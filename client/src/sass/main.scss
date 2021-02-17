@@ -1,3 +1,10 @@
-body {
-  background-color: tomato;
-}
+@import 'base/reset';
+@import 'base/base';
+
+@import 'components/buttons';
+@import 'components/calendar';
+
+@import 'layout/footer';
+@import 'layout/header';
+
+@import 'themes/dark';

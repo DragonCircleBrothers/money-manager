@@ -1,0 +1,26 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  color: #666;
+  background-color: #fff;
+  font-size: 1.5rem;
+}
+
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.container {
+  width: 960px;
+  height: 900px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(170,63,63,1) 50%, rgba(252,176,69,1) 100%);
+}
