@@ -1,12 +1,7 @@
-alert('hihi@');
+alert("hihi@");
 
-function add (x: number, y: number): number{
-  return x+y;
+function add(x: number, y: number): number {
+  return x + y;
 }
 
-console.log(add(1,3));  
-
-
-let  a = 'hello';  
-
-  const b = 'hi';
+console.log(add(1, 3));
