@@ -1,11 +1,15 @@
 @import 'base/reset';
 @import 'base/base';
+@import 'base/variables';
 
 @import 'components/buttons';
 @import 'components/calendar';
+@import 'components/modal';
 
 @import 'layout/footer';
 @import 'layout/header';
+@import 'layout/addModal';
+@import 'layout/incomeModal';
 
 @import 'pages/dailyList';
 

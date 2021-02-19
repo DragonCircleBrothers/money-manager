@@ -1,0 +1,44 @@
+.income-modal {
+  @include modalBox;
+  position: relative;
+  background: orange;
+  .income-modal__back {
+    font-size: 2.5rem;
+    color: rgb(122, 122, 122);
+    margin-right: 20px;
+  }
+  .income-modal__price {
+    display: inline-block;
+    color: $outcome-color;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .income-modal__content {
+    width: 100%;
+    font-size: 3rem;
+    border-bottom: 1px solid rgb(128, 128, 128);
+  }
+  .income-modal__category {
+    display: flex;
+    flex-flow: row wrap;
+    input[type=radio] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 100%;
+    }
+    input[type=radio]:checked {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+  .btn-close {
+    @include closeBtn;
+  }
+}
