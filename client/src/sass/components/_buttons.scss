@@ -1,3 +1,4 @@
+
 @mixin roundSquareBtn($wsize: 10px, $hsize: 10px, $bc: #fff) {
   width: $wsize;
   height: $hsize;
@@ -13,4 +14,13 @@
   right: $right;
   top: $top;
   font-size: 25px;
+}
+
+@mixin button($width, $height, $radius, $fontSize: 1rem, $color: $base-color, $bgc) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  font-size: $fontSize;
+  color: $color;
+  background-color: $bgc;
 }
