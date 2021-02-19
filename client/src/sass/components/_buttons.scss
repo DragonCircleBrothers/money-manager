@@ -1,3 +1,21 @@
+
+@mixin roundSquareBtn($wsize: 10px, $hsize: 10px, $bc: #fff) {
+  width: $wsize;
+  height: $hsize;
+  border-radius: 5px;
+  background-color: $bc;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+@mixin closeBtn($right: 10px, $top: 10px) {
+  position: absolute;
+  right: $right;
+  top: $top;
+  font-size: 25px;
+}
+
 @mixin button($width, $height, $radius, $fontSize: 1rem, $color: $base-color, $bgc) {
   width: $width;
   height: $height;
