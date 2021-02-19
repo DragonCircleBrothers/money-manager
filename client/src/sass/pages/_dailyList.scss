@@ -1,0 +1,66 @@
+.consumption-list {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: tomato;
+}
+
+.consumption-list__total {
+  width: 300px;
+  font-size: 40px;
+  // height: 100px;
+  // background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.consumption-list__total>span:first-child {
+  color: blue;
+}
+
+.consumption-list__detail {
+  width: 250px;
+  font-size: 20px;
+  background-color: violet;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // align-items: stretch;
+  flex-wrap: wrap;
+}
+
+// .consumption-list__detail > div {
+//   // display: flex;
+//   flex-direction: column;
+//   // background-color: greenyellow;
+// }
+
+.consumption-detail {
+  font-size: 20px;
+  // background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.consumption-detail-list {
+  // background-color: greenyellow;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.consumption-detail-list > li {
+  width: 100%;
+  // background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
