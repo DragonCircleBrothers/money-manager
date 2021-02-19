@@ -1,0 +1,6 @@
+@mixin modalBox($wsize: 300px, $hsize: 300px) {
+  width: $wsize;
+  height: $hsize;
+  background-color: $modalBg-color;
+  padding: 30px;
+}
