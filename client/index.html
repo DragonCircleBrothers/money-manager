@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
@@ -40,41 +40,41 @@
           <span class="calendar-sell__income">200</span>
           <span class="calendar-sell__outcome">7800</span>
         </div>
-        <div class="calendar__this-month">2</div>
-        <div class="calendar__this-month">3</div>
-        <div class="calendar__this-month sat">4</div>
+        <div class="calendar__this-month calendar-sell">2</div>
+        <div class="calendar__this-month calendar-sell">3</div>
+        <div class="calendar__this-month calendar-sell sat">4</div>
 
-        <div class="calendar__this-month sun">5</div>
-        <div class="calendar__this-month">6</div>
-        <div class="calendar__this-month">7</div>
-        <div class="calendar__this-month">8</div>
-        <div class="calendar__this-month">9</div>
-        <div class="calendar__this-month">10</div>
-        <div class="calendar__this-month sat">11</div>
+        <div class="calendar__this-month calendar-sell sun">5</div>
+        <div class="calendar__this-month calendar-sell">6</div>
+        <div class="calendar__this-month calendar-sell">7</div>
+        <div class="calendar__this-month calendar-sell">8</div>
+        <div class="calendar__this-month calendar-sell">9</div>
+        <div class="calendar__this-month calendar-sell">10</div>
+        <div class="calendar__this-month calendar-sell sat">11</div>
 
-        <div class="calendar__this-month sun">12</div>
-        <div class="calendar__this-month">13</div>
-        <div class="calendar__this-month">14</div>
-        <div class="calendar__this-month">15</div>
-        <div class="calendar__this-month">16</div>
-        <div class="calendar__this-month">17</div>
-        <div class="calendar__this-month sat">18</div>
+        <div class="calendar__this-month calendar-sell sun">12</div>
+        <div class="calendar__this-month calendar-sell">13</div>
+        <div class="calendar__this-month calendar-sell">14</div>
+        <div class="calendar__this-month calendar-sell">15</div>
+        <div class="calendar__this-month calendar-sell">16</div>
+        <div class="calendar__this-month calendar-sell">17</div>
+        <div class="calendar__this-month calendar-sell sat">18</div>
 
-        <div class="calendar__this-month sun">19</div>
-        <div class="calendar__this-month">20</div>
-        <div class="calendar__this-month">21</div>
-        <div class="calendar__this-month">22</div>
-        <div class="calendar__this-month">23</div>
-        <div class="calendar__this-month">24</div>
-        <div class="calendar__this-month sat">25</div>
+        <div class="calendar__this-month calendar-sell sun">19</div>
+        <div class="calendar__this-month calendar-sell ">20</div>
+        <div class="calendar__this-month calendar-sell">21</div>
+        <div class="calendar__this-month calendar-sell">22</div>
+        <div class="calendar__this-month calendar-sell">23</div>
+        <div class="calendar__this-month calendar-sell">24</div>
+        <div class="calendar__this-month calendar-sell sat">25</div>
 
-        <div class="calendar__this-month sun">26</div>
-        <div class="calendar__this-month">27</div>
-        <div class="calendar__this-month">28</div>
-        <div class="calendar__this-month">29</div>
-        <div class="calendar__this-month">30</div>
-        <div class="calendar__this-month">31</div>
-        <div class="calendar__next-month sat">1</div>
+        <div class="calendar__this-month calendar-sell sun">26</div>
+        <div class="calendar__this-month calendar-sell">27</div>
+        <div class="calendar__this-month calendar-sell">28</div>
+        <div class="calendar__this-month calendar-sell">29</div>
+        <div class="calendar__this-month calendar-sell">30</div>
+        <div class="calendar__this-month calendar-sell">31</div>
+        <div class="calendar__next-month calendar-sell sat">1</div>
       </div>
 
       <div class="add-modal">
@@ -96,14 +96,14 @@
           <span class="price__original">2000</span>
           <span class="price__unit">원</span>
         </p>
-        <input type="text" class="income-modal__content" />
+        <input type="text" class="income-modal__content" placeholder="내역" />
         <form action="" class="income-modal__category">
           <label for="salary">
-            <input id="salary" type="radio" name="income">
+            <input id="salary" class="far fa-envelope fa-2x" type="radio" name="income">
             <span>월급</span>
           </label>
           <label for="allowance">
-            <input id="allowance" type="radio" name="income">
+            <input id="allowance" class="fas fa-wallet fa-2x" type="radio" name="income">
             <span>용돈</span>
           </label>
         </form>
@@ -116,43 +116,75 @@
           <span class="price__original">2000</span>
           <span class="price__unit">원</span>
         </p>
-        <input type="text" class="outcome-modal__content" />
+        <input type="text" class="outcome-modal__content" placeholder="내역" />
         <form action="" class="outcome-modal__category">
-          <input id="food" type="radio" name="outcome">
-          <label for="food">식비</label>
-          <input id="transportation" type="radio" name="outcome">
-          <label for="transportation">교통비</label>
-          <input id="culture" type="radio" name="outcome">
-          <label for="culture">문화생활</label>
-          <input id="daily" type="radio" name="outcome">
-          <label for="daily">생필품</label>
-          <input id="clothing" type="radio" name="outcome">
-          <label for="clothing">의류</label>
-          <input id="beauty" type="radio" name="outcome">
-          <label for="beauty">미용</label>
-          <input id="health" type="radio" name="outcome">
-          <label for="health">의료/건강</label>
-          <input id="education" type="radio" name="outcome">
-          <label for="education">교육</label>
-          <input id="communication" type="radio" name="outcome">
-          <label for="communication">통신비</label>
-          <input id="dues" type="radio" name="outcome">
-          <label for="dues">회비</label>
-          <input id="cac" type="radio" name="outcome">
-          <label for="cac">경조사</label>
-          <input id="saving" type="radio" name="outcome">
-          <label for="saving">저축</label>
-          <input id="appliance" type="radio" name="outcome">
-          <label for="appliance">가전</label>
-          <input id="bill" type="radio" name="outcome">
-          <label for="bill">공과금</label>
-          <input id="card" type="radio" name="outcome">
-          <label for="card">카드대금</label>
+          <label for="food">
+            <input id="food" class="fas fa-utensils fa-2x" type="radio" name="outcome">
+            <span>식비</span>
+          </label>
+          <label for="transportation">
+            <input id="transportation" class="fas fa-bus-alt fa-2x" type="radio" name="outcome">
+            <span>교통비</span>
+          </label>
+          <label for="culture">
+            <input id="culture" class="fas fa-music fa-2x" type="radio" name="outcome">
+            <span>문화생활</span>
+          </label>
+          <label for="daily">
+            <input id="daily" class="fas fa-shopping-cart fa-2x" type="radio" name="outcome">
+            <span>생필품</span>
+          </label>
+          <label for="clothing">
+            <input id="clothing" class="fas fa-tshirt fa-2x" type="radio" name="outcome">
+            <span>의류</span>
+          </label>
+          <label for="beauty">
+            <input id="beauty" class="fas fa-bath fa-2x" type="radio" name="outcome">
+            <span>미용</span>
+          </label>
+          <label for="health">
+            <input id="health" class="fas fa-syringe fa-2x" type="radio" name="outcome">
+            <span>의료/건강</span>
+          </label>
+          <label for="education">
+            <input id="education" class="fas fa-university fa-2x" type="radio" name="outcome">
+            <span>교육</span>
+          </label>
+          <label for="communication">
+            <input id="communication" class="fas fa-mobile-alt fa-2x" type="radio" name="outcome">
+            <span>통신비</span>
+          </label>
+          <label for="dues">
+            <input id="dues" class="fas fa-user-friends fa-2x" type="radio" name="outcome">
+            <span>회비</span>
+          </label>
+          <label for="cac">
+            <input id="cac" class="fas fa-birthday-cake fa-2x" type="radio" name="outcome">
+            <span>경조사</span>
+          </label>
+          <label for="saving">
+            <input id="saving" class="fas fa-piggy-bank fa-2x" type="radio" name="outcome">
+            <span>저축</span>
+          </label>
+          <label for="appliance">
+            <input id="appliance" class="fas fa-tv fa-2x" type="radio" name="outcome">
+            <span>가전</span>
+          </label>
+          <label for="bill">
+            <input id="bill" class="fas fa-file-invoice-dollar fa-2x" type="radio" name="outcome">
+            <span>공과금</span>
+          </label>
+          <label for="card">
+            <input id="card" class="far fa-credit-card fa-2x" type="radio" name="outcome">
+            <span>카드대금</span>
+          </label>
         </form>
         <button class="fas fa-times btn-close"></button>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      
+    </footer>
   </div>
 </body>
 </html>
