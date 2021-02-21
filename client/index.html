@@ -14,14 +14,25 @@
 <body>
   <header class="header">
     <button class="header__chart"><i class="far fa-chart-bar"></i></button>
+    <button class="header__prev fas fa-chevron-left"></button>
     <div class="header__month"><span class="month__num">2</span>월</div>
+    <button class="header__next fas fa-chevron-right"></button>
     <button class="header__add"><i class="fas fa-plus-circle"></i></button>
   </header>
   <main class="main">
     <section class="amount-section">
-      <div class="amount-section__income">수입 <span class="income__price">24000</span>원</div>
-      <div class="amount-section__outcome">지출 <span class="outcome__price">12000</span>원</div>
-      <div class="amount-section__total">합계 <span class="total__price">12000</span>원</div>
+      <div class="amount-section__income">
+        <span class="income__title">수입</span>  
+        <span class="income__price">24000</span>
+      </div>
+      <div class="amount-section__outcome">
+        <span class="outcome__title">지출</span>
+        <span class="outcome__price">12000</span>
+      </div>
+      <div class="amount-section__total">
+        <span class="total__title">합계</span>
+        <span class="total__price">12000</span>
+      </div>
     </section>
 
     <div class="calendar-container">
@@ -183,15 +194,18 @@
 
     <!-- 영수증 모달 -->
     <div class="bill-modal">
-        <h3>영수증</h3>
+      <h3>지불 영수증</h3>
       <form action="" class="bill-modal__form">
+        <label for="category">
+          <input id="card" class="far fa-credit-card fa-2x" type="radio" name="outcome">
+          <span>카드대금</span>
+        </label>
         <div class="input-container">
           <div>
-            <label for="date">거래일 : </label>
-            <label for="price">금액 : </label>
-            <label for="category">분류 : </label>
-            <label for="content">내역 : </label>
-            <label for="payment">지불 : </label>
+            <label for="date">거래일</label>
+            <label for="price">금액</label>
+            <label for="content">내역</label>
+            <label for="payment">지불</label>
           </div>
           <div>
             <input id="date" type="text" class="form__input" />
@@ -213,19 +227,19 @@
       <div class="github-container">
         <h3 class="a11y-hidden">만든이</h3>
         <a href="https://github.com/yhun940731" class="github__link" target="_blank">
-          <i class="fab fa-github fa-2x"></i>
+          <i class="fab fa-github fa-3x"></i>
           <span class="developer__name">Yonghoon Choi</span>
         </a>
         <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
-          <i class="fab fa-github fa-2x"></i>
+          <i class="fab fa-github fa-3x"></i>
           <span class="developer__name">Jiwon Kim</span>
         </a>
         <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
-          <i class="fab fa-github fa-2x"></i>
+          <i class="fab fa-github fa-3x"></i>
           <span class="developer__name">Hyohyung Lee</span>
         </a>
       </div>
-      <p class="copyright">ⓒ 2021 DCB all rights reserved.</p>
+      <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
     </footer>
 </body>
 </html>
