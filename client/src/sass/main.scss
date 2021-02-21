@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import 'base/reset';
 @import 'base/base';
 @import 'base/variables';
@@ -5,11 +6,13 @@
 @import 'components/buttons';
 @import 'components/calendar';
 @import 'components/modal';
+@import 'components/summary';
 
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/addModal';
 @import 'layout/incomeModal';
+@import 'layout/billModal';
 
 @import 'pages/dailyList';
 
