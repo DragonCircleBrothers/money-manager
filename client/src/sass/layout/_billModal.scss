@@ -1,0 +1,53 @@
+.bill-modal {
+  @include modalBox($wsize: 500px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(122, 122, 122);
+
+  .bill-modal__form {
+    .input-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label,
+      input {
+        margin-top: 15px;
+      }
+
+      label {
+        background-color: cyan;
+        font-size: 2.0rem;
+      }
+
+      .form__input {
+        
+        font-size: 1.8rem;
+        background-color: #fff;
+        padding: 0;
+      }
+    }
+
+    .form__button {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      margin-top: 20px;
+
+      button {
+        @include roundSquareBtn(100px, 50px, $income-color);
+      }
+    }
+  }
+
+  .add-modal__closed {
+    @include closeBtn;
+  }
+}
