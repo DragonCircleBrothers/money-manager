@@ -1,0 +1,62 @@
+.outcome-modal {
+  @include modalBox($hsize: auto);
+  position: relative;
+
+  .outcome-modal__back {
+    @include backBtn;
+  }
+
+  .outcome-modal__price {
+    @include priceForm($outcome-color);
+  }
+
+  .outcome-modal__content {
+    @include contentForm;
+  }
+
+  .outcome-modal__category {
+    display: flex;
+    flex-flow: row wrap;
+
+    span {
+      display: block;
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    $lists: (
+      food,
+      transportation,
+      culture,
+      daily,
+      clothing,
+      beauty,
+      health,
+      education,
+      beauty,
+      communication,
+      dues,
+      cac,
+      saving,
+      appliance,
+      bill,
+      card
+    );
+
+    @each $list in $lists {
+      $i: random() * 10;
+      ##{$list} {
+        @include labelBtn($bg: rgb($i * 20, $i * 10, $i * 20))
+      }
+    }
+  }
+
+  .btn-close {
+    @include closeBtn;
+  }
+}
