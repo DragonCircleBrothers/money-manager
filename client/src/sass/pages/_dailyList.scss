@@ -1,15 +1,21 @@
+.consumption-container {
+  border: 1px solid black;
+}
+
 .consumption-list {
-  height: 100px;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // background-color: tomato;
+  // background-color: rgb(25, 165, 90);
+  box-shadow: 0 3px rgb(161, 158, 158);
+  margin: 10px 0;
 }
 
 .consumption-list__total {
   width: 300px;
-  font-size: 40px;
+  font-size: 30px;
   // height: 100px;
   // background-color: green;
   display: flex;
@@ -22,14 +28,19 @@
 }
 
 .consumption-list__detail {
-  width: 250px;
+  // width: 110px;
   font-size: 20px;
-  background-color: violet;
+  // background-color: violet;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   // align-items: stretch;
   flex-wrap: wrap;
+}
+
+.consumption-list__detail>span:nth-child(3) {
+  margin-left: 10px;
+  // color: red;
 }
 
 // .consumption-list__detail > div {
@@ -40,12 +51,15 @@
 
 .consumption-detail {
   font-size: 20px;
-  // background-color: blueviolet;
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+}
 
+.consumption-detail__button {
+  border: 1px solid black;
 }
 
 .consumption-detail-list {
@@ -55,9 +69,11 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
-.consumption-detail-list > li {
+.consumption-detail-list>li {
   width: 100%;
   // background-color: red;
   display: flex;
