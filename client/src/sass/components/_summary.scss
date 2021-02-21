@@ -1,0 +1,31 @@
+.amount-section {
+  background-color: #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2.6rem;
+  font-weight: bold;
+  padding: 15px;
+
+  .amount-section__income{
+    .income__price{
+      color: $income-color;
+      font-size: 3.6rem;
+    }
+  }
+
+  .amount-section__outcome{
+    .outcome__price{
+      color: $outcome-color;
+      font-size: 3.6rem;
+    }
+  }
+
+  .amount-section__total{
+    .total__price{
+      color: $base-color;
+      font-size: 3.6rem;
+    }
+  }
+}
