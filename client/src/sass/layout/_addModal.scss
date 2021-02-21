@@ -2,18 +2,22 @@
   @include modalBox;
   position: relative;
   border-radius: 5px;
+  
   .add-modal__date {
     display: inline-block;
     font-size: 1.7rem;
     color: rgb(102, 102, 102);
     margin-bottom: 27px;
   }
+
   .add-modal__content {
     font-size: 5rem;
     margin-bottom: 70px;
+
     .content__unit {
       line-height: 1.2em
     }
+
     .content__price {
       float: right;
       font-size: 5rem;
@@ -21,18 +25,21 @@
       text-align: right;
     }
   }
+
   .add-modal__btn {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .btn__income {
       @include roundSquareBtn(100px, 50px, $income-color);
     }
+
     .btn__outcome {
       @include roundSquareBtn(100px, 50px, $outcome-color);
     }
   }
+  
   .add-modal__closed {
     @include closeBtn;
   }
