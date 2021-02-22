@@ -30,9 +30,8 @@
 
     $lists: (salary, allowance);
     @each $list in $lists {
-      $i: random() * 10;
       ##{$list} {
-        @include labelBtn($bg: rgb($i * 30, $i * 10, $i * 20));
+        @include labelBtn($bg: rgb(random(256), random(256), random(256)));
       }
     }
   }
