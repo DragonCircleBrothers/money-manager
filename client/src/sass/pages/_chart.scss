@@ -1,37 +1,110 @@
-.chart-container{
-  background-color: tomato;
+.chart-container {
   position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 
-  .chart__header{
-    background-color: cyan;
+  .chart__header {
+    background-color: $modalBg-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     text-align: center;
-    .header__income--btn{
-      @include roundSquareBtn($wsize: 150px, $hsize: 50px, $bc: $income-color);
-      color: black;
-      margin: 10px;
-    }
-    .header__outcome--btn{
-      @include roundSquareBtn($wsize: 150px, $hsize: 50px, $bc: $outcome-color);
-      color: black;
-      margin: 10px;
+
+    .header__btn {
+      .btn__income {
+        @include roundSquareBtn($wsize: 100px, $hsize: 30px, $bc: $income-color);
+        border-radius: 20px;
+        color: #fff;
+        margin: 10px 0;
+        padding: 10px inherit;
+      }
+
+      .btn__outcome {
+        @include roundSquareBtn($wsize: 100px, $hsize: 30px, $bc: $outcome-color);
+        border-radius: 20px;
+        color: #fff;
+        margin: 10px 0;
+        padding: 10px inherit;
+      }
     }
   }
 
-  .chart__main{
-    background-color: yellowgreen;
+  .chart__main {
+    position: relative;
     width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 
-    .main__detail{
-      display:flex;
+    #doughnut {
+      margin: 10px auto;
+    }
+
+    .main__total {
+      position: absolute;
+      right: 10%;
+      top: 20%;
+
+      .total__income,
+      .total__outcome {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+
+        span {
+          font-size: 2.8rem;
+          margin-left: 10px;
+        }
+
+        .income__price {
+          color: $income-color;
+        }
+
+        .outcome__price {
+          color: $outcome-color;
+        }
+      }
+    }
+
+    .main__detail {
+      width: 100%;
+      display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      font-size: 2.3rem;
+      justify-content: space-around;
+
+      .detail__list {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        li {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          margin-top: 20px;
+          
+          .categorybadge {
+            font-size: 1.5rem;
+            @include labelBtn($width: 30px, $height: 30px, $lineHeight: 1.6, $bg: rgb(random(256), random(256), random(256)));
+          }
+
+          span {
+            font-size: 2rem;
+          }
+          .list__price {
+            margin-left: 100px;
+          }
+        }
+      }
     }
   }
 }
