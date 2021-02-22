@@ -3,6 +3,11 @@
   width: 960px;
 }
 
+.consumption-container.hidden {
+  display: none;
+  // width: 960px;
+}
+
 .consumption-list {
   height: auto;
   display: flex;
