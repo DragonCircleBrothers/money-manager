@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
+
 <body>
   <!-- header -->
   <header class="header">
@@ -216,35 +218,40 @@
     </div>
 
     <!-- 영수증 모달 -->
-    <!-- <div class="bill-modal">
-      <h3>지불 영수증</h3>
-      <form action="" class="bill-modal__form">
-        <label for="category">
-          <input id="card" class="far fa-credit-card fa-2x" type="radio" name="outcome">
-          <span>카드대금</span>
-        </label>
-        <div class="input-container">
-          <div>
-            <label for="date">거래일</label>
+    <div class="bill-modal">
+      <h3>지출 영수증</h3>
+
+      <div class="input-container">
+        <form action="" class="bill-modal__form">
+          <time class="add-modal__date">2021/02/18</time>
+          <div class="container-category">
+            <label for="category">분류</label>
+            <input id="category" type="radio" class="far fa-credit-card fa-2x form__input" name="category" />
+          </div>
+
+          <div class="container-price">
             <label for="price">금액</label>
+            <input id="price" type="text" class="form__input" />
+          </div>
+
+          <div class="container-content">
             <label for="content">내역</label>
+            <input id="content" type="text" class="form__input" />
+          </div>
+
+          <div class="container-payment">
             <label for="payment">지불</label>
+            <input id="payment" type="text" class="form__input" />
           </div>
-          <div>
-            <input id="date" type="text" class="form__input" />
-            <input type="price" class="form__input" />
-            <input type="category" class="form__input" />
-            <input type="content" class="form__input" />
-            <input type="payment" class="form__input" />
+
+          <div class="form__button">
+            <button class="bill-modal__modified fas fa-sync-alt"></button>
           </div>
-        </div>
-        <div class="form__button">
-          <button>수정</button>
-          <button>삭제</button>
-        </div>
-      </form>
+        </form>
+      </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
-    </div> -->
+      <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
+    </div>
     </main>
     <footer class="footer">
       <div class="github-container">
@@ -265,4 +272,5 @@
       <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
     </footer>
 </body>
+
 </html>
