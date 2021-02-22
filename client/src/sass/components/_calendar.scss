@@ -1,3 +1,11 @@
+header {
+  height: 100px;
+}
+
+main {
+  background-color: #fff;
+}
+
 .calendar-container {
   display: grid;
   grid-template-rows: 35px 100px 100px 100px 100px 100px;
