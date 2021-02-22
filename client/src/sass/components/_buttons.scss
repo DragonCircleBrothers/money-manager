@@ -18,7 +18,7 @@
   font-size: 25px;
 }
 
-@mixin deltedBtn($left: 20px, $top: 10px) {
+@mixin deletedBtn($left: 20px, $top: 10px) {
   position: absolute;
   left: $left;
   top: $top;
