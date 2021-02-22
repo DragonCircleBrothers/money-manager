@@ -1,0 +1,28 @@
+.footer {
+  background-color: rgb(219, 219, 219);
+  text-align: center;
+  padding: 30px;
+
+  .github-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    .github__link {
+      margin-right: 35px;
+      &:hover {
+        color: $income-color;
+      }
+    }
+
+    .developer__name {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .footer__copyright {
+    margin-top: 35px;
+  }
+}
