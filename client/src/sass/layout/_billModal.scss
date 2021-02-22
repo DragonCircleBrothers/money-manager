@@ -1,18 +1,16 @@
 .bill-modal {
-  @include modalBox($wsize: 500px, $hsize: 500px);
+  @include modalBox($wsize: 350px, $hsize: 500px);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(122, 122, 122);
-
-  h3 {
+  
+  .bill-modal__header {
     margin-bottom: 20px;
   }
-
-  time {}
-
+  
   .input-container {
+    color: rgb(122, 122, 122);
     .bill-modal__form {
       display: flex;
       flex-direction: column;
@@ -20,9 +18,18 @@
 
       .container-category {
         margin: 20px 0;
-
-        .category__input {
-          @include labelBtn($bg: rgb(random(256), random(256), random(256)));
+        label{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .category__input {
+            @include labelBtn($bg: rgb(random(256), random(256), random(256)));
+          }
+          span{
+            margin-top: 10px;
+            font-weight: bold;
+          }
         }
       }
 
@@ -33,12 +40,12 @@
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 20px;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
       }
 
       .form__input {
         @include contentForm;
-        margin-left: 50px;
+        margin-left: 20px;
         width: 200px;
       }
     }
