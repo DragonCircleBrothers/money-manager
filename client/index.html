@@ -44,6 +44,54 @@
       </div>
     </div>
 
+    <!-- consumption page(SPA)-->
+    <div class="consumption-container">
+      <div class="consumption-list">
+        <div class="consumption-list__total">
+          <span>지출</span>
+          <span>100,000원</span>
+        </div>
+        <div class="consumption-list__detail">
+          <i class="fas fa-money-bill-wave"></i>
+          <span>50,000</span>
+          <i class="far fa-credit-card"></i>
+          <span>40,000</span>
+        </div>
+      </div>
+      <div class="consumption-detail">
+        <!-- <span class="">나간 돈</span> -->
+        <span class="">detail</span>
+        <button class="consumption-detail-delete__button fas fa-trash-alt"></button>
+      </div>
+      <ul class="consumption-detail-list">
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- calendar -->
     <!-- summary -->
     <div class="amount-section">
       <div class="amount-section__income">
@@ -59,7 +107,6 @@
         <span class="total__price">12000</span>
       </div>
     </div>
-    <!-- calendar -->
     <div class="calendar-container">
       <div class="calendar__day">sun</div>
       <div class="calendar__day">mon</div>
@@ -296,53 +343,6 @@
     </div>
     <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
   </footer>
-
-  <!-- consumption page(SPA)-->
-  <div class="consumption-container">
-      <div class="consumption-list">
-        <div class="consumption-list__total">
-          <span>지출</span>
-          <span>100,000원</span>
-        </div>
-        <div class="consumption-list__detail">
-          <i class="fas fa-money-bill-wave"></i>
-          <span>50,000</span>
-          <i class="far fa-credit-card"></i>
-          <span>40,000</span>
-        </div>
-      </div>
-      <div class="consumption-detail">
-        <!-- <span class="">나간 돈</span> -->
-        <span class="">detail</span>
-        <button class="consumption-detail-delete__button fas fa-trash-alt"></button>
-      </div>
-      <ul class="consumption-detail-list">
-        <li>
-          <label for="categorybadge">
-            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
-            <span class="">카드</span>
-            <span>25000원</span>
-            <input type="checkbox" class="delete-button">
-          </label>
-        </li>
-        <li>
-          <label for="categorybadge">
-            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
-            <span class="">카드</span>
-            <span>25000원</span>
-            <input type="checkbox" class="delete-button">
-          </label>
-        </li>
-        <li>
-          <label for="categorybadge">
-            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
-            <span class="">카드</span>
-            <span>25000원</span>
-            <input type="checkbox" class="delete-button">
-          </label>
-        </li>
-      </ul>
-    </div>
 </body>
 
 </html>
