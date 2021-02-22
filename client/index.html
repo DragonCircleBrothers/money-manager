@@ -8,9 +8,7 @@
   <meta name="description" content="머니 매니저 홈페이지입니다." />
   <meta name="keywords" content="머니 매니저, money manager, 가계부, 용돈 관리, 돈 관리, 홈페이지" />
   <meta name="author" content="DCB(Dragon Circle Brothers)" />
-
-  <!-- TODO: 파비콘 -->
-  <link rel="icon" type="image/png" sizes="16x16" href="./src/asset/favicon.ico">
+  <link rel="icon" type="image/png" href="./src/asset/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -110,6 +108,7 @@
       </div>
       <button class="add-modal__closed fas fa-times" aria-label="close"></button>
     </div>
+
     <!-- income-modal -->
     <div class="income-modal">
       <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
@@ -220,7 +219,7 @@
       <button class="fas fa-times btn-close"></button>
     </div>
 
-    <!-- 영수증 모달 -->
+    <!-- bill-modal -->
     <div class="bill-modal">
       <header class="bill-modal__header">
         <h3>지출 영수증</h3>
@@ -257,8 +256,9 @@
         </form>
       </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
-      <button class="bill-modal__deleted fas fa-trash-alt" aria-label="delete"></button>
+      <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
     </div>
+  
   </main>
 
   <footer class="footer">
@@ -325,5 +325,4 @@
 </div>
 
 </body>
-
 </html>
