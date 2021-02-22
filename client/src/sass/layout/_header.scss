@@ -6,26 +6,28 @@
   align-items: center;
   background: $mainBg-color;
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 30px;
 
   .header__chart {
     font-size: 3rem;
-    color: #e2e9f3;
+    color: #fff;
   }
 
   .header__prev, .header__next {
-    color: #e2e9f3;
+    color: #fff;
   }
 
-  .header__month {
-
-    .month__num {}
-
+  .header__date {
+    display: flex;
+    flex-flow: row nowrap;
+    .date__year {
+      margin-right: 10px;
+    }
   }
 
   .header__add {
     font-size: 3rem;
-    color: #e2e9f3;
+    color: #fff;
   }
 }
