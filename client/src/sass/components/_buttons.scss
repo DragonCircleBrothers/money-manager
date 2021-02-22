@@ -18,23 +18,19 @@
   font-size: 25px;
 }
 
-@mixin deletedBtn($left: 20px, $top: 10px) {
-  position: absolute;
-  left: $left;
-  top: $top;
-  font-size: 25px;
-}
-
-@mixin modifiedBtn($left: 50%, $bottom: 10px) {
+@mixin deletedBtn($left: 20px, $bottom: 20px) {
   position: absolute;
   left: $left;
   bottom: $bottom;
-  font-size: 25px;
-  background-color: $income-color;
-  border-radius: 100%;
-  width: 50px;
-  height: 50px;
-  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+@mixin modifiedBtn($right: 20px, $bottom: 20px) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+  color: black;
+  font-size: 2.5rem;
 }
 
 @mixin labelBtn($width: 50px, $height: 50px, $lineHeight: 1.6, $bg) {
