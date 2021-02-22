@@ -1,8 +1,8 @@
 import Chart from "chart.js";
 
-const renderDoughnutChart = () => {
+const renderDoughnutChart = (): void => {
   const doughnutCtx = document.getElementById("doughnut") as HTMLCanvasElement;
-  const myDoughnutChart = new Chart(doughnutCtx, {
+  const myDoughnutChart: Chart = new Chart(doughnutCtx, {
     type: "doughnut",
     data: {
       datasets: [
@@ -28,9 +28,9 @@ const renderDoughnutChart = () => {
   });
 };
 
-const renderBarChart = () => {
+const renderBarChart = (): void => {
   const barCtx = document.getElementById("bar") as HTMLCanvasElement;
-  const myBarChart = new Chart(barCtx, {
+  const myBarChart: Chart = new Chart(barCtx, {
     type: "horizontalBar",
     data: {
       labels: ["식비", "교통비", "경조사", "Green", "Purple", "Orange"],
