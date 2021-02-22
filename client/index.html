@@ -109,6 +109,7 @@
       </div>
       <button class="add-modal__closed fas fa-times" aria-label="close"></button>
     </div>
+
     <!-- income-modal -->
     <div class="income-modal">
       <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
@@ -218,45 +219,8 @@
       </div>
       <button class="fas fa-times btn-close"></button>
     </div>
-<!-- 이효형 -->
-      <div class="consumption-container">
-        <div class="consumption-list">
-          <div class="consumption-list__total">
-            <span>지출</span>
-            <span>20000</span>
-          </div>
-          <div class="consumption-list__detail">
-            <span>현금</span>
-            <span>50,000</span>
-            <span>카드</span>
-            <span>40,000</span>
-          </div>
-        </div>
-        <div class="consumption-detail">
-          <span class="">나간 돈</span>
-          <span class="">내역</span>
-          <button class="consumption-detail__button">Edit</button>
-        </div>
-        <ul class="consumption-detail-list">
-          <li>
-            <span>badge</span>
-            <span>식비</span>
-            <span>25000원</span>
-          </li>
-          <li>
-            <span>badge</span>
-            <span>교통비</span>
-            <span>30000원</span>
-          </li>
-          <!-- <li>
-            <span>badge</span>
-            <span>22</span>
-            <span>교통비</span>
-            <span>30000원</span>
-          </li> -->
-        </ul>
-      </div>
-    <!-- 영수증 모달 -->
+
+    <!-- bill-modal -->
     <div class="bill-modal">
       <h3>지출 영수증</h3>
 
@@ -264,11 +228,8 @@
         <form action="" class="bill-modal__form">
           <time class="add-modal__date">2021/02/18</time>
           <div class="container-category">
-            <label for="category">
-              <input id="category" type="radio" class="far fa-credit-card fa-2x category__input" name="category" />
-              <span>분류</span>
-            </label>
-            
+            <label for="category">분류</label>
+            <input id="category" type="radio" class="far fa-credit-card fa-2x form__input" name="category" />
           </div>
 
           <div class="container-price">
@@ -292,15 +253,17 @@
         </form>
       </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
-      <button class="bill-modal__deleted fas fa-trash-alt" aria-label="delete"></button>
+      <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
     </div>
     </main>
+
+    <!-- footer -->
     <footer class="footer">
       <div class="github-container">
         <h3 class="a11y-hidden">만든이</h3>
         <a href="https://github.com/yhun940731" class="github__link" target="_blank">
           <i class="fab fa-github fa-3x"></i>
-          <span class="developer__name">Yonghun Choi</span>
+          <span class="developer__name">Yonghoon Choi</span>
         </a>
         <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
           <i class="fab fa-github fa-3x"></i>
