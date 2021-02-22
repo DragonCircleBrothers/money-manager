@@ -4,12 +4,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  // background: #EBAD01;
   background: $mainBg-color;
   color: #fff;
   font-size: 2.5rem;
   padding: 30px;
 
   .header__chart {
+    font-size: 3.6rem;
     font-size: 3rem;
     color: #e2e9f3;
   }
