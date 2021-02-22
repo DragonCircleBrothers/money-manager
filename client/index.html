@@ -27,9 +27,51 @@
     <button class="header__next fas fa-chevron-right"></button>
     <button class="header__add"><i class="fas fa-plus-circle"></i></button>
   </header>
+
   <main class="main">
+    <!-- chart page(SPA)-->
+    <div class="chart-container">
+      <div class="chart__header">
+        <div class="header__btn">
+          <button class="btn__income">수입</button>
+          <button class="btn__outcome">지출</button>
+        </div>
+      </div>
+
+      <div class="chart__main">
+        <canvas id="doughnut" width="400" height="400"></canvas>
+        <div class="main__total">
+          <div class="total__income">수입<span class="income__price">300000</span></div>
+          <div class="total__outcome">지출<span class="outcome__price">300000</span></div>
+        </div>
+        <div class="main__detail">
+          <canvas id="bar" width="400" height="400"></canvas>
+          <ul class="detail__list">
+            <li>
+              <div class="categorybadge fas fa-utensils fa-2x"></div>
+              <span class="list__payment">카드</span>
+              <span class="list__price">25000</span>
+            </li>
+            <li>
+              <div class="categorybadge fas fa-utensils fa-2x"></div>
+              <span class="list__payment">카드</span>
+              <span class="list__price">25000</span>
+            </li>
+            <li>
+              <div class="categorybadge fas fa-utensils fa-2x"></div>
+              <span class="list__payment">카드</span>
+              <span class="list__price">25000</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- calendar -->
     <!-- summary -->
-    <section class="amount-section">
+    <div class="amount-section">
       <div class="amount-section__income">
         <span class="income__title">수입</span>
         <span class="income__price">24000</span>
@@ -42,7 +84,7 @@
         <span class="total__title">합계</span>
         <span class="total__price">12000</span>
       </div>
-    </section>
+    </div>
 
     <!-- calendar -->
     <!-- <div class="calendar-container">
@@ -97,6 +139,52 @@
       <div class="calendar__this-month calendar-sell">31</div>
       <div class="calendar__next-month calendar-sell sat">1</div>
     </div> -->
+    
+    <!-- consumption page(SPA)-->
+    <div class="consumption-container">
+      <div class="consumption-list">
+        <div class="consumption-list__total">
+          <span>지출</span>
+          <span>100,000원</span>
+        </div>
+        <div class="consumption-list__detail">
+          <i class="fas fa-money-bill-wave"></i>
+          <span>50,000</span>
+          <i class="far fa-credit-card"></i>
+          <span>40,000</span>
+        </div>
+      </div>
+      <div class="consumption-detail">
+        <span class="">detail</span>
+        <button class="consumption-detail-delete__button fas fa-trash-alt"></button>
+      </div>
+      <ul class="consumption-detail-list">
+        <!-- <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li> -->
+      </ul>
+    </div>
 
     <!-- add-modal -->
     <!-- <div class="add-modal">
@@ -281,51 +369,5 @@
     </div>
     <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
   </footer>
-
-  <!-- consumption page(SPA)-->
-  <div class="consumption-container">
-    <div class="consumption-list">
-      <div class="consumption-list__total">
-        <span>지출</span>
-        <span>20000</span>
-      </div>
-      <div class="consumption-list__detail">
-        <span>현금</span>
-        <span>50,000</span>
-        <span>카드</span>
-        <span>40,000</span>
-      </div>
-    </div>
-    <div class="consumption-detail">
-      <span class="">나간 돈</span>
-      <span class="">내역</span>
-      <button class="consumption-detail__button">Edit</button>
-    </div>
-    <ul class="consumption-detail-list">
-      <li>
-        <span>badge</span>
-        <span>식비</span>
-        <span>25000원</span>
-      </li>
-      <li>
-        <span>badge</span>
-        <span>교통비</span>
-        <span>30000원</span>
-      </li>
-      <!-- <li>
-          <span>badge</span>
-          <span>22</span>
-          <span>교통비</span>
-          <span>30000원</span>
-        </li> -->
-    </ul>
-  </div>
-
-  <!-- chart page(SPA)-->
-  <div class="chart-container">
-    
-  </div>
-
-
 </body>
 </html>
