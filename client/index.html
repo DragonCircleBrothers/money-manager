@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +28,7 @@
     <!-- summary -->
     <section class="amount-section">
       <div class="amount-section__income">
-        <span class="income__title">수입</span>  
+        <span class="income__title">수입</span>
         <span class="income__price">24000</span>
       </div>
       <div class="amount-section__outcome">
@@ -220,14 +221,18 @@
 
     <!-- bill-modal -->
     <div class="bill-modal">
-      <h3>지출 영수증</h3>
+      <header class="bill-modal__header">
+        <h3>지출 영수증</h3>
+      </header>
 
       <div class="input-container">
         <form action="" class="bill-modal__form">
           <time class="add-modal__date">2021/02/18</time>
           <div class="container-category">
-            <label for="category">분류</label>
-            <input id="category" type="radio" class="far fa-credit-card fa-2x form__input" name="category" />
+            <label for="category">
+              <input id="category" type="radio" class="far fa-credit-card fa-2x category__input" name="category" />
+              <span>분류</span>
+            </label>
           </div>
 
           <div class="container-price">
@@ -246,33 +251,78 @@
           </div>
 
           <div class="form__button">
-            <button class="bill-modal__modified fas fa-sync-alt"></button>
+            <button class="bill-modal__modified fas fa-edit"></button>
           </div>
         </form>
       </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
       <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
     </div>
-    </main>
+  
+  </main>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div class="github-container">
-        <h3 class="a11y-hidden">만든이</h3>
-        <a href="https://github.com/yhun940731" class="github__link" target="_blank">
-          <i class="fab fa-github fa-3x"></i>
-          <span class="developer__name">Yonghoon Choi</span>
-        </a>
-        <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
-          <i class="fab fa-github fa-3x"></i>
-          <span class="developer__name">Jiwon Kim</span>
-        </a>
-        <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
-          <i class="fab fa-github fa-3x"></i>
-          <span class="developer__name">Hyohyung Lee</span>
-        </a>
-      </div>
-      <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <div class="github-container">
+      <h3 class="a11y-hidden">만든이</h3>
+      <a href="https://github.com/yhun940731" class="github__link" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Yonghun Choi</span>
+      </a>
+      <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Jiwon Kim</span>
+      </a>
+      <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Hyohyung Lee</span>
+      </a>
+    </div>
+    <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
+  </footer>
+
+  <!-- consumption page(SPA)-->
+<div class="consumption-container">
+  <div class="consumption-list">
+    <div class="consumption-list__total">
+      <span>지출</span>
+      <span>20000</span>
+    </div>
+    <div class="consumption-list__detail">
+      <span>현금</span>
+      <span>50,000</span>
+      <span>카드</span>
+      <span>40,000</span>
+    </div>
+  </div>
+  <div class="consumption-detail">
+    <span class="">나간 돈</span>
+    <span class="">내역</span>
+    <button class="consumption-detail__button">Edit</button>
+  </div>
+  <ul class="consumption-detail-list">
+    <li>
+      <span>badge</span>
+      <span>식비</span>
+      <span>25000원</span>
+    </li>
+    <li>
+      <span>badge</span>
+      <span>교통비</span>
+      <span>30000원</span>
+    </li>
+    <!-- <li>
+        <span>badge</span>
+        <span>22</span>
+        <span>교통비</span>
+        <span>30000원</span>
+      </li> -->
+  </ul>
+</div>
+
+<!-- chart page(SPA)-->
+<div class="chart-container">
+  
+</div>
+
 </body>
 </html>
