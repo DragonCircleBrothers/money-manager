@@ -1,37 +1,41 @@
 .bill-modal {
-  @include modalBox($wsize: 500px);
+  margin-top: 100px; // delete
+  @include modalBox($wsize: 500px, $hsize: 500px);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: rgb(122, 122, 122);
 
-  .bill-modal__form {
-    .input-container {
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  time {}
+
+  .input-container {
+    .bill-modal__form {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-between;
 
-      div {
+      .container-category{
+
+      }
+
+      .container-price,
+      .container-content,
+      .container-payment {
         display: flex;
-        flex-direction: column;
-      }
-
-      label,
-      input {
-        margin-top: 15px;
-      }
-
-      label {
-        background-color: cyan;
-        font-size: 2.0rem;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
       }
 
       .form__input {
-        
-        font-size: 1.8rem;
-        background-color: #fff;
+        @include contentForm;
         padding: 0;
+        width: 200px;
       }
     }
 
@@ -39,15 +43,17 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-around;
-      margin-top: 20px;
 
-      button {
-        @include roundSquareBtn(100px, 50px, $income-color);
+      .bill-modal__modified {
+        @include modifiedBtn;
       }
     }
   }
 
-  .add-modal__closed {
+  .bill-modal__closed {
     @include closeBtn;
+  }
+  .bill-modal__deleted {
+    @include deltedBtn;
   }
 }

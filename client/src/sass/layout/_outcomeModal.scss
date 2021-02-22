@@ -49,9 +49,8 @@
     );
 
     @each $list in $lists {
-      $i: random() * 10;
       ##{$list} {
-        @include labelBtn($bg: rgb($i * 20, $i * 10, $i * 20))
+        @include labelBtn($bg: rgb(random(256), random(256), random(256)));
       }
     }
   }
