@@ -1,0 +1,52 @@
+.payment-modal {
+  @include modalBox;
+  position: relative;
+  
+  .payment-modal__category {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    padding: 50px;
+
+    input[name=payment] {
+      display: none;
+    }
+
+    .category__content {
+      display:inline-block;
+      width: 135px;
+      padding: 7px 0;
+      text-align: center;
+      line-height: 33px;
+      cursor: pointer;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: 1.7rem;
+      border: 3px solid transparent;
+
+      &:hover {
+        border: 3px solid rgb(27, 206, 176);
+      }
+    }
+
+    #paymentCash + span {
+      background-color: $income-color;
+    }
+    #paymentCard + span {
+      background-color: $mainBg-color;
+    }
+  }
+
+  .payment-modal__back {
+    @include backBtn;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    padding: 5px;
+  }
+
+  .btn-close {
+    @include closeBtn;
+  }
+}

@@ -12,6 +12,7 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- header -->
   <header class="header">
     <button class="header__chart"><i class="far fa-chart-bar"></i></button>
     <button class="header__prev fas fa-chevron-left"></button>
@@ -20,6 +21,7 @@
     <button class="header__add"><i class="fas fa-plus-circle"></i></button>
   </header>
   <main class="main">
+    <!-- summary -->
     <section class="amount-section">
       <div class="amount-section__income">
         <span class="income__title">수입</span>  
@@ -35,6 +37,7 @@
       </div>
     </section>
 
+    <!-- calendar -->
     <div class="calendar-container">
       <div class="calendar__day">sun</div>
       <div class="calendar__day">mon</div>
@@ -88,6 +91,7 @@
       <div class="calendar__next-month calendar-sell sat">1</div>
     </div>
 
+    <!-- add-modal -->
     <div class="add-modal">
       <time class="add-modal__date">2021/02/18</time>
       <p class="add-modal__content">
@@ -101,6 +105,7 @@
       <button class="add-modal__closed fas fa-times" aria-label="close"></button>
     </div>
 
+    <!-- income-modal -->
     <div class="income-modal">
       <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="income-modal__price">
@@ -120,6 +125,8 @@
       </form>
       <button class="fas fa-times btn-close"></button>
     </div>
+
+    <!-- outcome-modal -->
     <div class="outcome-modal">
       <button class="outcome-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="outcome-modal__price">
@@ -192,8 +199,24 @@
       <button class="fas fa-times btn-close"></button>
     </div>
 
+    <!-- payment-modal -->
+    <div class="payment-modal">
+      <button class="payment-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
+      <div class="payment-modal__category">
+        <label for="paymentCash">
+          <input id="paymentCash" type="radio" name="payment">
+          <span class="category__content">현금</span>
+        </label>
+        <label for="paymentCard">
+          <input id="paymentCard" type="radio" name="payment">
+          <span class="category__content">카드</span>
+        </label>
+      </div>
+      <button class="fas fa-times btn-close"></button>
+    </div>
+
     <!-- 영수증 모달 -->
-    <div class="bill-modal">
+    <!-- <div class="bill-modal">
       <h3>지불 영수증</h3>
       <form action="" class="bill-modal__form">
         <label for="category">
@@ -221,7 +244,7 @@
         </div>
       </form>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
-    </div>
+    </div> -->
     </main>
     <footer class="footer">
       <div class="github-container">
