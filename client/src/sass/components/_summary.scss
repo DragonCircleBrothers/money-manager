@@ -1,13 +1,10 @@
 .amount-section {
-  background-color: #ccc;
   background-color: $modalBg-color;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  font-size: 2.6rem;
   font-weight: bold;
-  padding: 15px;
   font-size: 1.5rem;
   padding: 15px;
   border-bottom: 1px solid #c5c5c5;
@@ -21,7 +18,6 @@
   .amount-section__income{
     .income__price{
       color: $income-color;
-      font-size: 3.6rem;
       font-size: 2.3rem;
     }
   }
@@ -29,7 +25,6 @@
   .amount-section__outcome{
     .outcome__price{
       color: $outcome-color;
-      font-size: 3.6rem;
       font-size: 2.3rem;
     }
   }
@@ -37,7 +32,6 @@
   .amount-section__total{
     .total__price{
       color: $base-color;
-      font-size: 3.6rem;
       font-size: 2.3rem;
     }
   }
