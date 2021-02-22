@@ -1,8 +1,7 @@
 .consumption-container {
-  background-color: rgb(205, 205, 205);
-  border: 1px solid black;
-  height: 200px;
-  overflow-y: scroll;
+  background-color: #f4f4f4;
+  width: 960px;
+  height: 900px;
 }
 
 .consumption-list {
@@ -15,81 +14,94 @@
   padding: 10px 5px;
 }
 
+.delete-button {
+  zoom: 1.5;
+}
+
 .consumption-list__total {
-  width: 300px;
+  width: 500px;
   font-size: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 5px;
 }
 
 .consumption-list__total>span:first-child {
-  color: red;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.consumption-list__total>span:last-child {
+  font-size: 5rem;
 }
 
 .consumption-list__detail {
-  font-size: 20px;
+  font-size: 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-}
 
-.consumption-list__detail>span {
-  margin-right: 5px;
+  span {
+    margin: 0 10px;
+  }
 }
-
-.consumption-list__detail>span:first-child {
-  font-weight: bold;
-  color: blue;
-}
-
-.consumption-list__detail>span:nth-child(3) {
-  margin-left: 10px;
-  font-weight: bold;
-  color: violet;
-}
-
 
 .consumption-detail {
-  font-size: 20px;
-  padding: 10px 5px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   box-shadow: 0 3px white;
-}
 
-.consumption-detail>span {
-  margin-top: 10px;
-}
 
-.consumption-detail__button {
-  font-size: 20px;
-  margin-top: 2px;
-  padding: 5px 20px;
-  border: 1px solid black;
-  cursor: pointer;
-}
+  span {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 80px;
+  }
 
-.consumption-detail__button:hover {
-  border: 2px solid red;
+  button {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
 }
 
 .consumption-detail-list {
-  font-size: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: start;
   flex-wrap: wrap;
-}
+  overflow: hidden auto;
+  height: 750px;
 
-.consumption-detail-list>li {
-  width: 100%;
-  margin: 12px 0;
-  padding: 0 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  li {
+    width: 100%;
+    margin: 12px 0;
+    padding: 0 10px;
+
+    label {
+      display: inline-block;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row;
+      align-items: center;
+
+      span {
+        font-size: 2.5rem;
+      }
+    }
+
+    #categorybadge {
+      @include labelBtn($bg: rgb(random(256), random(256), random(256)));
+    }
+
+    span {
+      font-size: 2.0rem;
+    }
+  }
 }

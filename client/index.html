@@ -276,7 +276,6 @@
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
       <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
     </div>
-
   </main>
 
   <footer class="footer">
@@ -300,42 +299,50 @@
 
   <!-- consumption page(SPA)-->
   <div class="consumption-container">
-    <div class="consumption-list">
-      <div class="consumption-list__total">
-        <span>지출</span>
-        <span>20000</span>
+      <div class="consumption-list">
+        <div class="consumption-list__total">
+          <span>지출</span>
+          <span>100,000원</span>
+        </div>
+        <div class="consumption-list__detail">
+          <i class="fas fa-money-bill-wave"></i>
+          <span>50,000</span>
+          <i class="far fa-credit-card"></i>
+          <span>40,000</span>
+        </div>
       </div>
-      <div class="consumption-list__detail">
-        <span>현금</span>
-        <span>50,000</span>
-        <span>카드</span>
-        <span>40,000</span>
+      <div class="consumption-detail">
+        <!-- <span class="">나간 돈</span> -->
+        <span class="">detail</span>
+        <button class="consumption-detail-delete__button fas fa-trash-alt"></button>
       </div>
+      <ul class="consumption-detail-list">
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+        <li>
+          <label for="categorybadge">
+            <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
+            <span class="">카드</span>
+            <span>25000원</span>
+            <input type="checkbox" class="delete-button">
+          </label>
+        </li>
+      </ul>
     </div>
-    <div class="consumption-detail">
-      <span class="">나간 돈</span>
-      <span class="">내역</span>
-      <button class="consumption-detail__button">Edit</button>
-    </div>
-    <ul class="consumption-detail-list">
-      <li>
-        <span>badge</span>
-        <span>식비</span>
-        <span>25000원</span>
-      </li>
-      <li>
-        <span>badge</span>
-        <span>교통비</span>
-        <span>30000원</span>
-      </li>
-      <!-- <li>
-        <span>badge</span>
-        <span>22</span>
-        <span>교통비</span>
-        <span>30000원</span>
-      </li> -->
-    </ul>
-  </div>
 </body>
 
 </html>
