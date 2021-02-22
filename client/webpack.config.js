@@ -38,8 +38,9 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "[name].[ext]?[hash]",
-            publicPath: "dist/",
+            context: "./src/assets",
+            name: "root[path][name].[ext]",
+            publicPath: "dist",
           },
         },
       },
