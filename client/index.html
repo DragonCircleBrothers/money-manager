@@ -20,7 +20,10 @@
   <header class="header">
     <button class="header__chart"><i class="far fa-chart-bar"></i></button>
     <button class="header__prev fas fa-chevron-left"></button>
-    <div class="header__month"><span class="month__num">2</span>월</div>
+    <div class="header__date">
+      <div class="date__year"><span class="month__year">2021</span>년</div>
+      <div class="date__month"><span class="month__num">2</span>월</div>
+    </div>
     <button class="header__next fas fa-chevron-right"></button>
     <button class="header__add"><i class="fas fa-plus-circle"></i></button>
   </header>
@@ -42,7 +45,7 @@
     </section>
 
     <!-- calendar -->
-    <div class="calendar-container">
+    <!-- <div class="calendar-container">
       <div class="calendar__day">sun</div>
       <div class="calendar__day">mon</div>
       <div class="calendar__day">tue</div>
@@ -93,10 +96,10 @@
       <div class="calendar__this-month calendar-sell">30</div>
       <div class="calendar__this-month calendar-sell">31</div>
       <div class="calendar__next-month calendar-sell sat">1</div>
-    </div>
+    </div> -->
 
     <!-- add-modal -->
-    <div class="add-modal">
+    <!-- <div class="add-modal">
       <time class="add-modal__date">2021/02/18</time>
       <p class="add-modal__content">
         <span class="content__unit fas fa-won-sign"></span>
@@ -107,10 +110,10 @@
         <button class="btn__outcome">지출</button>
       </div>
       <button class="add-modal__closed fas fa-times" aria-label="close"></button>
-    </div>
+    </div> -->
 
     <!-- income-modal -->
-    <div class="income-modal">
+    <!-- <div class="income-modal">
       <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="income-modal__price">
         <span class="price__original">2000</span>
@@ -128,10 +131,10 @@
         </label>
       </form>
       <button class="fas fa-times btn-close"></button>
-    </div>
+    </div> -->
 
     <!-- outcome-modal -->
-    <div class="outcome-modal">
+    <!-- <div class="outcome-modal">
       <button class="outcome-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="outcome-modal__price">
         <span class="price__original">2000</span>
@@ -201,10 +204,10 @@
         </label>
       </form>
       <button class="fas fa-times btn-close"></button>
-    </div>
+    </div> -->
 
     <!-- payment-modal -->
-    <div class="payment-modal">
+    <!-- <div class="payment-modal">
       <button class="payment-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <div class="payment-modal__category">
         <label for="paymentCash">
@@ -217,10 +220,10 @@
         </label>
       </div>
       <button class="fas fa-times btn-close"></button>
-    </div>
+    </div> -->
 
     <!-- bill-modal -->
-    <div class="bill-modal">
+    <!-- <div class="bill-modal">
       <header class="bill-modal__header">
         <h3>지출 영수증</h3>
       </header>
@@ -257,10 +260,9 @@
       </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
       <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
-    </div>
-  
+    </div> -->
   </main>
-
+  <!-- footer -->
   <footer class="footer">
     <div class="github-container">
       <h3 class="a11y-hidden">만든이</h3>
@@ -281,48 +283,49 @@
   </footer>
 
   <!-- consumption page(SPA)-->
-<div class="consumption-container">
-  <div class="consumption-list">
-    <div class="consumption-list__total">
-      <span>지출</span>
-      <span>20000</span>
+  <div class="consumption-container">
+    <div class="consumption-list">
+      <div class="consumption-list__total">
+        <span>지출</span>
+        <span>20000</span>
+      </div>
+      <div class="consumption-list__detail">
+        <span>현금</span>
+        <span>50,000</span>
+        <span>카드</span>
+        <span>40,000</span>
+      </div>
     </div>
-    <div class="consumption-list__detail">
-      <span>현금</span>
-      <span>50,000</span>
-      <span>카드</span>
-      <span>40,000</span>
+    <div class="consumption-detail">
+      <span class="">나간 돈</span>
+      <span class="">내역</span>
+      <button class="consumption-detail__button">Edit</button>
     </div>
-  </div>
-  <div class="consumption-detail">
-    <span class="">나간 돈</span>
-    <span class="">내역</span>
-    <button class="consumption-detail__button">Edit</button>
-  </div>
-  <ul class="consumption-detail-list">
-    <li>
-      <span>badge</span>
-      <span>식비</span>
-      <span>25000원</span>
-    </li>
-    <li>
-      <span>badge</span>
-      <span>교통비</span>
-      <span>30000원</span>
-    </li>
-    <!-- <li>
+    <ul class="consumption-detail-list">
+      <li>
         <span>badge</span>
-        <span>22</span>
+        <span>식비</span>
+        <span>25000원</span>
+      </li>
+      <li>
+        <span>badge</span>
         <span>교통비</span>
         <span>30000원</span>
-      </li> -->
-  </ul>
-</div>
+      </li>
+      <!-- <li>
+          <span>badge</span>
+          <span>22</span>
+          <span>교통비</span>
+          <span>30000원</span>
+        </li> -->
+    </ul>
+  </div>
 
-<!-- chart page(SPA)-->
-<div class="chart-container">
-  
-</div>
+  <!-- chart page(SPA)-->
+  <div class="chart-container">
+    
+  </div>
+
 
 </body>
 </html>
