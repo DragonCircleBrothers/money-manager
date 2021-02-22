@@ -83,19 +83,94 @@
         <div class="calendar__this-month calendar-sell">31</div>
         <div class="calendar__next-month calendar-sell sat">1</div>
       </div>
-
-      <div class="add-modal">
-        <time class="add-modal__date">2021/02/18</time>
-        <p class="add-modal__content">
-          <span class="content__unit fas fa-won-sign"></span>
-          <input type="text" class="content__price" placeholder="0">
-        </p>
-        <div class="add-modal__btn">
-          <button class="btn__income">입금</button>
-          <button class="btn__outcome">지출</button>
-        </div>
-        <button class="add-modal__closed fas fa-times" aria-label="close"></button>
+  <header class="header">
+    <button class="header__chart"><i class="far fa-chart-bar"></i></button>
+    <button class="header__prev fas fa-chevron-left"></button>
+    <div class="header__month"><span class="month__num">2</span>월</div>
+    <button class="header__next fas fa-chevron-right"></button>
+    <button class="header__add"><i class="fas fa-plus-circle"></i></button>
+  </header>
+  <main class="main">
+    <section class="amount-section">
+      <div class="amount-section__income">
+        <span class="income__title">수입</span>  
+        <span class="income__price">24000</span>
       </div>
+      <div class="amount-section__outcome">
+        <span class="outcome__title">지출</span>
+        <span class="outcome__price">12000</span>
+      </div>
+      <div class="amount-section__total">
+        <span class="total__title">합계</span>
+        <span class="total__price">12000</span>
+      </div>
+    </section>
+
+    <div class="calendar-container">
+      <div class="calendar__day">sun</div>
+      <div class="calendar__day">mon</div>
+      <div class="calendar__day">tue</div>
+      <div class="calendar__day">wed</div>
+      <div class="calendar__day">thu</div>
+      <div class="calendar__day">fri</div>
+      <div class="calendar__day">sat</div>
+
+      <div class="calendar__past-month calendar-sell sun">29</div>
+      <div class="calendar__past-month calendar-sell">30</div>
+      <div class="calendar__past-month calendar-sell">31</div>
+      <div class="calendar__this-month calendar-sell">1
+        <span class="calendar-sell__income">200</span>
+        <span class="calendar-sell__outcome">7800</span>
+      </div>
+      <div class="calendar__this-month calendar-sell">2</div>
+      <div class="calendar__this-month calendar-sell">3</div>
+      <div class="calendar__this-month calendar-sell sat">4</div>
+
+      <div class="calendar__this-month calendar-sell sun">5</div>
+      <div class="calendar__this-month calendar-sell">6</div>
+      <div class="calendar__this-month calendar-sell">7</div>
+      <div class="calendar__this-month calendar-sell">8</div>
+      <div class="calendar__this-month calendar-sell">9</div>
+      <div class="calendar__this-month calendar-sell">10</div>
+      <div class="calendar__this-month calendar-sell sat">11</div>
+
+      <div class="calendar__this-month calendar-sell sun">12</div>
+      <div class="calendar__this-month calendar-sell">13</div>
+      <div class="calendar__this-month calendar-sell">14</div>
+      <div class="calendar__this-month calendar-sell">15</div>
+      <div class="calendar__this-month calendar-sell">16</div>
+      <div class="calendar__this-month calendar-sell">17</div>
+      <div class="calendar__this-month calendar-sell sat">18</div>
+
+      <div class="calendar__this-month calendar-sell sun">19</div>
+      <div class="calendar__this-month calendar-sell ">20</div>
+      <div class="calendar__this-month calendar-sell">21</div>
+      <div class="calendar__this-month calendar-sell">22</div>
+      <div class="calendar__this-month calendar-sell">23</div>
+      <div class="calendar__this-month calendar-sell">24</div>
+      <div class="calendar__this-month calendar-sell sat">25</div>
+
+      <div class="calendar__this-month calendar-sell sun">26</div>
+      <div class="calendar__this-month calendar-sell">27</div>
+      <div class="calendar__this-month calendar-sell">28</div>
+      <div class="calendar__this-month calendar-sell">29</div>
+      <div class="calendar__this-month calendar-sell">30</div>
+      <div class="calendar__this-month calendar-sell">31</div>
+      <div class="calendar__next-month calendar-sell sat">1</div>
+    </div>
+
+    <div class="add-modal">
+      <time class="add-modal__date">2021/02/18</time>
+      <p class="add-modal__content">
+        <span class="content__unit fas fa-won-sign"></span>
+        <input type="text" class="content__price" placeholder="0">
+      </p>
+      <div class="add-modal__btn">
+        <button class="btn__income">입금</button>
+        <button class="btn__outcome">지출</button>
+      </div>
+      <button class="add-modal__closed fas fa-times" aria-label="close"></button>
+    </div>
 
       <div class="income-modal">
         <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
@@ -262,6 +337,146 @@
   </div>
   </main>
   <footer></footer>
+    <div class="income-modal">
+      <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
+      <p class="income-modal__price">
+        <span class="price__original">2000</span>
+        <span class="price__unit">원</span>
+      </p>
+      <input type="text" class="income-modal__content" placeholder="내역" />
+      <form action="" class="income-modal__category">
+        <label for="salary">
+          <input id="salary" class="far fa-envelope fa-2x" type="radio" name="income">
+          <span>월급</span>
+        </label>
+        <label for="allowance">
+          <input id="allowance" class="fas fa-wallet fa-2x" type="radio" name="income">
+          <span>용돈</span>
+        </label>
+      </form>
+      <button class="fas fa-times btn-close"></button>
+    </div>
+    <div class="outcome-modal">
+      <button class="outcome-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
+      <p class="outcome-modal__price">
+        <span class="price__original">2000</span>
+        <span class="price__unit">원</span>
+      </p>
+      <input type="text" class="outcome-modal__content" placeholder="내역" />
+      <form action="" class="outcome-modal__category">
+        <label for="food">
+          <input id="food" class="fas fa-utensils fa-2x" type="radio" name="outcome">
+          <span>식비</span>
+        </label>
+        <label for="transportation">
+          <input id="transportation" class="fas fa-bus-alt fa-2x" type="radio" name="outcome">
+          <span>교통비</span>
+        </label>
+        <label for="culture">
+          <input id="culture" class="fas fa-music fa-2x" type="radio" name="outcome">
+          <span>문화생활</span>
+        </label>
+        <label for="daily">
+          <input id="daily" class="fas fa-shopping-cart fa-2x" type="radio" name="outcome">
+          <span>생필품</span>
+        </label>
+        <label for="clothing">
+          <input id="clothing" class="fas fa-tshirt fa-2x" type="radio" name="outcome">
+          <span>의류</span>
+        </label>
+        <label for="beauty">
+          <input id="beauty" class="fas fa-bath fa-2x" type="radio" name="outcome">
+          <span>미용</span>
+        </label>
+        <label for="health">
+          <input id="health" class="fas fa-syringe fa-2x" type="radio" name="outcome">
+          <span>의료/건강</span>
+        </label>
+        <label for="education">
+          <input id="education" class="fas fa-university fa-2x" type="radio" name="outcome">
+          <span>교육</span>
+        </label>
+        <label for="communication">
+          <input id="communication" class="fas fa-mobile-alt fa-2x" type="radio" name="outcome">
+          <span>통신비</span>
+        </label>
+        <label for="dues">
+          <input id="dues" class="fas fa-user-friends fa-2x" type="radio" name="outcome">
+          <span>회비</span>
+        </label>
+        <label for="cac">
+          <input id="cac" class="fas fa-birthday-cake fa-2x" type="radio" name="outcome">
+          <span>경조사</span>
+        </label>
+        <label for="saving">
+          <input id="saving" class="fas fa-piggy-bank fa-2x" type="radio" name="outcome">
+          <span>저축</span>
+        </label>
+        <label for="appliance">
+          <input id="appliance" class="fas fa-tv fa-2x" type="radio" name="outcome">
+          <span>가전</span>
+        </label>
+        <label for="bill">
+          <input id="bill" class="fas fa-file-invoice-dollar fa-2x" type="radio" name="outcome">
+          <span>공과금</span>
+        </label>
+        <label for="card">
+          <input id="card" class="far fa-credit-card fa-2x" type="radio" name="outcome">
+          <span>카드대금</span>
+        </label>
+      </form>
+      <button class="fas fa-times btn-close"></button>
+    </div>
+
+    <!-- 영수증 모달 -->
+    <div class="bill-modal">
+      <h3>지불 영수증</h3>
+      <form action="" class="bill-modal__form">
+        <label for="category">
+          <input id="card" class="far fa-credit-card fa-2x" type="radio" name="outcome">
+          <span>카드대금</span>
+        </label>
+        <div class="input-container">
+          <div>
+            <label for="date">거래일</label>
+            <label for="price">금액</label>
+            <label for="content">내역</label>
+            <label for="payment">지불</label>
+          </div>
+          <div>
+            <input id="date" type="text" class="form__input" />
+            <input type="price" class="form__input" />
+            <input type="category" class="form__input" />
+            <input type="content" class="form__input" />
+            <input type="payment" class="form__input" />
+          </div>
+        </div>
+        <div class="form__button">
+          <button>수정</button>
+          <button>삭제</button>
+        </div>
+      </form>
+      <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
+    </div>
+    </main>
+    <footer class="footer">
+      <div class="github-container">
+        <h3 class="a11y-hidden">만든이</h3>
+        <a href="https://github.com/yhun940731" class="github__link" target="_blank">
+          <i class="fab fa-github fa-3x"></i>
+          <span class="developer__name">Yonghoon Choi</span>
+        </a>
+        <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
+          <i class="fab fa-github fa-3x"></i>
+          <span class="developer__name">Jiwon Kim</span>
+        </a>
+        <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
+          <i class="fab fa-github fa-3x"></i>
+          <span class="developer__name">Hyohyung Lee</span>
+        </a>
+      </div>
+      <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
+    </footer>
 </body>
 
 </html>
