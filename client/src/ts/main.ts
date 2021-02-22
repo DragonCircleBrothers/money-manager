@@ -1,3 +1,4 @@
-import myDoughnutChart from "./chart/chart_render";
+import { renderDoughnutChart, renderBarChart } from "./chart/chart_render";
 
-myDoughnutChart();
+renderDoughnutChart();
+renderBarChart();
