@@ -1,5 +1,4 @@
 .bill-modal {
-  margin-top: 100px; // delete
   @include modalBox($wsize: 500px, $hsize: 500px);
   position: relative;
   display: flex;
@@ -19,8 +18,12 @@
       flex-direction: column;
       justify-content: space-between;
 
-      .container-category{
+      .container-category {
+        margin: 20px 0;
 
+        .category__input {
+          @include labelBtn($bg: rgb(random(256), random(256), random(256)));
+        }
       }
 
       .container-price,
@@ -30,11 +33,12 @@
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 20px;
+        font-size: 2.5rem;
       }
 
       .form__input {
         @include contentForm;
-        padding: 0;
+        margin-left: 50px;
         width: 200px;
       }
     }
@@ -53,6 +57,7 @@
   .bill-modal__closed {
     @include closeBtn;
   }
+
   .bill-modal__deleted {
     @include deltedBtn;
   }
