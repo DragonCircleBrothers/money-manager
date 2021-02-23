@@ -10,8 +10,8 @@ const root = document.querySelector("main") as HTMLElement;
 
 const routes: route = {
   // hash: url
-  "": "./src/ts/html/home.html",
-  chart: "./src/ts/html/chart.html",
+  "": "./html/home.html",
+  chart: "./html/chart.html",
 };
 
 const render = async () => {

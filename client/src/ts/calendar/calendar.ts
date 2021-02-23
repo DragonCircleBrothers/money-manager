@@ -67,7 +67,10 @@ const renderCalendar = (() => {
     };
 
     $header.innerHTML = `
-      <button class="header__chart"><i class="far fa-chart-bar"></i></button>
+      <div class="header__btn">
+        <a href="#" class="header__home"><i class="fas fa-home"></i></a>
+        <a href="#chart" class="header__chart"><i class="far fa-chart-bar"></i></a>
+      </div>
       <button class="header__prev fas fa-chevron-left"></button>
       <div class="header__date">
         <div class="date__year"><span class="month__year">${year}</span>년</div>
