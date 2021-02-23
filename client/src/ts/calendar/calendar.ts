@@ -1,6 +1,6 @@
-import formattedDate from "./utils/formattedDate";
-import eachCalendarDate from "./utils/eachCalendarDate";
-import isEqualDate from "./utils/isEqualDate";
+import formattedDate from "../utils/formattedDate";
+import eachCalendarDate from "../utils/eachCalendarDate";
+import isEqualDate from "../utils/isEqualDate";
 import addModal from "../modal/addModal";
 
 const $header = document.querySelector(".header") as HTMLElement;
@@ -37,10 +37,20 @@ const renderCalendar = (() => {
 
   $main.onclick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (
-      target.classList.contains("calendar-sell") &&
-      !target.classList.contains("selected")
-    ) {
+    // if (
+    //   target.classList.contains("calendar-sell") &&
+    //   !target.classList.contains("selected")
+    // ) {
+    //   document.querySelector(".selected")?.classList.remove("selected");
+    //   target.classList.add("selected");
+    //   const selectedDate = target.dataset.date + "";
+    //   console.log(target.dataset.date);
+    //   currentDate = new Date(selectedDate);
+    //   console.log(currentDate);
+    //   addModal.addModalRender(selectedDate);
+    //   addModal.eventHandler();
+    // }
+    if (target.classList.contains("calendar-sell")) {
       document.querySelector(".selected")?.classList.remove("selected");
       target.classList.add("selected");
       const selectedDate = target.dataset.date + "";
@@ -48,7 +58,6 @@ const renderCalendar = (() => {
       currentDate = new Date(selectedDate);
       console.log(currentDate);
       addModal.addModalRender(selectedDate);
-      addModal.eventHandler();
     }
   };
 
