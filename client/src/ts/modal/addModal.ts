@@ -1,38 +1,41 @@
 const $main = document.querySelector(".main") as HTMLElement;
 
 const addModal = (() => {
-  const $addModal = document.createElement("div");
-  const $overlay = document.createElement("div");
+  const $overlay = document.querySelector(".overlay") as HTMLElement;
+  const $modal = document.querySelector(".modal") as HTMLElement;
+  const $addModal = document.querySelector(".add-modal") as HTMLElement;
+  const $incomeModal = document.querySelector(".income-modal") as HTMLElement;
+  const $paymentModal = document.querySelector(".payment-modal") as HTMLElement;
 
-  $addModal.classList.add("add-modal");
-  $overlay.classList.add("overlay");
+  const close = () => {
+    $overlay.style.display = "none";
+    $modal.style.display = "none";
+  };
+
+  const incomeModalRender = (price: number) => {
+    $addModal.style.display = "none";
+    $incomeModal.style.display = "block";
+
+    const $price = document.querySelector(".price__original") as HTMLElement;
+    $price.textContent = price + "";
+  };
 
   return {
     addModalRender(date: string) {
+      $modal.style.display = "block";
       $overlay.style.display = "block";
-      $addModal.innerHTML = `
-        <time class="add-modal__date">${date}</time>
-        <p class="add-modal__content">
-          <span class="content__unit fas fa-won-sign"></span>
-          <input type="text" class="content__price" placeholder="0">
-        </p>
-        <div class="add-modal__btn">
-          <button class="btn__income">입금</button>
-          <button class="btn__outcome">지출</button>
-        </div>
-        <button class="add-modal__closed fas fa-times" aria-label="close"></button>
-      `;
 
-      $main.append($overlay, $addModal);
+      const $date = document.querySelector(".add-modal__date") as HTMLElement;
+      $date.textContent = date;
     },
+    // outcomeModalRender() {},
+    // paymentModalRedner() {},
     eventHandler() {
-      const $closeBtn = document.querySelector(
-        ".add-modal__closed"
-      ) as HTMLElement;
-
-      $closeBtn.onclick = () => {
-        $addModal.remove();
-        $overlay.remove();
+      $addModal.onclick = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.classList.contains("add-modal__closed")) close();
+        if (target.classList.contains("btn__income")) incomeModalRender(2000);
+        // if (target.classList.contains("btn__outcome"))
       };
     },
   };

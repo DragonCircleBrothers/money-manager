@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <title>Money Manager</title>
 </head>
-
 <body>
   <!-- header -->
   <header class="header">
@@ -183,8 +182,33 @@
       </ul>
     </div>
 
+  </main>
+  
+  <!-- footer -->
+  <footer class="footer">
+    <div class="github-container">
+      <h3 class="a11y-hidden">만든이</h3>
+      <a href="https://github.com/yhun940731" class="github__link" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Yonghun Choi</span>
+      </a>
+      <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Jiwon Kim</span>
+      </a>
+      <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
+        <i class="fab fa-github fa-3x"></i>
+        <span class="developer__name">Hyohyung Lee</span>
+      </a>
+    </div>
+    <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
+  </footer>
+
+  <div class="overlay"></div>
+  
+  <!-- modal -->
+  <div class="modal">
     <!-- add-modal -->
-    <!-- <div class="overlay"></div>
     <div class="add-modal">
       <time class="add-modal__date">2021/02/18</time>
       <p class="add-modal__content">
@@ -196,10 +220,10 @@
         <button class="btn__outcome">지출</button>
       </div>
       <button class="add-modal__closed fas fa-times" aria-label="close"></button>
-    </div> -->
-
+    </div>
+    
     <!-- income-modal -->
-    <!-- <div class="income-modal">
+    <div class="income-modal">
       <button class="income-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="income-modal__price">
         <span class="price__original">2000</span>
@@ -217,10 +241,10 @@
         </label>
       </form>
       <button class="fas fa-times btn-close"></button>
-    </div> -->
-
+    </div>
+  
     <!-- outcome-modal -->
-    <!-- <div class="outcome-modal">
+    <div class="outcome-modal">
       <button class="outcome-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <p class="outcome-modal__price">
         <span class="price__original">2000</span>
@@ -290,10 +314,10 @@
         </label>
       </form>
       <button class="fas fa-times btn-close"></button>
-    </div> -->
-
+    </div>
+    
     <!-- payment-modal -->
-    <!-- <div class="payment-modal">
+    <div class="payment-modal">
       <button class="payment-modal__back fas fa-long-arrow-alt-left" aria-label="뒤로가기"></button>
       <div class="payment-modal__category">
         <label for="paymentCash">
@@ -306,14 +330,14 @@
         </label>
       </div>
       <button class="fas fa-times btn-close"></button>
-    </div> -->
-
+    </div>
+    
     <!-- bill-modal -->
-    <!-- <div class="bill-modal">
+    <div class="bill-modal">
       <header class="bill-modal__header">
         <h3>지출 영수증</h3>
       </header>
-
+    
       <div class="input-container">
         <form action="" class="bill-modal__form">
           <time class="add-modal__date">2021/02/18</time>
@@ -323,22 +347,22 @@
               <span>분류</span>
             </label>
           </div>
-
+    
           <div class="container-price">
             <label for="price">금액</label>
             <input id="price" type="text" class="form__input" />
           </div>
-
+    
           <div class="container-content">
             <label for="content">내역</label>
             <input id="content" type="text" class="form__input" />
           </div>
-
+    
           <div class="container-payment">
             <label for="payment">지불</label>
             <input id="payment" type="text" class="form__input" />
           </div>
-
+    
           <div class="form__button">
             <button class="bill-modal__modified fas fa-edit"></button>
           </div>
@@ -346,27 +370,8 @@
       </div>
       <button class="bill-modal__closed fas fa-times" aria-label="close"></button>
       <button class="bill-modal__deleted fas fa-trash-alt" aria-label="close"></button>
-    </div> -->
-  </main>
-
-  <!-- footer -->
-  <footer class="footer">
-    <div class="github-container">
-      <h3 class="a11y-hidden">만든이</h3>
-      <a href="https://github.com/yhun940731" class="github__link" target="_blank">
-        <i class="fab fa-github fa-3x"></i>
-        <span class="developer__name">Yonghun Choi</span>
-      </a>
-      <a href="https://github.com/iamkjw77" class="github__link fab" target="_blank">
-        <i class="fab fa-github fa-3x"></i>
-        <span class="developer__name">Jiwon Kim</span>
-      </a>
-      <a href="https://github.com/lhhyung91" class="github__link fab" target="_blank">
-        <i class="fab fa-github fa-3x"></i>
-        <span class="developer__name">Hyohyung Lee</span>
-      </a>
     </div>
-    <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
-  </footer>
+  </div>
+  
 </body>
 </html>
