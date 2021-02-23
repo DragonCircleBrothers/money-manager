@@ -1,7 +1,7 @@
-const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   // entry file
@@ -11,14 +11,26 @@ module.exports = {
   // https://webpack.js.org/configuration/output/#outputpath
   // https://webpack.js.org/configuration/output/#outputfilename
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../server/dist"),
     filename: "js/bundle.js",
   },
   plugins: [
     // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
     new MiniCssExtractPlugin({ filename: "css/style.css" }),
-    new HtmlWebpackPlugin({ template: "./index.html" }),
     new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: "./index.html" }),
+    new HtmlWebpackPlugin({
+      title: "chart",
+      hash: true,
+      filename: "./html/chart.html",
+      template: "./src/ts/spa/html/chart.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "home",
+      hash: true,
+      filename: "./html/home.html",
+      template: "./src/ts/spa/html/home.html",
+    }),
   ],
   // https://webpack.js.org/configuration/module
   module: {

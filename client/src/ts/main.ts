@@ -1,11 +1,10 @@
+import renderMain from "./spa/spa";
 import renderCalendar from "./calendar/calendar";
-// import { renderDoughnutChart, renderBarChart } from "./chart/chart_render";
 import renderdetailList from "./detail/detail_list";
 
 document.addEventListener("DOMContentLoaded", () => {
+  renderMain();
   renderCalendar();
   renderdetailList();
-  // addDetailList();
-  // renderDoughnutChart();
-  // renderBarChart();
 });
+window.addEventListener("hashchange", renderMain);
