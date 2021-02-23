@@ -41,6 +41,8 @@ const renderCalendar = (() => {
       target.classList.contains("calendar-sell") &&
       !target.classList.contains("selected")
     ) {
+      document.querySelector(".selected")?.classList.remove("selected");
+      target.classList.add("selected");
       const selectedDate = target.dataset.date + "";
       console.log(target.dataset.date);
       currentDate = new Date(selectedDate);

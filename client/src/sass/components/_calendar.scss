@@ -12,6 +12,12 @@
     border-bottom: 1px solid currentColor;
   }
 
+  .selected {
+    background-color: rgb(255, 108, 235);
+    color: #fff;
+    box-shadow: 0 0 1px 0;
+  }
+
   .calendar-sell {
     cursor: pointer;
     &:hover {
