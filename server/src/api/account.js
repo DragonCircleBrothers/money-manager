@@ -3,18 +3,9 @@ const monk = require('monk');
 const Joi = require('@hapi/joi');
 
 const db = monk(process.env.MONGO_URI);
-const income = db.get('income');
+const account = db.get('account');
 
-const schema = Joi.object({
-  date: Joi.string().trim().required(), // Date
-  amount: Joi.number().required(), // number type
-  category: Joi.string().trim().required(),
-  content: Joi.string().trim().required(),
-});
-
-const router = express.Router();
-
-/*
+/* income
 {
   "date": millseconds,
   "amount": 30000,
@@ -23,9 +14,19 @@ const router = express.Router();
 }
 */
 
+/* outcome
+{
+  "date": millseconds,
+  "amount": 30000,
+  "category": "toy",
+  "content": "hi",
+  "payment": "credit"
+}
+*/
+
 // const dataset = [{
 //   date: '2021-02-23',
-//   id: 1,
+//   _id: 1,
 //   type: 'income',
 //   aoumont: 3000,
 //   category: 'toy',
@@ -33,7 +34,7 @@ const router = express.Router();
 // },
 // {
 //   date: '2021-02-24',
-//   id: 2,
+//   _id: 2,
 //   type: 'outcome',
 //   aoumont: 3000,
 //   category: 'toy',
@@ -42,10 +43,21 @@ const router = express.Router();
 // },
 // ];
 
+const schema = Joi.object({
+  date: Joi.string().trim().required(), // Date
+  type: Joi.string().trim().required(),
+  amount: Joi.number().required(), // number type
+  category: Joi.string().trim().required(),
+  content: Joi.string().trim().required(),
+  payment: Joi.string().trim(),
+});
+
+const router = express.Router();
+
 // READ ALL
 router.get('/', async (req, res, next) => {
   try {
-    const items = await income.find({});
+    const items = await account.find({});
     res.json(items);
   } catch (error) {
     next(error);
@@ -56,7 +68,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    const item = await income.findOne({
+    const item = await account.findOne({
       _id: id,
     });
 
@@ -72,7 +84,7 @@ router.post('/', async (req, res, next) => {
   try {
     console.log(req.body);
     const value = await schema.validateAsync(req.body);
-    const inserted = await income.insert(value);
+    const inserted = await account.insert(value);
     res.json(inserted);
   } catch (error) {
     next(error);
@@ -84,12 +96,12 @@ router.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     const value = await schema.validateAsync(req.body);
-    const item = await income.findOne({
+    const item = await account.findOne({
       _id: id,
     });
 
     if (!item) return next();
-    await income.update({
+    await account.update({
       _id: id,
     }, {
       $set: value
@@ -104,7 +116,7 @@ router.put('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
-    await income.remove({ _id: id });
+    await account.remove({ _id: id });
     res.json({
       message: 'Success deleted'
     });
