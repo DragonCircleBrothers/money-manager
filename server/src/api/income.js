@@ -16,12 +16,31 @@ const router = express.Router();
 
 /*
 {
-  "date": "2020/03/16",
+  "date": millseconds,
   "amount": 30000,
   "category": "toy",
   "content": "hi"
 }
 */
+
+// const dataset = [{
+//   date: '2021-02-23',
+//   id: 1,
+//   type: 'income',
+//   aoumont: 3000,
+//   category: 'toy',
+//   content: 'lunch'
+// },
+// {
+//   date: '2021-02-24',
+//   id: 2,
+//   type: 'outcome',
+//   aoumont: 3000,
+//   category: 'toy',
+//   content: 'lunch'
+//   payment: 'cash'
+// },
+// ];
 
 // READ ALL
 router.get('/', async (req, res, next) => {

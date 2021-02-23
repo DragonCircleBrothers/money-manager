@@ -17,7 +17,7 @@ const router = express.Router();
 
 /*
 {
-  "date": "2020/03/16",
+  "date": millseconds,
   "amount": 30000,
   "category": "toy",
   "content": "hi",
