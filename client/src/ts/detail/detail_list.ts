@@ -41,9 +41,9 @@ const renderdetailList = () => {
   `;
   $main.appendChild($consumptionCont);
 
-  $main.onclick = (e: MouseEvent) => {
-    billModal.billModalRender();
-  };
+  // $main.onclick = (e: MouseEvent) => {
+  //   billModal.billModalRender();
+  // };
 };
 
 export default renderdetailList;

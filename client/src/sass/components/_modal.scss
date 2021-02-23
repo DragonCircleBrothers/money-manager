@@ -1,4 +1,4 @@
-@mixin modalBox($wsize: 350px, $hsize: 300px) {
+@mixin modalBox($wsize: 300px, $hsize: 300px) {
   width: $wsize;
   height: $hsize;
   background-color: $modalBg-color;

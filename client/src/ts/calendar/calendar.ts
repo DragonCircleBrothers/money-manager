@@ -5,6 +5,8 @@ import addModal from "../modal/addModal";
 
 const $header = document.querySelector(".header") as HTMLElement;
 const $main = document.querySelector(".main") as HTMLElement;
+const $year = document.querySelector(".month__year") as HTMLElement;
+const $month = document.querySelector(".month__num") as HTMLElement;
 
 let currentDate = new Date();
 
@@ -66,21 +68,8 @@ const renderCalendar = (() => {
       return res.join(" ");
     };
 
-    $header.innerHTML = `
-      <div class="header__btn">
-        <a href="#" class="header__home"><i class="fas fa-home"></i></a>
-        <a href="#chart" class="header__chart"><i class="far fa-chart-bar"></i></a>
-      </div>
-      <button class="header__prev fas fa-chevron-left"></button>
-      <div class="header__date">
-        <div class="date__year"><span class="month__year">${year}</span>년</div>
-        <div class="date__month"><span class="month__num">${
-          month + 1
-        }</span>월</div>
-      </div>
-      <button class="header__next fas fa-chevron-right"></button>
-      <button class="header__add"><i class="fas fa-plus-circle"></i></button>
-    `;
+    $year.textContent = `${year}`;
+    $month.textContent = `${month + 1}`;
 
     $main.innerHTML = `
       <div class="amount-section">
