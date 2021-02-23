@@ -1,8 +1,7 @@
 const express = require('express');
 
 const emojis = require('./emojis');
-const income = require('./income');
-const outcome = require('./outcome');
+const account = require('./account');
 
 const router = express.Router();
 
@@ -13,7 +12,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/emojis', emojis);
-router.use('/income', income);
-router.use('/outcome', outcome);
+router.use('/account', account);
 
 module.exports = router;

@@ -1,4 +1,26 @@
 import Chart from "chart.js";
+import axios from "axios";
+
+const getData = async () => {
+  const data = await axios.get("http://localhost:1111/api/account");
+  console.log(data);
+
+  const product = await data.data.filter(({ date }: { date: string }) =>
+    date.includes("2021-02")
+  );
+  console.log(product);
+  const arrDate = product.map(({ category }: { category: string }) => category);
+  console.log(arrDate);
+
+  // const productInfo = {
+  //   img_URL: product.img_URL,
+  //   name: product.name,
+  //   title: product.title,
+  //   description: product.description,
+  // };
+
+  //TODO: render
+};
 
 const renderDoughnutChart = (): void => {
   const doughnutCtx = document.getElementById("doughnut") as HTMLCanvasElement;
@@ -15,6 +37,14 @@ const renderDoughnutChart = (): void => {
             "rgba(75, 192, 192, 0.2)",
             "rgba(153, 102, 255, 0.2)",
             "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255,99,132,1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
           ],
         },
       ],
@@ -64,4 +94,4 @@ const renderBarChart = (): void => {
   });
 };
 
-export { renderDoughnutChart, renderBarChart };
+export { renderDoughnutChart, renderBarChart, getData };

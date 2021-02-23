@@ -1,4 +1,8 @@
-import { renderDoughnutChart, renderBarChart } from "../chart/chart_render";
+import {
+  renderDoughnutChart,
+  renderBarChart,
+  getData,
+} from "../chart/chart_render";
 import renderCalendar from "../calendar/calendar";
 import renderDetailList from "../detail/detail_list";
 
@@ -33,6 +37,7 @@ const render = async () => {
     if (window.location.hash === "#chart") {
       renderDoughnutChart();
       renderBarChart();
+      getData();
     } else {
       renderCalendar();
       renderDetailList();
