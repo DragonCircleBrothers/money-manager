@@ -1,6 +1,6 @@
 import { renderDoughnutChart, renderBarChart } from "../chart/chart_render";
 import renderCalendar from "../calendar/calendar";
-import renderdetailList from "../detail/detail_list";
+import renderDetailList from "../detail/detail_list";
 
 interface route {
   "": string;
@@ -35,7 +35,7 @@ const render = async () => {
       renderBarChart();
     } else {
       renderCalendar();
-      renderdetailList();
+      renderDetailList();
     }
   } catch (err) {
     console.error(err);
