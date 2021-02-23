@@ -1,5 +1,5 @@
 {
-  {
+  "account": [{
     "date": "2021-02-01",
     "type": "income",
     "amount": 10000,
@@ -233,5 +233,5 @@
     "category": "card",
     "content": "현대 카드",
     "payment": "card"
-  }
+  }]
 }
