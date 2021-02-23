@@ -19,10 +19,7 @@
   <header class="header">
     <!-- <button class="header__chart"><i class="far fa-chart-bar"></i></button>
     <button class="header__prev fas fa-chevron-left"></button>
-    <div class="header__date">
-      <div class="date__year"><span class="month__year">2021</span>년</div>
-      <div class="date__month"><span class="month__num">2</span>월</div>
-    </div>
+    <div class="header__month"><span class="month__num">2</span>월</div>
     <button class="header__next fas fa-chevron-right"></button>
     <button class="header__add"><i class="fas fa-plus-circle"></i></button> -->
   </header>
@@ -36,7 +33,7 @@
           <button class="btn__outcome">지출</button>
         </div>
       </div>
-
+      
       <div class="chart__main">
         <canvas id="doughnut" width="400" height="400"></canvas>
         <div class="main__total">
@@ -47,20 +44,20 @@
           <canvas id="bar" width="400" height="400"></canvas>
           <ul class="detail__list">
             <li>
-              <div class="categorybadge fas fa-utensils fa-2x"></div>
-              <span class="list__payment">카드</span>
-              <span class="list__price">25000</span>
+                <div class="categorybadge fas fa-utensils fa-2x"></div>
+                <span class="list__payment">카드</span>
+                <span class="list__price">25000</span>
             </li>
             <li>
               <div class="categorybadge fas fa-utensils fa-2x"></div>
               <span class="list__payment">카드</span>
               <span class="list__price">25000</span>
-            </li>
-            <li>
-              <div class="categorybadge fas fa-utensils fa-2x"></div>
-              <span class="list__payment">카드</span>
-              <span class="list__price">25000</span>
-            </li>
+          </li>
+          <li>
+            <div class="categorybadge fas fa-utensils fa-2x"></div>
+            <span class="list__payment">카드</span>
+            <span class="list__price">25000</span>
+        </li>
           </ul>
         </div>
       </div>
@@ -139,7 +136,7 @@
     
     <!-- consumption page(SPA)-->
     <div class="consumption-container">
-      <div class="consumption-list">
+      <!-- <div class="consumption-list">
         <div class="consumption-list__total">
           <span>지출</span>
           <span>100,000원</span>
@@ -154,7 +151,7 @@
       <div class="consumption-detail">
         <span class="">detail</span>
         <button class="consumption-detail-delete__button fas fa-trash-alt"></button>
-      </div>
+      </div> -->
       <ul class="consumption-detail-list">
         <!-- <li>
           <label for="categorybadge">
@@ -369,4 +366,5 @@
     <p class="footer__copyright">ⓒ 2021 DCB all rights reserved.</p>
   </footer>
 </body>
+
 </html>
