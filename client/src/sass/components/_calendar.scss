@@ -1,6 +1,6 @@
 .calendar-container {
   display: grid;
-  grid-template-rows: 35px 100px 100px 100px 100px 100px;
+  grid-template-rows: 35px repeat(6, 100px);
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
   font-size: 2rem;
@@ -41,7 +41,7 @@
     color: blue;
   }
 
-  .calendar__past-month, .calendar__next-month {
+  .calendar__not-present-month {
     color:rgb(202, 202, 202)
   }
 }
