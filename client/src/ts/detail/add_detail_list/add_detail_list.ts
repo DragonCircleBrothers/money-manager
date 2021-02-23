@@ -6,7 +6,7 @@ const $consumptionDetailList = document.querySelector(
   ".consumption-detail-list"
 ) as HTMLElement;
 
-const detailListrender = () => {
+const addDetailListRender = () => {
   $consumptionDetailList.innerHTML += `<li>
     <label for="categorybadge">
       <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
@@ -17,15 +17,15 @@ const detailListrender = () => {
   </li>`;
 };
 
-const addDetaillist = () => {
+const detailListAdd = () => {
   $paymentModalCategory.onclick = (e: MouseEvent) => {
     if (!(e.target as HTMLElement).classList.contains("category__content"))
       return;
-    detailListrender();
+    addDetailListRender();
   };
 };
 
-export default addDetaillist;
+export default detailListAdd;
 
 // <li>
 //           <label for="categorybadge">
