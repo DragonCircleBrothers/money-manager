@@ -5,7 +5,7 @@ const $consumptionContainer = document.querySelector(
   ".consumption-container"
 ) as HTMLElement;
 
-const detailPopup = () => {
+const detailPopup = (): void => {
   $calendarContainer.onclick = (e: MouseEvent) => {
     // const a = e.target as HTMLElement;
     // console.log((e.target as HTMLElement).classList.contains("calendar-sell"));

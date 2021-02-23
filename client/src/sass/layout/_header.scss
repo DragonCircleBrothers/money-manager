@@ -9,18 +9,28 @@
   font-size: 2rem;
   padding: 30px;
 
-  .header__chart {
-    font-size: 3rem;
-    color: #fff;
+  .header__btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .header__chart,
+    .header__home {
+      font-size: 3rem;
+      color: #fff;
+      margin-left: 15px;
+    }
   }
 
-  .header__prev, .header__next {
+  .header__prev,
+  .header__next {
     color: #fff;
   }
 
   .header__date {
     display: flex;
     flex-flow: row nowrap;
+
     .date__year {
       margin-right: 10px;
     }
