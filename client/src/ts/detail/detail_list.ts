@@ -1,10 +1,16 @@
 import billModal from "../modal/billModal";
 
 const $main = document.querySelector(".main") as HTMLElement;
+// const $consumptionDetailList = document.querySelector(
+//   ".consumption-detail-list"
+// ) as HTMLElement;
+const currentDate = new Date();
 
-const renderdetailList = () => {
+const renderDetailList = () => {
   const $consumptionCont = document.createElement("div");
+
   $consumptionCont.classList.add("consumption-container");
+
   $consumptionCont.innerHTML = `
   <ul class="consumption-detail-list">
         <li>
@@ -41,9 +47,15 @@ const renderdetailList = () => {
   `;
   $main.appendChild($consumptionCont);
 
-  // $main.onclick = (e: MouseEvent) => {
-  //   billModal.billModalRender();
-  // };
+  const $consumptionDetailList = document.querySelector(
+    ".consumption-detail-list"
+  ) as HTMLElement;
+
+  $consumptionDetailList.addEventListener("click", (e: MouseEvent) => {
+    console.log(e.target);
+    billModal.billModalRender();
+    billModal.eventHandler();
+  });
 };
 
-export default renderdetailList;
+export default renderDetailList;
