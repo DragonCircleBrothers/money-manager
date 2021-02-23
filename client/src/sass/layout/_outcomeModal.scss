@@ -1,7 +1,8 @@
 .outcome-modal {
-  @include modalBox($hsize: auto);
-  position: relative;
+  // @include modalBox($hsize: auto);
+  // position: relative;
   display: none;
+  height: auto;
 
   .outcome-modal__back {
     @include backBtn;
