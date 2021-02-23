@@ -31,7 +31,8 @@
     display: flex;
     flex-flow: row nowrap;
 
-    .date__year {
+    .date__year,
+    .date__month {
       margin-right: 10px;
     }
   }

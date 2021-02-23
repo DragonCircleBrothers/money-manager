@@ -1,0 +1,305 @@
+{
+  "dataset": [{
+      "date": "2021-02-01",
+      "id": 1,
+      "type": "income",
+      "aoumont": 10000,
+      "category": "salary",
+      "content": "월급"
+    }, 
+    {
+      "date": "2021-02-02",
+      "id": 2,
+      "type": "income",
+      "aoumont": 10500,
+      "category": "salary",
+      "content": "월급"
+    },
+    {
+      "date": "2021-02-02",
+      "id": 3,
+      "type": "income",
+      "aoumont": 11000,
+      "category": "allowance",
+      "content": "용돈"
+    },
+    {
+      "date": "2021-02-02",
+      "id": 4,
+      "type": "income",
+      "aoumont": 11500,
+      "category": "allowance",
+      "content": "용돈"
+    },
+    {
+      "date": "2021-02-03",
+      "id": 5,
+      "type": "outcome",
+      "aoumont": 12000,
+      "category": "food",
+      "content": "점심",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-04",
+      "id": 6,
+      "type": "outcome",
+      "aoumont": 12500,
+      "category": "food",
+      "content": "저녁",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-04",
+      "id": 7,
+      "type": "outcome",
+      "aoumont": 13000,
+      "category": "transportation",
+      "content": "버스",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-04",
+      "id": 8,
+      "type": "outcome",
+      "aoumont": 13500,
+      "category": "transportation",
+      "content": "택시",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-05",
+      "id": 9,
+      "type": "outcome",
+      "aoumont": 14000,
+      "category": "culture",
+      "content": "영화",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-07",
+      "id": 10,
+      "type": "outcome",
+      "aoumont": 14500,
+      "category": "culture",
+      "content": "뮤지컬",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-08",
+      "id": 11,
+      "type": "outcome",
+      "aoumont": 15000,
+      "category": "daily",
+      "content": "치약",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-08",
+      "id": 12,
+      "type": "outcome",
+      "aoumont": 15500,
+      "category": "daily",
+      "content": "로션",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-08",
+      "id": 13,
+      "type": "outcome",
+      "aoumont": 16000,
+      "category": "clothing",
+      "content": "패딩",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-08",
+      "id": 14,
+      "type": "outcome",
+      "aoumont": 16500,
+      "category": "clothing",
+      "content": "신발",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-09",
+      "id": 15,
+      "type": "outcome",
+      "aoumont": 17000,
+      "category": "beauty",
+      "content": "이발",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-10",
+      "id": 16,
+      "type": "outcome",
+      "aoumont": 17500,
+      "category": "beauty",
+      "content": "피부시술",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-10",
+      "id": 17,
+      "type": "outcome",
+      "aoumont": 18000,
+      "category": "health",
+      "content": "필라테스",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-13",
+      "id": 18,
+      "type": "outcome",
+      "aoumont": 18500,
+      "category": "health",
+      "content": "복싱",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-13",
+      "id": 19,
+      "type": "outcome",
+      "aoumont": 19000,
+      "category": "education",
+      "content": "패스트캠퍼스",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-13",
+      "id": 20,
+      "type": "outcome",
+      "aoumont": 19500,
+      "category": "education",
+      "content": "토익",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-13",
+      "id": 21,
+      "type": "outcome",
+      "aoumont": 20000,
+      "category": "communication",
+      "content": "통신비",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-14",
+      "id": 22,
+      "type": "outcome",
+      "aoumont": 20500,
+      "category": "communication",
+      "content": "넷플릭스",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-15",
+      "id": 23,
+      "type": "outcome",
+      "aoumont": 21000,
+      "category": "dues",
+      "content": "회비",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-16",
+      "id": 24,
+      "type": "outcome",
+      "aoumont": 21500,
+      "category": "dues",
+      "content": "찬조금",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-17",
+      "id": 25,
+      "type": "outcome",
+      "aoumont": 22000,
+      "category": "cac",
+      "content": "축의금",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-18",
+      "id": 26,
+      "type": "outcome",
+      "aoumont": 22500,
+      "category": "cac",
+      "content": "부의금",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-19",
+      "id": 27,
+      "type": "outcome",
+      "aoumont": 23000,
+      "category": "saving",
+      "content": "적금",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-19",
+      "id": 28,
+      "type": "outcome",
+      "aoumont": 23500,
+      "category": "saving",
+      "content": "보험",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-20",
+      "id": 29,
+      "type": "outcome",
+      "aoumont": 24000,
+      "category": "appliance",
+      "content": "맥북",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-20",
+      "id": 30,
+      "type": "outcome",
+      "aoumont": 24500,
+      "category": "appliance",
+      "content": "플스5",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-20",
+      "id": 31,
+      "type": "outcome",
+      "aoumont": 25000,
+      "category": "bill",
+      "content": "전기세",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-21",
+      "id": 32,
+      "type": "outcome",
+      "aoumont": 25500,
+      "category": "bill",
+      "content": "수도세",
+      "payment": "card"
+    },
+    {
+      "date": "2021-02-22",
+      "id": 33,
+      "type": "outcome",
+      "aoumont": 26000,
+      "category": "card",
+      "content": "삼성 카드",
+      "payment": "cash"
+    },
+    {
+      "date": "2021-02-23",
+      "id": 34,
+      "type": "outcome",
+      "aoumont": 26500,
+      "category": "card",
+      "content": "현대 카드",
+      "payment": "card"
+    }
+  ] 
+}
