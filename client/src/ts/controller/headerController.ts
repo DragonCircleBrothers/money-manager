@@ -1,7 +1,11 @@
 import renderCalendar from "../calendar/calendar";
 import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
+<<<<<<< HEAD
 import renderDetailList from "../detail/detail_list";
+=======
+import addModal from "../modal/addModal";
+>>>>>>> d33c486b6d010cf3e5ac94207d7e51cb3da250b2
 
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
@@ -70,6 +74,14 @@ const headerController = () => {
         renderCalendar(globalState.currentDate);
         renderDetailList();
       }
+    };
+
+    const $addBtn = document.querySelector(".header__add") as HTMLElement;
+
+    $addBtn.onclick = () => {
+      addModal.addModalRender(
+        globalState.currentDate.toISOString().slice(0, 10)
+      );
     };
   }
 };

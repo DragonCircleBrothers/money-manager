@@ -27,6 +27,7 @@ const mainController = () => {
   } else {
     $main.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+<<<<<<< HEAD
       // if (
       //   target.classList.contains("calendar-cell") &&
       //   !target.classList.contains("selected")
@@ -40,17 +41,20 @@ const mainController = () => {
       //   addModal.addModalRender(selectedDate);
       //   addModal.eventHandler();
       // }
+=======
+>>>>>>> d33c486b6d010cf3e5ac94207d7e51cb3da250b2
 
       if (target.classList.contains("calendar-cell")) {
         document.querySelector(".selected")?.classList.remove("selected");
         target.classList.add("selected");
 
-        console.log(target.dataset.date);
+        // console.log(target.dataset.date);
         const selectedDate = target.dataset.date + "";
 
         globalState.currentDate = new Date(selectedDate);
-        console.log(globalState.currentDate);
-        addModal.addModalRender(selectedDate);
+        // console.log(globalState.currentDate);
+
+        // console.log(globalState.currentDate);
       }
     };
   }
