@@ -1,10 +1,9 @@
-import {
-  renderDoughnutChart,
-  renderBarChart,
-  getData,
-} from "../chart/chart_render";
+import chartRender from "../chart/chart_render";
 import renderCalendar from "../calendar/calendar";
 import renderDetailList from "../detail/detail_list";
+import globalState from "../globalState";
+import headerController from "../controller/headerController";
+import mainController from "../controller/mainController";
 
 interface route {
   "": string;
@@ -31,17 +30,19 @@ const render = async () => {
     }
 
     const res = await fetch(url);
-    const contentType = res.headers.get("content-type");
 
     root.innerHTML = await res.text();
+
     if (window.location.hash === "#chart") {
-      renderDoughnutChart();
-      renderBarChart();
-      getData();
+      globalState.pageLocation = "chart";
+      chartRender(globalState.currentDate.toISOString().slice(0, 7), "outcome");
     } else {
-      renderCalendar();
+      globalState.pageLocation = "home";
+      renderCalendar(globalState.currentDate);
       renderDetailList();
     }
+    headerController();
+    mainController();
   } catch (err) {
     console.error(err);
   }

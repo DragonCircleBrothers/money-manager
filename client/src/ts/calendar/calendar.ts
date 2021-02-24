@@ -1,79 +1,32 @@
-import type from "../type";
-import formattedDate from "../utils/formattedDate";
-import eachCalendarDate from "../utils/eachCalendarDate";
-import isEqualDate from "../utils/isEqualDate";
 import addModal from "../modal/addModal";
 import getAccounts from "./getAccounts";
 import AccountItem from "../type";
 
-const $header = document.querySelector(".header") as HTMLElement;
 const $main = document.querySelector(".main") as HTMLElement;
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
 
-let currentDate = new Date();
-
-const renderCalendar = (() => {
+const renderCalendar = (currentDate: Date) => {
   const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
 
-  $header.onclick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
+  const classNames = (date: Date) => {
+    const today = new Date();
+    const res = [];
 
-    if (target.classList.contains("header__prev")) {
-      currentDate = new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth() - 1,
-        currentDate.getDate()
-      );
-      return renderCalendar();
-    }
-
-    if (target.classList.contains("header__next")) {
-      currentDate = new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth() + 1,
-        currentDate.getDate()
-      );
-      return renderCalendar();
-    }
+    if (isEqualDate(date, today)) res.push("today");
+    // if (date.getMonth() !== month) res.push("muted");
+    if (date.getMonth() !== month) res.push("calendar__not-present-month");
+    if (!date.getDay()) res.push("sun");
+    if (date.getDay() === 6) res.push("sat");
+    if (isEqualDate(date, currentDate)) res.push("selected");
   };
 
-  $main.onclick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
+  $year.textContent = `${year}`;
+  $month.textContent = `${month + 1}`;
 
-    if (target.classList.contains("calendar-cell")) {
-      document.querySelector(".selected")?.classList.remove("selected");
-      target.classList.add("selected");
-      const selectedDate = target.dataset.date + "";
-      console.log(target.dataset.date);
-      currentDate = new Date(selectedDate);
-      console.log(currentDate);
-      addModal.addModalRender(selectedDate);
-    }
-  };
-
-  return () => {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-
-    const classNames = (date: Date) => {
-      const today = new Date();
-      const res = [];
-
-      if (isEqualDate(date, today)) res.push("today");
-      // if (date.getMonth() !== month) res.push("muted");
-      if (date.getMonth() !== month) res.push("calendar__not-present-month");
-      if (!date.getDay()) res.push("sun");
-      if (date.getDay() === 6) res.push("sat");
-      if (isEqualDate(date, currentDate)) res.push("selected");
-
-      return res.join(" ");
-    };
-
-    $year.textContent = `${year}`;
-    $month.textContent = `${month + 1}`;
-
-    $main.innerHTML = `
+  $main.innerHTML = `
       <div class="amount-section">
         <div class="amount-section__income">
           <span class="income__title">수입</span>
