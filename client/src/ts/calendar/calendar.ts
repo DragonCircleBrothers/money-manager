@@ -1,7 +1,10 @@
+import type from "../type";
 import formattedDate from "../utils/formattedDate";
 import eachCalendarDate from "../utils/eachCalendarDate";
 import isEqualDate from "../utils/isEqualDate";
 import addModal from "../modal/addModal";
+import getAccounts from "./getAccounts";
+import AccountItem from "../type";
 
 const $header = document.querySelector(".header") as HTMLElement;
 const $main = document.querySelector(".main") as HTMLElement;
@@ -37,20 +40,8 @@ const renderCalendar = (() => {
 
   $main.onclick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    // if (
-    //   target.classList.contains("calendar-sell") &&
-    //   !target.classList.contains("selected")
-    // ) {
-    //   document.querySelector(".selected")?.classList.remove("selected");
-    //   target.classList.add("selected");
-    //   const selectedDate = target.dataset.date + "";
-    //   console.log(target.dataset.date);
-    //   currentDate = new Date(selectedDate);
-    //   console.log(currentDate);
-    //   addModal.addModalRender(selectedDate);
-    //   addModal.eventHandler();
-    // }
-    if (target.classList.contains("calendar-sell")) {
+
+    if (target.classList.contains("calendar-cell")) {
       document.querySelector(".selected")?.classList.remove("selected");
       target.classList.add("selected");
       const selectedDate = target.dataset.date + "";
@@ -104,12 +95,53 @@ const renderCalendar = (() => {
         ${eachCalendarDate(year, month)
           .map(
             (date) => `<div data-date="${formattedDate(date)}" 
-                    class="calendar-sell ${classNames(date)}">
-                    ${date.getDate()}</div>`
+                    class="calendar-cell ${classNames(date)}">
+                    ${date.getDate()}
+                    <span class="calendar-cell__income"></span>
+                    <span class="calendar-cell__outcome"></span>
+                    </div>
+                    `
           )
           .join("")}
       </div>
     `;
+
+    // const $incomeTotal = document.querySelectorAll(".calendar-sell__income");
+    // const $outcomeTotal = document.querySelectorAll(".calendar-sell__outcome");
+
+    const getAccountsArr = async () => {
+      const $cell = document.querySelectorAll(".calendar-cell");
+      const account = await getAccounts();
+      const acc: any = {};
+
+      account.forEach((account: AccountItem) => {
+        acc[account.date] = [];
+      });
+
+      Object.values(acc);
+
+      // console.log(Object.values(acc).forEach());
+
+      // account.forEach((account: AccountItem) => {
+      //   $cell.forEach((item) => {
+      //     if (item.dataset.date === account.date) {
+      //       item.firstElementChild.textContent;
+      //       item.lastElementChild.textContent;
+      //     }
+      //   });
+      // });
+    };
+    getAccountsArr();
+
+    // const getAccountsArr = async () => {
+    //   const accounts = await getAccounts();
+    //   accounts.forEach((account: type) => {
+    //     $incomeTotal.forEach(ele => {
+    //       const incomeTotal = 0;
+    //       if (ele.parentElement.dataset.date === account.date)
+    //     })
+    //   });
+    // };
   };
 })();
 
