@@ -35,6 +35,8 @@ const billModal = (() => {
       $billModal.style.display = "block";
       $overlay.style.display = "block";
       $addModal.style.display = "none";
+      // const $selected = document.querySelector(".selected") as HTMLElement;
+      // console.log($selected);
 
       // const $date = document.querySelector(".bill-modal__date") as HTMLElement;
       // $date.textContent = date;
