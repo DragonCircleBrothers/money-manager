@@ -1,4 +1,5 @@
-import calendarRender from "../calendar/calendarRender";
+import postAccounts from "../calendar/postAccount";
+import AccountItem from "../type";
 
 const addModal = (() => {
   const $overlay = document.querySelector(".overlay") as HTMLElement;
@@ -8,15 +9,6 @@ const addModal = (() => {
   const $outcomeModal = document.querySelector(".outcome-modal") as HTMLElement;
   const $paymentModal = document.querySelector(".payment-modal") as HTMLElement;
   const $amount = document.querySelector(".content__price") as HTMLInputElement;
-
-  type AccountItem = {
-    date: string;
-    type: string;
-    amount: number;
-    content: string | null;
-    category: string;
-    payment: string | null;
-  };
 
   const account = {} as AccountItem;
 
@@ -40,6 +32,7 @@ const addModal = (() => {
     const $incomePrice = document.querySelector(
       ".income-modal__price > .price__original"
     ) as HTMLElement;
+
     $incomePrice.textContent = price + "";
     account.amount = price;
 
@@ -66,7 +59,7 @@ const addModal = (() => {
       account.category = target.id;
 
       close($incomeModal);
-      calendarRender(account);
+      postAccounts(account);
     };
   };
 
@@ -79,7 +72,7 @@ const addModal = (() => {
     ) as HTMLElement;
 
     $outcomePrice.textContent = price + "";
-    account.amount = price;
+    account.amount = -price;
 
     $outcomeModal.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -127,7 +120,7 @@ const addModal = (() => {
 
     $category.onchange = () => {
       close($paymentModal);
-      calendarRender(account);
+      postAccounts(account);
     };
   };
 

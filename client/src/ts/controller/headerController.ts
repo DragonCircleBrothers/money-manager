@@ -7,7 +7,7 @@ import addModal from "../modal/addModal";
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
 
-const headerController = () => {
+const headerController = (): void => {
   const $header = document.querySelector(".header") as HTMLElement;
 
   if (globalState.pageLocation === "chart") {
