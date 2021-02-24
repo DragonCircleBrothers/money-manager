@@ -17,6 +17,7 @@ const renderDetailList = () => {
   $consumptionDetailList.classList.add("consumption-detail__list");
 
   $calendarContainer.addEventListener("click", (e: MouseEvent) => {
+
     if ($calendarCell) {
       $consumptionDetailList.innerHTML = `
     <li>

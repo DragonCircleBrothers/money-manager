@@ -166,7 +166,6 @@ const chartRender = async (
   const incomeAmount = res.data
     .filter((v: any) => v.date.includes(monthYear) && v.type.includes("income"))
     .reduce((acc: any, cur: any) => acc + cur.amount, 0);
-  console.log(incomeAmount);
 
   const outcomeAmount = res.data
     .filter(
