@@ -14,9 +14,23 @@
   }
 
   .selected {
-    background-color: rgb(207, 207, 207);
+    background-color: $mainBg-color;
     color: #fff;
     box-shadow: 0 0 1px 0;
+
+    &.calendar-cell > .calendar-cell__income,
+    &.calendar-cell > .calendar-cell__outcome {
+      color: #fff;
+    }
+
+    &.calendar-cell.sun,
+    &.calendar-cell.sat {
+      color: #fff;
+    }
+
+    &.calendar-cell:hover {
+      background-color: $mainBg-color;
+    }
   }
 
   .calendar-cell {
@@ -26,29 +40,35 @@
     }
 
     span {
-      display: block;
       height: 20px;
       font-size: 1.6rem;
       line-height: 1.5;
     }
 
     .calendar-cell__income {
+      display: none;
       color: rgb(12, 189, 12);
     }
   
     .calendar-cell__outcome {
+      display: none;
       color: rgb(234, 115, 250);
     }
-    
   }
+  
   .sun {
     color: red;
   }
+  
   .sat {
     color: blue;
   }
 
   .calendar__not-present-month {
-    color:rgb(202, 202, 202)
+    color:rgb(202, 202, 202);
+
+    .calendar-cell__income, .calendar-cell__outcome {
+      color: rgb(202, 202, 202);
+    }
   }
 }
