@@ -11,11 +11,13 @@ const renderDetailList = () => {
     ".calendar-container"
   ) as HTMLElement;
 
+  const $calendarCell = document.querySelector(".calendar-cell") as HTMLElement;
+
   $consumptionCont.classList.add("consumption-container");
   $consumptionDetailList.classList.add("consumption-detail__list");
 
   $calendarContainer.addEventListener("click", (e: MouseEvent) => {
-    if ((e.target as HTMLElement).classList.contains("calendar-sell")) {
+    if ($calendarCell) {
       $consumptionDetailList.innerHTML = `
     <li>
       <label for="categorybadge">
@@ -34,7 +36,10 @@ const renderDetailList = () => {
   });
 
   $consumptionCont.addEventListener("click", (e: MouseEvent) => {
-    if (document.querySelectorAll(".consumption-detail__list > li")) {
+    const $detailLIst = document.querySelectorAll(
+      ".consumption-detail__list > li"
+    );
+    if ($detailLIst) {
       // const $selected = document.querySelector(".selected") as HTMLElement;
       // const target = e.target as HTMLElement;
       // const selectedDate = target.dataset.date + "";
