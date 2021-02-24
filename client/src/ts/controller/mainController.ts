@@ -28,7 +28,7 @@ const mainController = () => {
     $main.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       // if (
-      //   target.classList.contains("calendar-sell") &&
+      //   target.classList.contains("calendar-cell") &&
       //   !target.classList.contains("selected")
       // ) {
       //   document.querySelector(".selected")?.classList.remove("selected");
@@ -40,7 +40,6 @@ const mainController = () => {
       //   addModal.addModalRender(selectedDate);
       //   addModal.eventHandler();
       // }
-      console.log(target);
 
       if (target.classList.contains("calendar-cell")) {
         document.querySelector(".selected")?.classList.remove("selected");

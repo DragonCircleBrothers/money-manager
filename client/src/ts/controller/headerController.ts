@@ -1,6 +1,7 @@
 import renderCalendar from "../calendar/calendar";
 import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
+import renderDetailList from "../detail/detail_list";
 
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
@@ -23,7 +24,7 @@ const headerController = () => {
         $year.textContent = `${year}`;
         $month.textContent = `${month + 1}`;
 
-        return chartRender(
+        chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
           "outcome"
         );
@@ -40,7 +41,7 @@ const headerController = () => {
         $year.textContent = `${year}`;
         $month.textContent = `${month + 1}`;
 
-        return chartRender(
+        chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
           "outcome"
         );
@@ -56,7 +57,8 @@ const headerController = () => {
           globalState.currentDate.getMonth() - 1,
           globalState.currentDate.getDate()
         );
-        return renderCalendar(globalState.currentDate);
+        renderCalendar(globalState.currentDate);
+        renderDetailList();
       }
 
       if (target.classList.contains("header__next")) {
@@ -65,7 +67,8 @@ const headerController = () => {
           globalState.currentDate.getMonth() + 1,
           globalState.currentDate.getDate()
         );
-        return renderCalendar(globalState.currentDate);
+        renderCalendar(globalState.currentDate);
+        renderDetailList();
       }
     };
   }

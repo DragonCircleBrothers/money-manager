@@ -1,4 +1,4 @@
-import getAccounts from "./getAccounts";
+import getAccounts from "../getAccounts";
 import AccountItem from "../type";
 import formattedDate from "../utils/formattedDate";
 import eachCalendarDate from "../utils/eachCalendarDate";
@@ -63,8 +63,8 @@ const renderCalendar = (currentDate: Date) => {
       </div>
     `;
 
-  // const $incomeTotal = document.querySelectorAll(".calendar-sell__income");
-  // const $outcomeTotal = document.querySelectorAll(".calendar-sell__outcome");
+  // const $incomeTotal = document.querySelectorAll(".calendar-cell__income");
+  // const $outcomeTotal = document.querySelectorAll(".calendar-cell__outcome");
 
   const getAccountsArr = async () => {
     const $cell = document.querySelectorAll(".calendar-cell");

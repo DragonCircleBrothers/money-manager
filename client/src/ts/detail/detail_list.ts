@@ -15,7 +15,7 @@ const renderDetailList = () => {
   $consumptionDetailList.classList.add("consumption-detail__list");
 
   $calendarContainer.addEventListener("click", (e: MouseEvent) => {
-    if ((e.target as HTMLElement).classList.contains("calendar-sell")) {
+    if ((e.target as HTMLElement).classList.contains("calendar-cell")) {
       $consumptionDetailList.innerHTML = `
     <li>
       <label for="categorybadge">
