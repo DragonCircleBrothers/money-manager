@@ -14,12 +14,12 @@
   }
 
   .selected {
-    background-color: rgb(255, 108, 235);
+    background-color: rgb(207, 207, 207);
     color: #fff;
     box-shadow: 0 0 1px 0;
   }
 
-  .calendar-sell {
+  .calendar-cell {
     cursor: pointer;
     &:hover {
       background-color: #ebebeb;
@@ -32,11 +32,11 @@
       line-height: 1.5;
     }
 
-    .calendar-sell__income {
+    .calendar-cell__income {
       color: rgb(12, 189, 12);
     }
   
-    .calendar-sell__outcome {
+    .calendar-cell__outcome {
       color: rgb(234, 115, 250);
     }
     

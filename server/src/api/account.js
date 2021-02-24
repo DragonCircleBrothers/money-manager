@@ -28,7 +28,7 @@ const account = db.get('account');
 //   date: '2021-02-23',
 //   _id: 1,
 //   type: 'income',
-//   aoumont: 3000,
+//   amount: 3000,
 //   category: 'toy',
 //   content: 'lunch'
 // },
@@ -48,7 +48,7 @@ const schema = Joi.object({
   type: Joi.string().trim().required(),
   amount: Joi.number().required(), // number type
   category: Joi.string().trim().required(),
-  content: Joi.string().trim().required(),
+  content: Joi.string().trim().allow(null),
   payment: Joi.string().trim(),
 });
 

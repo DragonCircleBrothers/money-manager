@@ -15,7 +15,7 @@ const addModal = (() => {
     amount: number;
     content: string | null;
     category: string;
-    payment: string;
+    payment: string | null;
   };
 
   const account = {} as AccountItem;
@@ -65,7 +65,8 @@ const addModal = (() => {
       account.content = $incomeContent.value;
       account.category = target.id;
 
-      paymentModalRedner($incomeModal);
+      close($incomeModal);
+      calendarRender(account);
     };
   };
 
