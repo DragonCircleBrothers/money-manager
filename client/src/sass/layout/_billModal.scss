@@ -9,7 +9,9 @@
   display: none;
   
   .bill-modal__header {
-    margin-bottom: 20px;
+    h3 {
+      margin-bottom: 5px;
+    }
   }
   
   .input-container {
@@ -22,7 +24,7 @@
       justify-content: space-between;
 
       .container-category {
-        margin: 20px 0;
+        margin: 10px 0;
         label{
           display: flex;
           flex-direction: column;
@@ -44,7 +46,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 20px;
+        // margin-bottom: 5px; 
         font-size: 1.8rem;
       }
 
