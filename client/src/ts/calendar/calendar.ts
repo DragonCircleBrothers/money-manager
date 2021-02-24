@@ -1,4 +1,4 @@
-import getAccounts from "./getAccounts";
+import getAccounts from "../getAccounts";
 import AccountItem from "../type";
 import formattedDate from "../utils/formattedDate";
 import eachCalendarDate from "../utils/eachCalendarDate";

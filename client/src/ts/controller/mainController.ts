@@ -27,31 +27,18 @@ const mainController = () => {
   } else {
     $main.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      // if (
-      //   target.classList.contains("calendar-sell") &&
-      //   !target.classList.contains("selected")
-      // ) {
-      //   document.querySelector(".selected")?.classList.remove("selected");
-      //   target.classList.add("selected");
-      //   const selectedDate = target.dataset.date + "";
-      //   console.log(target.dataset.date);
-      //   currentDate = new Date(selectedDate);
-      //   console.log(currentDate);
-      //   addModal.addModalRender(selectedDate);
-      //   addModal.eventHandler();
-      // }
-      console.log(target);
 
       if (target.classList.contains("calendar-cell")) {
         document.querySelector(".selected")?.classList.remove("selected");
         target.classList.add("selected");
 
-        console.log(target.dataset.date);
+        // console.log(target.dataset.date);
         const selectedDate = target.dataset.date + "";
 
         globalState.currentDate = new Date(selectedDate);
-        console.log(globalState.currentDate);
-        addModal.addModalRender(selectedDate);
+        // console.log(globalState.currentDate);
+
+        // console.log(globalState.currentDate);
       }
     };
   }
