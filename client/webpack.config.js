@@ -50,7 +50,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            context: "./src/assets",
+            context: "./src/asset",
             name: "root[path][name].[ext]",
             publicPath: "dist",
           },

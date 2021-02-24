@@ -1,35 +1,14 @@
 import Chart from "chart.js";
 import axios from "axios";
 
-const getData = async () => {
-  const data = await axios.get("http://localhost:1111/api/account");
-  console.log(data);
-
-  const product = await data.data.filter(({ date }: { date: string }) =>
-    date.includes("2021-02")
-  );
-  console.log(product);
-  const arrDate = product.map(({ category }: { category: string }) => category);
-  console.log(arrDate);
-
-  // const productInfo = {
-  //   img_URL: product.img_URL,
-  //   name: product.name,
-  //   title: product.title,
-  //   description: product.description,
-  // };
-
-  //TODO: render
-};
-
-const renderDoughnutChart = (): void => {
+const renderDoughnutChart = (amountData: any, categoryData: any): void => {
   const doughnutCtx = document.getElementById("doughnut") as HTMLCanvasElement;
   const myDoughnutChart: Chart = new Chart(doughnutCtx, {
     type: "doughnut",
     data: {
       datasets: [
         {
-          data: [10, 20, 30],
+          data: amountData,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -50,7 +29,7 @@ const renderDoughnutChart = (): void => {
       ],
 
       // These labels appear in the legend and in the tooltips when hovering different arcs
-      labels: ["식비", "경조사", "교통비"],
+      labels: categoryData,
     },
     options: {
       responsive: false,
@@ -58,16 +37,16 @@ const renderDoughnutChart = (): void => {
   });
 };
 
-const renderBarChart = (): void => {
+const renderBarChart = (amountData: any, categoryData: any): void => {
   const barCtx = document.getElementById("bar") as HTMLCanvasElement;
   const myBarChart: Chart = new Chart(barCtx, {
     type: "horizontalBar",
     data: {
-      labels: ["식비", "교통비", "경조사", "Green", "Purple", "Orange"],
+      labels: categoryData,
       datasets: [
         {
           label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+          data: amountData,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -94,4 +73,31 @@ const renderBarChart = (): void => {
   });
 };
 
-export { renderDoughnutChart, renderBarChart, getData };
+const getData = async () => {
+  const data = await axios.get("http://localhost:1111/api/account");
+  console.log(data);
+
+  const product = await data.data.filter(
+    ({ date, type }: { date: string; type: string }) =>
+      date.includes("2021-02") && type.includes("outcome")
+  );
+  console.log(product);
+
+  const categoryData = product
+    .map(({ category }: { category: string }) => category)
+    .filter((v: string, i: number, arr: string[]) => arr.indexOf(v) === i);
+  console.log(categoryData);
+
+  const amountData = Object.values(
+    product.reduce((acc: any, cur: any) => {
+      acc[cur.category] = (acc[cur.category] || 0) + cur.amount;
+      return acc;
+    }, {})
+  );
+  console.log(amountData);
+
+  renderDoughnutChart(amountData, categoryData);
+  renderBarChart(amountData, categoryData);
+};
+
+export default getData;
