@@ -40,11 +40,15 @@ const mainController = () => {
       //   addModal.addModalRender(selectedDate);
       //   addModal.eventHandler();
       // }
-      if (target.classList.contains("calendar-sell")) {
+      console.log(target);
+
+      if (target.classList.contains("calendar-cell")) {
         document.querySelector(".selected")?.classList.remove("selected");
         target.classList.add("selected");
-        const selectedDate = target.dataset.date + "";
+
         console.log(target.dataset.date);
+        const selectedDate = target.dataset.date + "";
+
         globalState.currentDate = new Date(selectedDate);
         console.log(globalState.currentDate);
         addModal.addModalRender(selectedDate);

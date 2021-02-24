@@ -1,6 +1,8 @@
-import addModal from "../modal/addModal";
 import getAccounts from "./getAccounts";
 import AccountItem from "../type";
+import formattedDate from "../utils/formattedDate";
+import eachCalendarDate from "../utils/eachCalendarDate";
+import isEqualDate from "../utils/isEqualDate";
 
 const $main = document.querySelector(".main") as HTMLElement;
 const $year = document.querySelector(".month__year") as HTMLElement;
@@ -21,6 +23,8 @@ const renderCalendar = (currentDate: Date) => {
     if (!date.getDay()) res.push("sun");
     if (date.getDay() === 6) res.push("sat");
     if (isEqualDate(date, currentDate)) res.push("selected");
+
+    return res.join(" ");
   };
 
   $year.textContent = `${year}`;
@@ -59,43 +63,42 @@ const renderCalendar = (currentDate: Date) => {
       </div>
     `;
 
-    // const $incomeTotal = document.querySelectorAll(".calendar-sell__income");
-    // const $outcomeTotal = document.querySelectorAll(".calendar-sell__outcome");
+  // const $incomeTotal = document.querySelectorAll(".calendar-sell__income");
+  // const $outcomeTotal = document.querySelectorAll(".calendar-sell__outcome");
 
-    const getAccountsArr = async () => {
-      const $cell = document.querySelectorAll(".calendar-cell");
-      const account = await getAccounts();
-      const acc: any = {};
+  const getAccountsArr = async () => {
+    const $cell = document.querySelectorAll(".calendar-cell");
+    const account = await getAccounts();
+    const acc: any = {};
 
-      account.forEach((account: AccountItem) => {
-        acc[account.date] = [];
-      });
+    account.forEach((account: AccountItem) => {
+      acc[account.date] = [];
+    });
 
-      Object.values(acc);
+    Object.values(acc);
 
-      // console.log(Object.values(acc).forEach());
+    // console.log(Object.values(acc).forEach());
 
-      // account.forEach((account: AccountItem) => {
-      //   $cell.forEach((item) => {
-      //     if (item.dataset.date === account.date) {
-      //       item.firstElementChild.textContent;
-      //       item.lastElementChild.textContent;
-      //     }
-      //   });
-      // });
-    };
-    getAccountsArr();
-
-    // const getAccountsArr = async () => {
-    //   const accounts = await getAccounts();
-    //   accounts.forEach((account: type) => {
-    //     $incomeTotal.forEach(ele => {
-    //       const incomeTotal = 0;
-    //       if (ele.parentElement.dataset.date === account.date)
-    //     })
+    // account.forEach((account: AccountItem) => {
+    //   $cell.forEach((item) => {
+    //     if (item.dataset.date === account.date) {
+    //       item.firstElementChild.textContent;
+    //       item.lastElementChild.textContent;
+    //     }
     //   });
-    // };
+    // });
   };
-})();
+  getAccountsArr();
+
+  // const getAccountsArr = async () => {
+  //   const accounts = await getAccounts();
+  //   accounts.forEach((account: type) => {
+  //     $incomeTotal.forEach(ele => {
+  //       const incomeTotal = 0;
+  //       if (ele.parentElement.dataset.date === account.date)
+  //     })
+  //   });
+  // };
+};
 
 export default renderCalendar;
