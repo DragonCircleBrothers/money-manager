@@ -112,18 +112,6 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-// Delete All
-router.delete('/', async (req, res, next) => {
-  try {
-    await account.remove();
-    res.json({
-      message: 'Success All deleted'
-    });
-  } catch (error) {
-    next(error);
-  }
-});
-
 // Delete One
 router.delete('/:id', async (req, res, next) => {
   try {
