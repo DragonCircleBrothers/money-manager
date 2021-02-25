@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -24,6 +25,10 @@ module.exports = {
       hash: true,
       filename: "./html/home.html",
       template: "./src/ts/spa/html/home.html",
+    }),
+    new FaviconsWebpackPlugin({
+      logo: "./src/asset/favicon-32x32.png",
+      prefix: "asset/",
     }),
   ],
   module: {

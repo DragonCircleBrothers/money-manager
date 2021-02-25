@@ -8,10 +8,10 @@ import { Result } from "../type";
 
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
+const $header = document.querySelector(".header") as HTMLElement;
+const $addBtn = document.querySelector(".header__add") as HTMLElement;
 
 const headerController = (result: Result): void => {
-  const $header = document.querySelector(".header") as HTMLElement;
-
   if (globalState.pageLocation === "chart") {
     $header.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -29,7 +29,8 @@ const headerController = (result: Result): void => {
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
 
@@ -46,9 +47,16 @@ const headerController = (result: Result): void => {
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
+
+      $addBtn.onclick = () => {
+        addModal.addModalRender(
+          globalState.currentDate.toISOString().slice(0, 10)
+        );
+      };
     };
   } else {
     $header.onclick = (e: MouseEvent) => {
@@ -76,8 +84,6 @@ const headerController = (result: Result): void => {
         amountRender(result);
       }
     };
-
-    const $addBtn = document.querySelector(".header__add") as HTMLElement;
 
     $addBtn.onclick = () => {
       addModal.addModalRender(

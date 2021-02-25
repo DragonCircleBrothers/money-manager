@@ -8,21 +8,41 @@ const mainController = (): void => {
     const $typeBtn = document.querySelector(
       ".chart__header > .header__btn"
     ) as HTMLElement;
+    const $detailList = document.querySelector(
+      ".main__detail > .detail__list"
+    ) as HTMLElement;
+
     $typeBtn.onclick = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).classList.contains("header__btn")) {
+      const target = e.target as HTMLElement;
+
+      if (target.classList.contains("header__btn")) {
         return;
-      } else if ((e.target as HTMLElement).classList.contains("btn__income")) {
+      } else if (target.classList.contains("btn__income")) {
+        $detailList.innerHTML = "";
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "income"
+          "income",
+          globalState.currentDate
         );
       } else {
+        $detailList.innerHTML = "";
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
     };
+
+    // chart에서 bill modal 띄우기
+    // $detailList.onclick = (e: MouseEvent) => {
+    //   const $itemList = document.querySelector(
+    //     ".detail__list > li"
+    //   ) as HTMLElement;
+    //   const target = e.target as HTMLElement;
+    //   if (target !== $itemList) return;
+    //   console.log(target);
+    // };
   } else {
     $main.onclick = (e: MouseEvent) => {
       let target = e.target as HTMLElement;
@@ -38,6 +58,7 @@ const mainController = (): void => {
         const selectedDate = target.dataset.date + "";
 
         globalState.currentDate = new Date(selectedDate);
+        console.log(globalState.currentDate);
       }
     };
   }
