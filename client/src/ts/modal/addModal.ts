@@ -56,8 +56,10 @@ const addModal = (() => {
       ".income-modal__category"
     ) as HTMLElement;
 
-    $category.onchange = (e: Event) => {
+    $category.onclick = (e: Event) => {
       const target = e.target as HTMLElement;
+
+      if (!(target.nodeName === "INPUT")) return;
 
       const $incomeContent = document.querySelector(
         ".income-modal__content"
@@ -93,8 +95,10 @@ const addModal = (() => {
       ".outcome-modal__category"
     ) as HTMLElement;
 
-    $category.onchange = (e: Event) => {
+    $category.onclick = (e: Event) => {
       const target = e.target as HTMLElement;
+
+      if (!(target.nodeName === "INPUT")) return;
 
       const $outcomeContent = document.querySelector(
         ".outcome-modal__content"
