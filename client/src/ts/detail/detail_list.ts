@@ -1,11 +1,17 @@
+import axios from "axios";
 import billModal from "../modal/billModal";
+import getAccounts from "../getAccounts";
+import globalState from "../globalState";
 
 const $main = document.querySelector(".main") as HTMLElement;
-// const currentDate = new Date();
+const $consumptionCont = document.createElement("div");
+const $consumptionDetailList = document.createElement("ul");
 
-const renderDetailList = () => {
-  const $consumptionCont = document.createElement("div");
-  const $consumptionDetailList = document.createElement("ul");
+$consumptionCont.classList.add("consumption-container");
+$consumptionDetailList.classList.add("consumption-detail__list");
+
+const renderDetailList = async () => {
+  const res = await getAccounts();
 
   const $calendarContainer = document.querySelector(
     ".calendar-container"
@@ -13,42 +19,60 @@ const renderDetailList = () => {
 
   const $calendarCell = document.querySelector(".calendar-cell") as HTMLElement;
 
-  $consumptionCont.classList.add("consumption-container");
-  $consumptionDetailList.classList.add("consumption-detail__list");
-
   $calendarContainer.addEventListener("click", (e: MouseEvent) => {
-
     if ($calendarCell) {
-      $consumptionDetailList.innerHTML = `
-    <li>
-      <label for="categorybadge">
-        <div>
-        <input id="categorybadge" class="fas fa-utensils fa-2x" type="radio" disabled>
-        <span class="">교통비</span>
-        </div>
-        <span class="">저녁</span>
-        <span>25000원</span>
-      </label>
-    </li>
-  `;
+      const listData = res.filter(({ date }: { date: string }) => {
+        return date.includes(
+          globalState.currentDate.toISOString().slice(0, 10)
+        );
+      });
+
+      $consumptionDetailList.innerHTML = listData
+        .map(
+          ({
+            id,
+            amount,
+            type,
+            payment,
+            content,
+            category,
+            date,
+          }: {
+            id: string;
+            amount: number;
+            type: string;
+            payment: string;
+            content: string;
+            category: string;
+            date: string;
+          }) => `<li id=${id}>
+        <label for="categorybadge">
+          <span class="consumption-detail__list__category">${category}</span>
+          <span class="consumption-detail__list__content">${content}</span>
+          <span class="consumption-detail__list__payment">${
+            type === "outcome" ? "지출" : "수입"
+          }</span>
+          <span class="consumption-detail__list__amount">${amount}</span>
+        </label>
+      </li>`
+        )
+        .join("");
     }
+
     $consumptionCont.appendChild($consumptionDetailList);
     $main.appendChild($consumptionCont);
   });
 
   $consumptionCont.addEventListener("click", (e: MouseEvent) => {
-    const $detailLIst = document.querySelectorAll(
-      ".consumption-detail__list > li"
-    );
-    if ($detailLIst) {
-      // const $selected = document.querySelector(".selected") as HTMLElement;
-      // const target = e.target as HTMLElement;
-      // const selectedDate = target.dataset.date + "";
-      // currentDate = new Date(selectedDate);
-      // console.log(currentDate);
-      billModal.billModalRender();
-      billModal.eventHandler();
+    if (e.target === $consumptionDetailList) return;
+    if ((e.target as HTMLElement).parentNode) {
+      const billdata = res.filter(({ id }: { id: string }) => {
+        // return id.includes();
+      });
     }
+
+    billModal.billModalRender();
+    billModal.eventHandler();
   });
 };
 

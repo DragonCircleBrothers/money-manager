@@ -76,7 +76,7 @@
   align-content: start;
   flex-wrap: wrap;
   overflow: hidden auto;
-  height: 180px;
+  height: 166px;
 
   li {
     width: 100%;
@@ -93,16 +93,9 @@
       align-items: center;
       padding-right: 11px;
 
-      div {
-        width: 140px;
-
-        input {
-          height: 20px;
-        }
-      }
-
       span {
         font-size: 2rem;
+        width: 150px;
       }
     }
 
