@@ -39,7 +39,7 @@ const render = async () => {
     } else {
       globalState.pageLocation = "home";
       renderCalendar(globalState.currentDate);
-      renderDetailList();
+      // renderDetailList();
     }
     headerController();
     mainController();

@@ -59,7 +59,7 @@ const headerController = (): void => {
           globalState.currentDate.getDate()
         );
         renderCalendar(globalState.currentDate);
-        renderDetailList();
+        // renderDetailList();
       }
 
       if (target.classList.contains("header__next")) {
@@ -69,7 +69,7 @@ const headerController = (): void => {
           globalState.currentDate.getDate()
         );
         renderCalendar(globalState.currentDate);
-        renderDetailList();
+        // renderDetailList();
       }
     };
 

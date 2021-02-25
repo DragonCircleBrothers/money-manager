@@ -1,5 +1,6 @@
 import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
+import renderDetailList from "../detail/detail_list";
 
 const mainController = (): void => {
   const $main = document.querySelector(".main") as HTMLElement;
@@ -57,6 +58,7 @@ const mainController = (): void => {
 
         globalState.currentDate = new Date(selectedDate);
         console.log(globalState.currentDate);
+        renderDetailList();
       }
     };
   }

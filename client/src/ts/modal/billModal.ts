@@ -1,4 +1,5 @@
 import state from "../globalState";
+import getAccounts from "../getAccounts";
 
 const billModal = (() => {
   // const $billModal = document.createElement("div");
@@ -6,6 +7,17 @@ const billModal = (() => {
   const $billModal = document.querySelector(".bill-modal") as HTMLElement;
   const $addModal = document.querySelector(".add-modal") as HTMLElement;
   const $overlay = document.querySelector(".overlay") as HTMLElement;
+
+  const billModalDetail = () => {
+    const $billPrice = (document.getElementById("price") as HTMLInputElement)
+      .value;
+    const $billContent = (document.getElementById(
+      "content"
+    ) as HTMLInputElement).value;
+    const $billPayment = (document.getElementById(
+      "payment"
+    ) as HTMLInputElement).value;
+  };
 
   const close = () => {
     $modal.style.display = "none";
@@ -37,6 +49,8 @@ const billModal = (() => {
       const date = state.currentDate.toISOString().slice(0, 10);
 
       $date.textContent = date;
+
+      billModalDetail();
     },
     eventHandler() {
       $billModal.onclick = (e: MouseEvent) => {
