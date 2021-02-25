@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Accounts } from "./type";
+import { Accounts } from "../type";
 
 const getAccounts = async (): Promise<Accounts[]> => {
   const { data: accounts } = await axios.get(
