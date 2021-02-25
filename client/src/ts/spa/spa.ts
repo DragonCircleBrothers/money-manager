@@ -1,9 +1,11 @@
+import headerController from "../controller/headerController";
 import chartRender from "../chart/chart_render";
 import renderCalendar from "../calendar/calendar";
 import renderDetailList from "../detail/detail_list";
 import globalState from "../globalState";
-import headerController from "../controller/headerController";
 import mainController from "../controller/mainController";
+import sleep from "../sleep";
+import { Result } from "../type";
 
 interface route {
   "": string;
@@ -21,6 +23,12 @@ const routes: route = {
 
 const render = async () => {
   try {
+    const $spinner = document.querySelector(
+      ".spinner__container"
+    ) as HTMLElement;
+
+    $spinner.style.display = "block";
+
     // url의 hash를 취득
     const hash = location.hash.replace("#", "");
     const url = routes[hash];
@@ -35,7 +43,11 @@ const render = async () => {
 
     if (window.location.hash === "#chart") {
       globalState.pageLocation = "chart";
-      chartRender(globalState.currentDate.toISOString().slice(0, 7), "outcome");
+      chartRender(
+        globalState.currentDate.toISOString().slice(0, 7),
+        "outcome",
+        globalState.currentDate
+      );
     } else {
       globalState.pageLocation = "home";
       renderCalendar(globalState.currentDate);
@@ -43,6 +55,9 @@ const render = async () => {
     }
     headerController();
     mainController();
+
+    await sleep(1000);
+    $spinner.style.display = "none";
   } catch (err) {
     console.error(err);
   }

@@ -1,24 +1,31 @@
 import getAccounts from "../getAccounts";
-import AccountItem from "../type";
+import { AccountItem, Result } from "../type";
 import eachCalendarDate from "../utils/eachCalendarDate";
 import amountRender from "./amountRender";
+import headerController from "../controller/headerController";
 
 const calendarListRender = async (
   year: number,
   month: number
 ): Promise<void> => {
   const account = await getAccounts();
-  const accountList: any = [];
-  const result: any = {};
+  const accountList: any[] = [];
+  const result: Result = {} as Result;
 
   account.forEach((account: AccountItem) => {
-    result[account.date] = [0, 0];
+    result[account.date as "date"] = [0, 0];
   });
 
   for (let i = 0; i < account.length; i++) {
-    if (account[i].amount > 0) {
+    if (
+      account[i].amount > 0 &&
+      new Date(account[i].date).getMonth() === month
+    ) {
       accountList.push([account[i].date, account[i].amount, 0]);
-    } else {
+    } else if (
+      account[i].amount < 0 &&
+      new Date(account[i].date).getMonth() === month
+    ) {
       accountList.push([account[i].date, 0, account[i].amount]);
     }
   }
@@ -43,8 +50,8 @@ const calendarListRender = async (
         const lc = a.lastElementChild as HTMLElement;
         fc.style.display = "block";
         lc.style.display = "block";
-        fc.textContent = value[0];
-        lc.textContent = value[1];
+        fc.textContent = (value[0] + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        lc.textContent = (value[1] + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     });
   });

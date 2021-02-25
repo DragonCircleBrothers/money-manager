@@ -47,14 +47,14 @@
 
     .main__total {
       position: absolute;
-      right: 10%;
+      right: 5%;
       top: 20%;
 
       .total__income,
       .total__outcome {
         display: flex;
         flex-flow: row;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-around;
         font-size: 1.5rem;
         margin-bottom: 15px;
@@ -63,13 +63,20 @@
           font-size: 2.8rem;
           margin-left: 10px;
         }
+        .unit {
+          font-size: 1rem;
+        }
 
         .income__price {
           color: $income-color;
+          width: 130px;
+          text-align: right;
         }
-
+        
         .outcome__price {
           color: $outcome-color;
+          width: 130px;
+          text-align: right;
         }
       }
     }
@@ -78,30 +85,46 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
 
       .detail__list {
         width: 50%;
+        padding-top: 18px;
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
         align-items: flex-start;
         
         li {
+          width: 400px;
           display: flex;
           flex-flow: row;
           justify-content: flex-start;
           align-items: center;
           margin-top: 15px;
-          cursor: pointer;
+          padding: 0 10px 10px 10px;
+          border-bottom: 1px dashed rgb(206, 206, 206);
 
           span {
             font-size: 1.2rem;
-            margin-left: 50px;
+          }
+          .list__payment{
+            margin-left: 40px;
+          }
+
+          .list__content {
+            text-align: center;
+            width: 110px;
+          }
+          .list__price {
+            text-align: right;
+            width: 70px;
           }
           .list__content,
           .list__price {
-            font-size: 1.8rem;
+            display:inline-block;
+            margin-left: 30px;
+            font-size: 1.5rem;
           }
         }
       }
