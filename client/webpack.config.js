@@ -4,18 +4,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  // entry file
-  // https://webpack.js.org/configuration/entry-context/#entry
   entry: ["./src/ts/main.ts", "./src/sass/main.scss"],
-  // 번들링된 js 파일의 이름(filename)과 저장될 경로(path)를 지정
-  // https://webpack.js.org/configuration/output/#outputpath
-  // https://webpack.js.org/configuration/output/#outputfilename
   output: {
     path: path.resolve(__dirname, "../server/dist"),
     filename: "js/bundle.js",
   },
   plugins: [
-    // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
     new MiniCssExtractPlugin({ filename: "css/style.css" }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: "./index.html" }),
@@ -32,7 +26,6 @@ module.exports = {
       template: "./src/ts/spa/html/home.html",
     }),
   ],
-  // https://webpack.js.org/configuration/module
   module: {
     rules: [
       {
@@ -52,7 +45,7 @@ module.exports = {
           options: {
             context: "./src/asset",
             name: "root[path][name].[ext]",
-            publicPath: "dist",
+            publicPath: "../server/dist",
           },
         },
       },
@@ -62,6 +55,5 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   devtool: "source-map",
-  // https://webpack.js.org/configuration/mode
   mode: "development",
 };

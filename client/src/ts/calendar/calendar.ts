@@ -1,14 +1,13 @@
-import getAccounts from "../getAccounts";
-import AccountItem from "../type";
 import formattedDate from "../utils/formattedDate";
 import eachCalendarDate from "../utils/eachCalendarDate";
 import isEqualDate from "../utils/isEqualDate";
+import calendarListRender from "./calendarListRender";
 
 const $main = document.querySelector(".main") as HTMLElement;
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
 
-const renderCalendar = (currentDate: Date) => {
+const renderCalendar = (currentDate: Date): void => {
   const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -62,43 +61,7 @@ const renderCalendar = (currentDate: Date) => {
           .join("")}
       </div>
     `;
-
-  // const $incomeTotal = document.querySelectorAll(".calendar-cell__income");
-  // const $outcomeTotal = document.querySelectorAll(".calendar-cell__outcome");
-
-  const getAccountsArr = async () => {
-    const $cell = document.querySelectorAll(".calendar-cell");
-    const account = await getAccounts();
-    const acc: any = {};
-
-    account.forEach((account: AccountItem) => {
-      acc[account.date] = [];
-    });
-
-    Object.values(acc);
-
-    // console.log(Object.values(acc).forEach());
-
-    // account.forEach((account: AccountItem) => {
-    //   $cell.forEach((item) => {
-    //     if (item.dataset.date === account.date) {
-    //       item.firstElementChild.textContent;
-    //       item.lastElementChild.textContent;
-    //     }
-    //   });
-    // });
-  };
-  getAccountsArr();
-
-  // const getAccountsArr = async () => {
-  //   const accounts = await getAccounts();
-  //   accounts.forEach((account: type) => {
-  //     $incomeTotal.forEach(ele => {
-  //       const incomeTotal = 0;
-  //       if (ele.parentElement.dataset.date === account.date)
-  //     })
-  //   });
-  // };
+  calendarListRender(year, month);
 };
 
 export default renderCalendar;
