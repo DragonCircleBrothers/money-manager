@@ -33,11 +33,9 @@ const close = () => {
   $addModal.style.display = "block";
 };
 
-const removeList = async (id: string) => {
+const removeList = (_id: string) => {
   // id 값 받아서 filter 돌리면 될 듯
-  console.log(id);
-
-  await axios.delete(`http://localhost:1111/api/account/${id}`);
+  axios.delete(`http://localhost:1111/api/account/${_id}`);
   $modal.style.display = "none";
   $overlay.style.display = "none";
   $billModal.style.display = "none";
@@ -98,17 +96,6 @@ const renderDetailList = async (target: HTMLElement) => {
     $billPrice.value = billModalData[0].amount;
     $billContent.value = billModalData[0].content;
     $billPayment.value = billModalData[0].payment;
-
-    $billModal.onclick = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
-        close();
-      } else if (
-        (e.target as HTMLElement).classList.contains("bill-modal__deleted")
-      ) {
-        console.log(billModalData.id);
-        removeList(billModalData.id);
-      }
-    };
   };
 
   $consumptionCont.addEventListener("click", (e: MouseEvent) => {
@@ -117,9 +104,19 @@ const renderDetailList = async (target: HTMLElement) => {
     if (target.nodeName === "SPAN") {
       target = target.parentNode as HTMLElement;
     }
-    billModalRender();
     billModalDetail(target.id);
+    billModalRender();
   });
+
+  $billModal.onclick = (e: MouseEvent) => {
+    if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
+      close();
+    } else if (
+      (e.target as HTMLElement).classList.contains("bill-modal__deleted")
+    ) {
+      removeList(target.id);
+    }
+  };
 };
 
 export default renderDetailList;
