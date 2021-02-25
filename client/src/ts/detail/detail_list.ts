@@ -1,4 +1,4 @@
-import getAccounts from "../getAccounts";
+import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 import { Accounts } from "../type";
 import billModalRender from "../modal/billModal";
@@ -10,7 +10,7 @@ const $consumptionDetailList = document.createElement("ul");
 $consumptionContainer.classList.add("consumption-container");
 $consumptionDetailList.classList.add("consumption-detail__list");
 
-const renderDetailList = async (target: HTMLElement) => {
+const renderDetailList = async (): Promise<void> => {
   const res = await getAccounts();
 
   const listData = res.filter(({ date }: { date: string }) => {

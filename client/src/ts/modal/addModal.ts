@@ -1,4 +1,4 @@
-import postAccounts from "../calendar/postAccount";
+import postAccounts from "../AccountCRUD/postAccount";
 import { AccountItem } from "../type";
 
 const addModal = (() => {

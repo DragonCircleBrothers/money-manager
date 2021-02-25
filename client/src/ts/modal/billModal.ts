@@ -1,5 +1,5 @@
-import removeAccount from "../removeAccount";
-import getAccounts from "../getAccounts";
+import removeAccount from "../AccountCRUD/removeAccount";
+import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 
 const $modal = document.querySelector(".modal") as HTMLElement;
