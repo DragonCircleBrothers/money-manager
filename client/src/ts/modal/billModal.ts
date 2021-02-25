@@ -31,7 +31,7 @@ async function billModalRender(id: string): Promise<void> {
     return _id.includes(id);
   });
 
-  $billPrice.value = billModalData[0].amount;
+  $billPrice.value = billModalData[0].amount + "";
   $billContent.value = billModalData[0].content;
   $billPayment.value =
     billModalData[0].payment !== undefined ? billModalData[0].payment : "수입";

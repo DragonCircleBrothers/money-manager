@@ -46,6 +46,7 @@ const render = async (): Promise<void> => {
       globalState.pageLocation = "home";
       renderCalendar(globalState.currentDate);
     }
+
     headerController();
     mainController();
 

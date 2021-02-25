@@ -17,7 +17,6 @@ const renderCalendar = (currentDate: Date): void => {
     const res = [];
 
     if (isEqualDate(date, today)) res.push("today");
-    // if (date.getMonth() !== month) res.push("muted");
     if (date.getMonth() !== month) res.push("calendar__not-present-month");
     if (!date.getDay()) res.push("sun");
     if (date.getDay() === 6) res.push("sat");

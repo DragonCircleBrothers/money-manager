@@ -13,7 +13,7 @@ const amountRender = (result: Result): void => {
   ) as HTMLElement;
   const $monthTotal = document.querySelector(".total__price") as HTMLElement;
 
-  Object.entries(result).forEach(([_, value]) => {
+  Object.entries(result).forEach(([, value]) => {
     monthIncomeTotal += value[0];
     monthOutcomeTotal += value[1];
     monthTotal += value[0] + value[1];

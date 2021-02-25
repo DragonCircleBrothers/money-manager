@@ -1,5 +1,5 @@
 .header {
-  height: 30px;
+  height: 75px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,12 +19,21 @@
       font-size: 3rem;
       color: #fff;
       margin-left: 15px;
+
+      &:hover {
+        color: rgb(224, 224, 224);
+      }
     }
   }
 
   .header__prev,
   .header__next {
+    font-size: 2rem;
     color: #fff;
+
+    &:hover {
+      color: rgb(218, 218, 218);
+    }
   }
 
   .header__date {
@@ -45,7 +54,18 @@
   }
 
   .header__add {
-    font-size: 3rem;
-    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 2.8rem;
+    color: $mainBg-color;
+    background-color: #fff;
+    line-height: 1.4;
+
+    &:hover {
+      background-color: #ffd000;
+      // color: rgb(218, 218, 218);
+    }
   }
 }
