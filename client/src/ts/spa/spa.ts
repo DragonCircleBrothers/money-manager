@@ -1,9 +1,11 @@
+import headerController from "../controller/headerController";
 import chartRender from "../chart/chart_render";
 import renderCalendar from "../calendar/calendar";
 import renderDetailList from "../detail/detail_list";
 import globalState from "../globalState";
 import mainController from "../controller/mainController";
 import sleep from "../sleep";
+import { Result } from "../type";
 
 interface route {
   "": string;
@@ -51,6 +53,7 @@ const render = async () => {
       renderCalendar(globalState.currentDate);
       renderDetailList();
     }
+    headerController();
     mainController();
 
     await sleep(1000);

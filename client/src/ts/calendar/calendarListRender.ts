@@ -1,5 +1,5 @@
 import getAccounts from "../getAccounts";
-import { AccountItem } from "../type";
+import { AccountItem, Result } from "../type";
 import eachCalendarDate from "../utils/eachCalendarDate";
 import amountRender from "./amountRender";
 import headerController from "../controller/headerController";
@@ -10,10 +10,10 @@ const calendarListRender = async (
 ): Promise<void> => {
   const account = await getAccounts();
   const accountList: any[] = [];
-  const result: any = {};
+  const result: Result = {} as Result;
 
   account.forEach((account: AccountItem) => {
-    result[account.date] = [0, 0];
+    result[account.date as "date"] = [0, 0];
   });
 
   for (let i = 0; i < account.length; i++) {
@@ -31,7 +31,7 @@ const calendarListRender = async (
   }
 
   for (let j = 0; j < accountList.length; j++) {
-    Object.entries<number[]>(result).forEach(([key, value]) => {
+    Object.entries(result).forEach(([key, value]) => {
       if (accountList[j][0] === key) {
         value[0] += accountList[j][1];
         value[1] += accountList[j][2];
@@ -40,7 +40,7 @@ const calendarListRender = async (
   }
 
   eachCalendarDate(year, month).forEach((item) => {
-    Object.entries<number[]>(result).forEach(([key, value]) => {
+    Object.entries(result).forEach(([key, value]) => {
       if (item.toISOString().slice(0, 10) === key) {
         const a = document.querySelector(
           `div[data-date="${key}"]`
@@ -57,7 +57,6 @@ const calendarListRender = async (
   });
 
   amountRender(result);
-  headerController(result);
 };
 
 export default calendarListRender;
