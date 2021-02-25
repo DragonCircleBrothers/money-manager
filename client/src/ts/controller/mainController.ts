@@ -27,22 +27,6 @@ const mainController = () => {
   } else {
     $main.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-<<<<<<< HEAD
-      // if (
-      //   target.classList.contains("calendar-cell") &&
-      //   !target.classList.contains("selected")
-      // ) {
-      //   document.querySelector(".selected")?.classList.remove("selected");
-      //   target.classList.add("selected");
-      //   const selectedDate = target.dataset.date + "";
-      //   console.log(target.dataset.date);
-      //   currentDate = new Date(selectedDate);
-      //   console.log(currentDate);
-      //   addModal.addModalRender(selectedDate);
-      //   addModal.eventHandler();
-      // }
-=======
->>>>>>> d33c486b6d010cf3e5ac94207d7e51cb3da250b2
 
       if (target.classList.contains("calendar-cell")) {
         document.querySelector(".selected")?.classList.remove("selected");

@@ -1,4 +1,4 @@
-// const $main = document.querySelector(".main") as HTMLElement;
+import state from "../globalState";
 
 const billModal = (() => {
   // const $billModal = document.createElement("div");
@@ -6,9 +6,6 @@ const billModal = (() => {
   const $billModal = document.querySelector(".bill-modal") as HTMLElement;
   const $addModal = document.querySelector(".add-modal") as HTMLElement;
   const $overlay = document.querySelector(".overlay") as HTMLElement;
-  // const $consumptionDetailList = document.querySelector(
-  //   ".consumption-detail__list"
-  // ) as HTMLElement;
 
   const close = () => {
     $modal.style.display = "none";
@@ -35,11 +32,11 @@ const billModal = (() => {
       $billModal.style.display = "block";
       $overlay.style.display = "block";
       $addModal.style.display = "none";
-      // const $selected = document.querySelector(".selected") as HTMLElement;
-      // console.log($selected);
 
-      // const $date = document.querySelector(".bill-modal__date") as HTMLElement;
-      // $date.textContent = date;
+      const $date = document.querySelector(".bill-modal__date") as HTMLElement;
+      const date = state.currentDate.toISOString().slice(0, 10);
+
+      $date.textContent = date;
     },
     eventHandler() {
       $billModal.onclick = (e: MouseEvent) => {
