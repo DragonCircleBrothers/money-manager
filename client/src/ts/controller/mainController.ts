@@ -21,13 +21,15 @@ const mainController = (): void => {
         $detailList.innerHTML = "";
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "income"
+          "income",
+          globalState.currentDate
         );
       } else {
         $detailList.innerHTML = "";
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
     };

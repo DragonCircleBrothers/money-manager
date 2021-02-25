@@ -27,7 +27,8 @@ const headerController = (): void => {
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
 
@@ -44,7 +45,8 @@ const headerController = (): void => {
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
-          "outcome"
+          "outcome",
+          globalState.currentDate
         );
       }
     };

@@ -35,7 +35,11 @@ const render = async () => {
 
     if (window.location.hash === "#chart") {
       globalState.pageLocation = "chart";
-      chartRender(globalState.currentDate.toISOString().slice(0, 7), "outcome");
+      chartRender(
+        globalState.currentDate.toISOString().slice(0, 7),
+        "outcome",
+        globalState.currentDate
+      );
     } else {
       globalState.pageLocation = "home";
       renderCalendar(globalState.currentDate);
