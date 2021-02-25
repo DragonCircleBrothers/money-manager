@@ -1,7 +1,5 @@
 import Chart from "chart.js";
-import axios from "axios";
 import getAccounts from "../getAccounts";
-import globalState from "../globalState";
 
 function initializeCanvas(parentClass: string, childId: string): void {
   const parent = document.querySelector(`.${parentClass}`) as Node;
