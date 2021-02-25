@@ -129,7 +129,13 @@
           span {
             font-size: 1.2rem;
           }
+          .list__date{
+            display: inline-block;
+            width: 100px;
+          }
           .list__payment{
+            display: inline-block;
+            width: 100px;
             margin-left: 40px;
           }
 
@@ -144,7 +150,6 @@
           .list__content,
           .list__price {
             display:inline-block;
-            margin-left: 30px;
             font-size: 1.5rem;
           }
         }
