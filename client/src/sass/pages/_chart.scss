@@ -81,27 +81,27 @@
       justify-content: space-around;
 
       .detail__list {
-        width: 100%;
+        width: 50%;
         display: flex;
         flex-flow: column;
-        align-items: center;
-
+        justify-content: flex-start;
+        align-items: flex-start;
+        
         li {
           display: flex;
           flex-flow: row;
+          justify-content: flex-start;
           align-items: center;
-          margin-top: 20px;
-          
-          .categorybadge {
-            font-size: 1.5rem;
-            @include labelBtn($width: 30px, $height: 30px, $lineHeight: 1.6, $bg: rgb(random(256), random(256), random(256)));
-          }
+          margin-top: 15px;
+          cursor: pointer;
 
           span {
-            font-size: 2rem;
+            font-size: 1.2rem;
+            margin-left: 50px;
           }
+          .list__content,
           .list__price {
-            margin-left: 100px;
+            font-size: 1.8rem;
           }
         }
       }

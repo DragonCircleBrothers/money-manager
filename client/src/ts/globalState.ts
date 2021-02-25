@@ -1,6 +1,6 @@
-const state: { pageLocation: string; currentDate: Date } = {
+const globalState: { pageLocation: string; currentDate: Date } = {
   pageLocation: "home",
   currentDate: new Date(),
 };
 
-export default state;
+export default globalState;
