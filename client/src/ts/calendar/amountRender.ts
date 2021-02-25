@@ -13,7 +13,6 @@ const amountRender = (result: Result): void => {
   ) as HTMLElement;
   const $monthTotal = document.querySelector(".total__price") as HTMLElement;
 
-  // TODO: 계산, 모달수정
   Object.entries(result).forEach(([_, value]) => {
     monthIncomeTotal += value[0];
     monthOutcomeTotal += value[1];
