@@ -56,6 +56,7 @@ const mainController = (): void => {
         const selectedDate = target.dataset.date + "";
 
         globalState.currentDate = new Date(selectedDate);
+        console.log(globalState.currentDate);
       }
     };
   }
