@@ -1,4 +1,4 @@
-# 세상에서 가장 쉬운 가계부, DCB 머니
+# :money_with_wings:세상에서 가장 쉬운 가계부, DCB 머니:money_with_wings:
 
 ![image](./client/src/asset/logo.png)
 
