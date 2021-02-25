@@ -83,21 +83,18 @@
     padding: 7px 0;
     border-bottom: 1px solid #e0e0e0e0;
     line-height: 2;
-    
-    label {
-      cursor: pointer;
-      display: inline-block;
-      display: flex;
-      justify-content: space-between;
-      flex-flow: row;
-      align-items: center;
-      padding-right: 11px;
+    cursor: pointer;
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    align-items: center;
+    padding-right: 11px;
 
       span {
         font-size: 2rem;
         width: 150px;
       }
-    }
 
     #categorybadge {
       @include labelBtn($bg: rgb(random(256), random(256), random(256)));

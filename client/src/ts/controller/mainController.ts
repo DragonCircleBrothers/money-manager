@@ -43,14 +43,14 @@ const mainController = (): void => {
       }
 
       if (target.classList.contains("calendar-cell")) {
-        document.querySelector(".selected")?.classList.remove("selected");
-        target.classList.add("selected");
-
         const selectedDate = target.dataset.date + "";
-
         globalState.currentDate = new Date(selectedDate);
         console.log(globalState.currentDate);
-        renderDetailList();
+        (document.querySelector(".selected") as HTMLElement).classList.remove(
+          "selected"
+        );
+        target.classList.add("selected");
+        renderDetailList(target);
       }
     };
   }
