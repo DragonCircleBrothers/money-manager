@@ -34,16 +34,6 @@ const mainController = (): void => {
         );
       }
     };
-
-    // chart에서 bill modal 띄우기
-    // $detailList.onclick = (e: MouseEvent) => {
-    //   const $itemList = document.querySelector(
-    //     ".detail__list > li"
-    //   ) as HTMLElement;
-    //   const target = e.target as HTMLElement;
-    //   if (target !== $itemList) return;
-    //   console.log(target);
-    // };
   } else {
     $main.onclick = (e: MouseEvent) => {
       let target = e.target as HTMLElement;
@@ -53,14 +43,14 @@ const mainController = (): void => {
       }
 
       if (target.classList.contains("calendar-cell")) {
-        document.querySelector(".selected")?.classList.remove("selected");
-        target.classList.add("selected");
-
         const selectedDate = target.dataset.date + "";
-
         globalState.currentDate = new Date(selectedDate);
         console.log(globalState.currentDate);
-        renderDetailList();
+        (document.querySelector(".selected") as HTMLElement).classList.remove(
+          "selected"
+        );
+        target.classList.add("selected");
+        renderDetailList(target);
       }
     };
   }
