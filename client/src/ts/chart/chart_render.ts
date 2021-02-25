@@ -1,5 +1,6 @@
 import Chart from "chart.js";
 import getAccounts from "../getAccounts";
+import { Accounts } from "../type";
 
 function initializeCanvas(parentClass: string, childId: string): void {
   const parent = document.querySelector(`.${parentClass}`) as Node;
@@ -11,7 +12,10 @@ function initializeCanvas(parentClass: string, childId: string): void {
   parent.replaceChild(para, child);
 }
 
-const renderDoughnutChart = (amountData: any, categoryData: any): void => {
+const renderDoughnutChart = (
+  amountData: number[],
+  categoryData: string[]
+): void => {
   initializeCanvas("chart__main", "doughnut");
 
   const doughnutCtx = document.getElementById("doughnut") as HTMLCanvasElement;
@@ -86,9 +90,9 @@ const renderDoughnutChart = (amountData: any, categoryData: any): void => {
 };
 
 const renderBarChart = (
-  amountData: any,
-  categoryData: any,
-  accountData: any
+  amountData: number[],
+  categoryData: string[],
+  accountData: Accounts[]
 ): void => {
   initializeCanvas("main__detail", "bar");
 
@@ -128,7 +132,7 @@ const renderBarChart = (
             datasets: [
               {
                 label: "# of category",
-                data: amountData,
+                data: amountData.map((v) => Math.abs(v)),
                 backgroundColor: [
                   "rgba(255, 99, 132, 0.6)",
                   "rgba(54, 162, 235, 0.6)",
@@ -172,6 +176,9 @@ const renderBarChart = (
             scales: {
               xAxes: [
                 {
+                  gridLines: {
+                    display: false,
+                  },
                   ticks: {
                     min: 0,
                   },
@@ -182,15 +189,18 @@ const renderBarChart = (
               const $detailList = document.querySelector(
                 ".main__detail > .detail__list"
               ) as HTMLElement;
+
               const chartLabelData: any = myBarChart.getElementsAtEvent(e)[0];
 
               if (chartLabelData === undefined) return;
 
-              const labelName: any = chartLabelData._model.label;
+              const labelName: string = chartLabelData._model.label;
+
               console.log(labelName);
               console.log(accountData);
+
               const categoryData = accountData.filter(
-                (v: any) => v.category === labelName
+                (v: Accounts) => v.category === labelName
               );
               console.log(categoryData);
 
@@ -203,14 +213,7 @@ const renderBarChart = (
                     amount,
                     date,
                     type,
-                  }: {
-                    _id: string;
-                    content: string;
-                    payment: string;
-                    amount: number;
-                    date: string;
-                    type: string;
-                  }) => `<li id="${_id}">
+                  }: Accounts) => `<li id="${_id}">
         <span class="list__date">${date}</span>
         <span class="list__payment">${
           type === "outcome" ? payment : "수입"
@@ -236,6 +239,7 @@ const chartRender = async (
   const $month = document.querySelector(".month__num") as HTMLElement;
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
+
   $year.textContent = `${year}`;
   $month.textContent = `${month + 1}`;
 
@@ -255,22 +259,24 @@ const chartRender = async (
   console.log(categoryData);
 
   const amountData = Object.values(
-    accountData.reduce((acc: any, cur: any) => {
+    accountData.reduce((acc: any, cur: Accounts) => {
       acc[cur.category] = (acc[cur.category] || 0) + cur.amount;
       return acc;
     }, {})
-  );
+  ) as number[];
   console.log(amountData);
 
   const incomeAmount: string = res
-    .filter((v: any) => v.date.includes(monthYear) && v.type.includes("income"))
-    .reduce((acc: any, cur: any) => acc + cur.amount, 0);
+    .filter(
+      (v: Accounts) => v.date.includes(monthYear) && v.type.includes("income")
+    )
+    .reduce((acc: number, cur: Accounts) => acc + cur.amount, 0);
 
   const outcomeAmount: string = res
     .filter(
-      (v: any) => v.date.includes(monthYear) && v.type.includes("outcome")
+      (v: Accounts) => v.date.includes(monthYear) && v.type.includes("outcome")
     )
-    .reduce((acc: any, cur: any) => acc + cur.amount, 0);
+    .reduce((acc: number, cur: Accounts) => acc + cur.amount, 0);
 
   const $incomeAmount = document.querySelector(".income__price") as HTMLElement;
   const $outcomeAmount = document.querySelector(

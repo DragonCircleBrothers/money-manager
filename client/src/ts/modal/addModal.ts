@@ -9,12 +9,20 @@ const addModal = (() => {
   const $outcomeModal = document.querySelector(".outcome-modal") as HTMLElement;
   const $paymentModal = document.querySelector(".payment-modal") as HTMLElement;
   const $amount = document.querySelector(".content__price") as HTMLInputElement;
+  const $incomeInput = document.querySelector(
+    ".income-modal__content"
+  ) as HTMLInputElement;
+  const $outcomeInput = document.querySelector(
+    ".outcome-modal__content"
+  ) as HTMLInputElement;
 
   const account = {} as AccountItem;
 
   const close = ($currentModal: HTMLElement) => {
     $addModal.style.display = "block";
     $amount.value = "";
+    $incomeInput.value = "";
+    $outcomeInput.value = "";
     if ($currentModal !== $addModal) $currentModal.style.display = "none";
     $overlay.style.display = "none";
     $modal.style.display = "none";
@@ -48,8 +56,10 @@ const addModal = (() => {
       ".income-modal__category"
     ) as HTMLElement;
 
-    $category.onchange = (e: Event) => {
+    $category.onclick = (e: Event) => {
       const target = e.target as HTMLElement;
+
+      if (!(target.nodeName === "INPUT")) return;
 
       const $incomeContent = document.querySelector(
         ".income-modal__content"
@@ -85,8 +95,10 @@ const addModal = (() => {
       ".outcome-modal__category"
     ) as HTMLElement;
 
-    $category.onchange = (e: Event) => {
+    $category.onclick = (e: Event) => {
       const target = e.target as HTMLElement;
+
+      if (!(target.nodeName === "INPUT")) return;
 
       const $outcomeContent = document.querySelector(
         ".outcome-modal__content"

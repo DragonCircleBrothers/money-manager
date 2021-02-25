@@ -11,4 +11,20 @@ interface Result {
   date: number[];
 }
 
-export { AccountItem, Result };
+interface Accounts {
+  date: string;
+  amount: number;
+  category: string;
+  content: string;
+  payment: string;
+  type: string;
+  _id: string;
+}
+
+interface route {
+  "": string;
+  chart: string;
+  [propsName: string]: any;
+}
+
+export { AccountItem, Result, Accounts, route };

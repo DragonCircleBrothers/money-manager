@@ -17,7 +17,7 @@ const account = db.get('account');
 /* outcome
 {
   "date": millseconds,
-  "amount": 30000,
+  "amount": -30000,
   "category": "toy",
   "content": "hi",
   "payment": "credit"
@@ -36,7 +36,7 @@ const account = db.get('account');
 //   date: '2021-02-24',
 //   _id: 2,
 //   type: 'outcome',
-//   aoumont: 3000,
+//   aoumont: -3000,
 //   category: 'toy',
 //   content: 'lunch'
 //   payment: 'cash'
@@ -107,6 +107,18 @@ router.put('/:id', async (req, res, next) => {
       $set: value
     });
     res.json(value);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// Delete All
+router.delete('/', async (req, res, next) => {
+  try {
+    await account.remove();
+    res.json({
+      message: 'Success All deleted'
+    });
   } catch (error) {
     next(error);
   }

@@ -11,6 +11,9 @@ const $addBtn = document.querySelector(".header__add") as HTMLElement;
 
 const headerController = (): void => {
   if (globalState.pageLocation === "chart") {
+    const $detailList = document.querySelector(
+      ".main__detail > .detail__list"
+    ) as HTMLElement;
     $header.onclick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
@@ -24,6 +27,7 @@ const headerController = (): void => {
         const month = globalState.currentDate.getMonth();
         $year.textContent = `${year}`;
         $month.textContent = `${month + 1}`;
+        $detailList.innerHTML = "";
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
@@ -42,6 +46,7 @@ const headerController = (): void => {
         const month = globalState.currentDate.getMonth();
         $year.textContent = `${year}`;
         $month.textContent = `${month + 1}`;
+        $detailList.innerHTML = "";
 
         chartRender(
           globalState.currentDate.toISOString().slice(0, 7),
