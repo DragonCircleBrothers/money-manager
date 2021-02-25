@@ -2,32 +2,25 @@ import getAccounts from "../getAccounts";
 import { AccountItem, Result } from "../type";
 import eachCalendarDate from "../utils/eachCalendarDate";
 import amountRender from "./amountRender";
-import headerController from "../controller/headerController";
+import formattedDate from "../utils/formattedDate";
 
 const calendarListRender = async (
   year: number,
   month: number
 ): Promise<void> => {
   const account = await getAccounts();
-  const accountList: any[] = [];
+  const accountList: (string | number)[][] = [];
   const result: Result = {} as Result;
 
-  account.forEach((account: AccountItem) => {
-    result[account.date as "date"] = [0, 0];
-  });
+  account.forEach(
+    (account: AccountItem) => (result[account.date as "date"] = [0, 0])
+  );
 
   for (let i = 0; i < account.length; i++) {
-    if (
-      account[i].amount > 0 &&
-      new Date(account[i].date).getMonth() === month
-    ) {
+    if (account[i].amount > 0 && new Date(account[i].date).getMonth() === month)
       accountList.push([account[i].date, account[i].amount, 0]);
-    } else if (
-      account[i].amount < 0 &&
-      new Date(account[i].date).getMonth() === month
-    ) {
+    if (account[i].amount < 0 && new Date(account[i].date).getMonth() === month)
       accountList.push([account[i].date, 0, account[i].amount]);
-    }
   }
 
   for (let j = 0; j < accountList.length; j++) {
@@ -41,29 +34,29 @@ const calendarListRender = async (
 
   eachCalendarDate(year, month).forEach((item) => {
     Object.entries(result).forEach(([key, value]) => {
-      if (item.toISOString().slice(0, 10) === key) {
+      if (formattedDate(item) === key) {
         const $unemptyCell = document.querySelector(
           `div[data-date="${key}"]`
         ) as HTMLElement;
 
-        const fc = $unemptyCell.firstElementChild as HTMLElement;
-        const lc = $unemptyCell.lastElementChild as HTMLElement;
+        const firstCell = $unemptyCell.firstElementChild as HTMLElement;
+        const lastCell = $unemptyCell.lastElementChild as HTMLElement;
 
         if (value[0]) {
-          fc.textContent = (value[0] + "").replace(
+          firstCell.textContent = (value[0] + "").replace(
             /\B(?=(\d{3})+(?!\d))/g,
             ","
           );
         }
         if (value[1]) {
-          lc.textContent = (value[1] + "").replace(
+          lastCell.textContent = (value[1] + "").replace(
             /\B(?=(\d{3})+(?!\d))/g,
             ","
           );
         }
 
-        fc.style.display = "block";
-        lc.style.display = "block";
+        firstCell.style.display = "block";
+        lastCell.style.display = "block";
       }
     });
   });

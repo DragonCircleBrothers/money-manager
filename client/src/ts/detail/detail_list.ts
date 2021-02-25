@@ -95,7 +95,7 @@ const renderDetailList = async (target: HTMLElement) => {
     });
     console.log(billModalData);
 
-    $billPrice.value = billModalData[0].amount;
+    $billPrice.value = billModalData[0].amount + "";
     $billContent.value = billModalData[0].content;
     $billPayment.value = billModalData[0].payment;
 
@@ -105,8 +105,8 @@ const renderDetailList = async (target: HTMLElement) => {
       } else if (
         (e.target as HTMLElement).classList.contains("bill-modal__deleted")
       ) {
-        console.log(billModalData.id);
-        removeList(billModalData.id);
+        console.log(billModalData[0]._id);
+        removeList(billModalData[0]._id);
       }
     };
   };

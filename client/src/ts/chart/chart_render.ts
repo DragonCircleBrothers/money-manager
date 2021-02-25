@@ -234,7 +234,7 @@ const chartRender = async (
   monthYear: string,
   someType: string,
   currentDate: Date
-) => {
+): Promise<void> => {
   const $year = document.querySelector(".month__year") as HTMLElement;
   const $month = document.querySelector(".month__num") as HTMLElement;
   const year = currentDate.getFullYear();
@@ -266,13 +266,13 @@ const chartRender = async (
   ) as number[];
   console.log(amountData);
 
-  const incomeAmount: string = res
+  const incomeAmount: number = res
     .filter(
       (v: Accounts) => v.date.includes(monthYear) && v.type.includes("income")
     )
     .reduce((acc: number, cur: Accounts) => acc + cur.amount, 0);
 
-  const outcomeAmount: string = res
+  const outcomeAmount: number = res
     .filter(
       (v: Accounts) => v.date.includes(monthYear) && v.type.includes("outcome")
     )
