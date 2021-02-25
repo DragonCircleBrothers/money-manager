@@ -33,15 +33,15 @@ const renderCalendar = (currentDate: Date): void => {
       <div class="amount-section">
         <div class="amount-section__income">
           <span class="income__title">수입</span>
-          <span class="income__price"></span>
+          <span class="income__price">0</span>
         </div>
         <div class="amount-section__outcome">
           <span class="outcome__title">지출</span>
-          <span class="outcome__price"></span>
+          <span class="outcome__price">0</span>
         </div>
         <div class="amount-section__total">
           <span class="total__title">합계</span>
-          <span class="total__price"></span>
+          <span class="total__price">0</span>
         </div>
       </div>
       <div class="calendar-container">

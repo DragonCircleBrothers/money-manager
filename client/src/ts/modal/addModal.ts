@@ -9,12 +9,20 @@ const addModal = (() => {
   const $outcomeModal = document.querySelector(".outcome-modal") as HTMLElement;
   const $paymentModal = document.querySelector(".payment-modal") as HTMLElement;
   const $amount = document.querySelector(".content__price") as HTMLInputElement;
+  const $incomeInput = document.querySelector(
+    ".income-modal__content"
+  ) as HTMLInputElement;
+  const $outcomeInput = document.querySelector(
+    ".outcome-modal__content"
+  ) as HTMLInputElement;
 
   const account = {} as AccountItem;
 
   const close = ($currentModal: HTMLElement) => {
     $addModal.style.display = "block";
     $amount.value = "";
+    $incomeInput.value = "";
+    $outcomeInput.value = "";
     if ($currentModal !== $addModal) $currentModal.style.display = "none";
     $overlay.style.display = "none";
     $modal.style.display = "none";

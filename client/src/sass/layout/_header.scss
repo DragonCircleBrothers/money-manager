@@ -34,6 +34,13 @@
     .date__year,
     .date__month {
       margin-right: 10px;
+
+      .month__num {
+        display: inline-block;
+        width: 25px;
+        padding-right: 1px;
+        text-align: right;
+      }
     }
   }
 

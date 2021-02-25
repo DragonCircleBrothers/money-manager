@@ -42,16 +42,28 @@ const calendarListRender = async (
   eachCalendarDate(year, month).forEach((item) => {
     Object.entries(result).forEach(([key, value]) => {
       if (item.toISOString().slice(0, 10) === key) {
-        const a = document.querySelector(
+        const $unemptyCell = document.querySelector(
           `div[data-date="${key}"]`
         ) as HTMLElement;
 
-        const fc = a.firstElementChild as HTMLElement;
-        const lc = a.lastElementChild as HTMLElement;
+        const fc = $unemptyCell.firstElementChild as HTMLElement;
+        const lc = $unemptyCell.lastElementChild as HTMLElement;
+
+        if (value[0]) {
+          fc.textContent = (value[0] + "").replace(
+            /\B(?=(\d{3})+(?!\d))/g,
+            ","
+          );
+        }
+        if (value[1]) {
+          lc.textContent = (value[1] + "").replace(
+            /\B(?=(\d{3})+(?!\d))/g,
+            ","
+          );
+        }
+
         fc.style.display = "block";
         lc.style.display = "block";
-        fc.textContent = (value[0] + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        lc.textContent = (value[1] + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     });
   });
