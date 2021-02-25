@@ -170,7 +170,9 @@ const renderBarChart = (
           type === "outcome" ? payment : "수입"
         }</span>
         <span class="list__content">${content}</span>
-        <span class="list__price">${amount}</span>
+        <span class="list__price">${amount
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
       </li>`
           )
           .join("");
@@ -203,11 +205,11 @@ const chartRender = async (monthYear: string, someType: string) => {
   );
   console.log(amountData);
 
-  const incomeAmount = res
+  const incomeAmount: string = res
     .filter((v: any) => v.date.includes(monthYear) && v.type.includes("income"))
     .reduce((acc: any, cur: any) => acc + cur.amount, 0);
 
-  const outcomeAmount = res
+  const outcomeAmount: string = res
     .filter(
       (v: any) => v.date.includes(monthYear) && v.type.includes("outcome")
     )
@@ -218,8 +220,14 @@ const chartRender = async (monthYear: string, someType: string) => {
     ".outcome__price"
   ) as HTMLElement;
 
-  $incomeAmount.textContent = incomeAmount;
-  $outcomeAmount.textContent = outcomeAmount;
+  $incomeAmount.textContent = (incomeAmount + "").replace(
+    /\B(?=(\d{3})+(?!\d))/g,
+    ","
+  );
+  $outcomeAmount.textContent = (outcomeAmount + "").replace(
+    /\B(?=(\d{3})+(?!\d))/g,
+    ","
+  );
 
   renderDoughnutChart(amountData, categoryData);
   renderBarChart(amountData, categoryData, accountData);
