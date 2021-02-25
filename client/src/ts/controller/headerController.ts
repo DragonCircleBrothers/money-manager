@@ -1,7 +1,6 @@
 import renderCalendar from "../calendar/calendar";
 import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
-import renderDetailList from "../detail/detail_list";
 import addModal from "../modal/addModal";
 
 const $year = document.querySelector(".month__year") as HTMLElement;

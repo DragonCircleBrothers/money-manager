@@ -50,7 +50,7 @@ const mainController = (): void => {
           "selected"
         );
         target.classList.add("selected");
-        renderDetailList(target);
+        renderDetailList();
       }
     };
   }

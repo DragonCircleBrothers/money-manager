@@ -1,5 +1,5 @@
 import Chart from "chart.js";
-import getAccounts from "../getAccounts";
+import getAccounts from "../AccountCRUD/getAccounts";
 import { Accounts } from "../type";
 
 function initializeCanvas(parentClass: string, childId: string): void {
