@@ -132,7 +132,7 @@ const renderBarChart = (
             datasets: [
               {
                 label: "# of category",
-                data: amountData,
+                data: amountData.map((v) => Math.abs(v)),
                 backgroundColor: [
                   "rgba(255, 99, 132, 0.6)",
                   "rgba(54, 162, 235, 0.6)",
@@ -176,6 +176,9 @@ const renderBarChart = (
             scales: {
               xAxes: [
                 {
+                  gridLines: {
+                    display: false,
+                  },
                   ticks: {
                     min: 0,
                   },
@@ -236,6 +239,7 @@ const chartRender = async (
   const $month = document.querySelector(".month__num") as HTMLElement;
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
+
   $year.textContent = `${year}`;
   $month.textContent = `${month + 1}`;
 
