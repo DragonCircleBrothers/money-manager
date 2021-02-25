@@ -6,8 +6,22 @@ body {
   font-size: 1.5rem;
 }
 
-.spinner {
-  // display: none;
+.spinner__container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(158, 151, 151, 0.274);
+  display: none;
+
+  .spinner__original {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate3D(-50%, 0, 0);
+  }
 }
 
 .a11y-hidden {

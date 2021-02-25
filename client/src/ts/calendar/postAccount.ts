@@ -1,5 +1,5 @@
 import axios from "axios";
-import AccountItem from "../type";
+import { AccountItem } from "../type";
 import calendarListRender from "./calendarListRender";
 import chartRender from "../chart/chart_render";
 import globalState from "../globalState";
