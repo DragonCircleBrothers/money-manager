@@ -7,4 +7,8 @@ type AccountItem = {
   payment: string | null;
 };
 
-export default AccountItem;
+interface Result {
+  date: number[];
+}
+
+export { AccountItem, Result };

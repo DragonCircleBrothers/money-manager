@@ -3,11 +3,13 @@ import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
 import renderDetailList from "../detail/detail_list";
 import addModal from "../modal/addModal";
+import amountRender from "../calendar/amountRender";
+import { Result } from "../type";
 
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
 
-const headerController = (): void => {
+const headerController = (result: Result): void => {
   const $header = document.querySelector(".header") as HTMLElement;
 
   if (globalState.pageLocation === "chart") {
@@ -60,6 +62,7 @@ const headerController = (): void => {
         );
         renderCalendar(globalState.currentDate);
         renderDetailList();
+        amountRender(result);
       }
 
       if (target.classList.contains("header__next")) {
@@ -70,6 +73,7 @@ const headerController = (): void => {
         );
         renderCalendar(globalState.currentDate);
         renderDetailList();
+        amountRender(result);
       }
     };
 

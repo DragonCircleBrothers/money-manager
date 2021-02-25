@@ -1,5 +1,5 @@
 import postAccounts from "../calendar/postAccount";
-import AccountItem from "../type";
+import { AccountItem } from "../type";
 
 const addModal = (() => {
   const $overlay = document.querySelector(".overlay") as HTMLElement;

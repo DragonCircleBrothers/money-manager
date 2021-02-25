@@ -2,8 +2,6 @@
   width: 960px;
 }
 
-
-
 .consumption-list {
   height: auto;
   display: flex;
@@ -71,6 +69,7 @@
 }
 
 .consumption-detail__list {
+  user-select: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -84,8 +83,9 @@
     padding: 7px 0;
     border-bottom: 1px solid #e0e0e0e0;
     line-height: 2;
-
+    
     label {
+      cursor: pointer;
       display: inline-block;
       display: flex;
       justify-content: space-between;
