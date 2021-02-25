@@ -34,6 +34,8 @@ const close = () => {
 };
 
 const removeList = (_id: string) => {
+  console.log(_id);
+
   // id 값 받아서 filter 돌리면 될 듯
   axios.delete(`http://localhost:1111/api/account/${_id}`);
   $modal.style.display = "none";
@@ -41,6 +43,8 @@ const removeList = (_id: string) => {
   $billModal.style.display = "none";
   $addModal.style.display = "block";
 };
+
+const editList = () => {};
 
 const renderDetailList = async (target: HTMLElement) => {
   const res = await getAccounts();
@@ -91,11 +95,11 @@ const renderDetailList = async (target: HTMLElement) => {
     const billModalData = res.filter(({ _id }: { _id: string }) => {
       return _id.includes(id);
     });
-    console.log(billModalData);
 
     $billPrice.value = billModalData[0].amount;
     $billContent.value = billModalData[0].content;
-    $billPayment.value = billModalData[0].payment;
+    $billPayment.value =
+      billModalData[0].type === "income" ? "cash" : billModalData[0].payment;
   };
 
   $consumptionCont.addEventListener("click", (e: MouseEvent) => {
@@ -109,12 +113,18 @@ const renderDetailList = async (target: HTMLElement) => {
   });
 
   $billModal.onclick = (e: MouseEvent) => {
+    console.log((e.target as HTMLElement).id);
+
     if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
       close();
     } else if (
       (e.target as HTMLElement).classList.contains("bill-modal__deleted")
     ) {
-      removeList(target.id);
+      removeList((e.target as HTMLElement).id);
+    } else if (
+      (e.target as HTMLElement).classList.contains("bill-modal__modified")
+    ) {
+      editList();
     }
   };
 };
