@@ -59,16 +59,24 @@ $billModal.onclick = async (e: MouseEvent) => {
   ) {
     console.log($deleteBtn.id);
     const res = await getAccounts();
-    const billModalData = res.filter(({ _id }: { _id: string }) => {
+    const billModalData: {
+      date: string;
+      amount: number;
+      category: string;
+      content: string;
+      payment: string;
+      type: string;
+      _id?: string;
+    } = res.filter(({ _id }: { _id: string }) => {
       return _id.includes($deleteBtn.id);
-    });
+    })[0];
 
-    billModalData[0].amount = $billPrice.value;
-    billModalData[0].content = $billContent.value;
-    billModalData[0].payment = $billPayment.value;
-    delete billModalData[0]._id;
+    billModalData.amount = +$billPrice.value;
+    billModalData.content = $billContent.value;
+    billModalData.payment = $billPayment.value;
+    delete billModalData._id;
 
-    putAccount($deleteBtn.id, billModalData[0]);
+    putAccount($deleteBtn.id, billModalData);
     close();
   }
 };
