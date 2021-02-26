@@ -37,6 +37,7 @@ async function billModalRender(id: string): Promise<void> {
   $billPayment.value =
     billModalData[0].payment !== undefined ? billModalData[0].payment : "수입";
   $deleteBtn.setAttribute("id", id);
+  $editBtn.setAttribute("id", id);
 }
 
 const close = (): void => {
