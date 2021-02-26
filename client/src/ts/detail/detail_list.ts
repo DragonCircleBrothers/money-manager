@@ -19,19 +19,19 @@ const renderDetailList = async (): Promise<void> => {
 
   if (listData.length === 0) {
     $consumptionDetailList.innerHTML = `<li style="display: block; font-weight: bold; text-align: center;">
-    ${globalState.currentDate
-      .toISOString()
-      .slice(0, 10)} 수입 및 지출이 없습니다.
+    수입 및 지출이 없습니다.
 </li>`;
   } else {
     $consumptionDetailList.innerHTML = listData
       .map(
         ({ _id, amount, type, content, category }: Accounts) => `<li id=${_id}>
             <span class="consumption-detail__list__category">${category}</span>
-            <span class="consumption-detail__list__content">${content}</span>
-            <span class="consumption-detail__list__payment">${
-              type === "outcome" ? "지출" : "수입"
+            <span class="consumption-detail__list__content">${
+              content === null ? "" : content
             }</span>
+            <span class="consumption-detail__list__type ${
+              type === "outcome" ? "outcome" : "income"
+            }">${type === "outcome" ? "지출" : "수입"}</span>
             <span class="consumption-detail__list__amount">${amount}</span>
         </li>`
       )

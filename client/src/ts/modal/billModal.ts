@@ -2,6 +2,7 @@ import removeAccount from "../AccountCRUD/removeAccount";
 import putAccount from "../AccountCRUD/putAccount";
 import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
+import formattedDate from "../utils/formattedDate";
 
 const $modal = document.querySelector(".modal") as HTMLElement;
 const $billModal = document.querySelector(".bill-modal") as HTMLElement;
@@ -23,8 +24,7 @@ async function billModalRender(id: string): Promise<void> {
   $addModal.style.display = "none";
 
   const $date = document.querySelector(".bill-modal__date") as HTMLElement;
-  // TODO: format 사용
-  $date.textContent = globalState.currentDate.toISOString().slice(0, 10);
+  $date.textContent = formattedDate(globalState.currentDate);
 
   const res = await getAccounts();
 
@@ -45,9 +45,17 @@ const close = (): void => {
   $overlay.style.display = "none";
   $billModal.style.display = "none";
   $addModal.style.display = "block";
+
+  $editBtn.className = "bill-modal__modified fas fa-edit";
 };
 
 $billModal.onclick = async (e: MouseEvent) => {
+  const $editBtn = document.querySelector(
+    ".bill-modal__modified"
+  ) as HTMLElement;
+
+  $editBtn.className = "bill-modal__modified fas fa-check";
+
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
@@ -58,7 +66,6 @@ $billModal.onclick = async (e: MouseEvent) => {
   } else if (
     (e.target as HTMLElement).classList.contains("bill-modal__modified")
   ) {
-    console.log($deleteBtn.id);
     const res = await getAccounts();
     const billModalData: {
       date: string;
