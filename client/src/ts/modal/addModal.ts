@@ -104,7 +104,7 @@ const addModal = (() => {
         ".outcome-modal__content"
       ) as HTMLInputElement;
 
-      account.content = !!account.content ? $outcomeContent.value : null;
+      account.content = $outcomeContent.value ? $outcomeContent.value : null;
       account.category = target.id;
       paymentModalRedner($outcomeModal);
     };
