@@ -21,6 +21,7 @@ async function billModalRender(id: string): Promise<void> {
   $addModal.style.display = "none";
 
   const $date = document.querySelector(".bill-modal__date") as HTMLElement;
+  // TODO: format 사용
   $date.textContent = globalState.currentDate.toISOString().slice(0, 10);
 
   console.log(id);
@@ -46,6 +47,12 @@ const close = (): void => {
 };
 
 $billModal.onclick = (e: MouseEvent) => {
+  const $editBtn = document.querySelector(
+    ".bill-modal__modified"
+  ) as HTMLElement;
+
+  $editBtn.className = "bill-modal__modified fas fa-check";
+
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
