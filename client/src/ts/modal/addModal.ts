@@ -149,6 +149,8 @@ const addModal = (() => {
       $modal.style.display = "block";
       $overlay.style.display = "block";
 
+      $amount.focus();
+
       const $date = document.querySelector(".add-modal__date") as HTMLElement;
       $date.textContent = date;
 
