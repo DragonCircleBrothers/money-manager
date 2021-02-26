@@ -1,4 +1,5 @@
 import removeAccount from "../AccountCRUD/removeAccount";
+import editAccount from "../AccountCRUD/putAccount";
 import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 
@@ -13,6 +14,7 @@ const $billPayment = document.getElementById("payment") as HTMLInputElement;
 const $deleteBtn = document.querySelector(
   ".bill-modal__deleted"
 ) as HTMLElement;
+const $editBtn = document.querySelector(".bill-modal__modified") as HTMLElement;
 
 async function billModalRender(id: string): Promise<void> {
   $modal.style.display = "block";
@@ -22,8 +24,6 @@ async function billModalRender(id: string): Promise<void> {
 
   const $date = document.querySelector(".bill-modal__date") as HTMLElement;
   $date.textContent = globalState.currentDate.toISOString().slice(0, 10);
-
-  console.log(id);
 
   const res = await getAccounts();
 
@@ -36,6 +36,7 @@ async function billModalRender(id: string): Promise<void> {
   $billPayment.value =
     billModalData[0].payment !== undefined ? billModalData[0].payment : "수입";
   $deleteBtn.setAttribute("id", id);
+  $editBtn.setAttribute("id", id);
 }
 
 const close = (): void => {
@@ -53,6 +54,10 @@ $billModal.onclick = (e: MouseEvent) => {
   ) {
     removeAccount($deleteBtn.id);
     close();
+  } else if (
+    (e.target as HTMLElement).classList.contains("bill-modal__modified")
+  ) {
+    // editAccount($editBtn.id, );
   }
 };
 
