@@ -45,7 +45,6 @@ const mainController = (): void => {
       if (target.classList.contains("calendar-cell")) {
         const selectedDate = target.dataset.date + "";
         globalState.currentDate = new Date(selectedDate);
-        console.log(globalState.currentDate);
         (document.querySelector(".selected") as HTMLElement).classList.remove(
           "selected"
         );
