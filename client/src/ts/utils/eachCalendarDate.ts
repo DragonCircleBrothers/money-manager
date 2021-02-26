@@ -8,6 +8,7 @@ const eachCalendarDate = (() => {
     const lastDay = new Date(currentYear, currentMonth + 1, 0).getDay() + 1;
     const from = new Date(currentYear, currentMonth, 1 - (firstDay - 1));
     const to = new Date(currentYear, currentMonth + 1, 7 - lastDay);
+
     const fromMilliSeconds = from.getTime();
     const toMilliSeconds = to.getTime();
 

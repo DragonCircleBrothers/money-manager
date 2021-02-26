@@ -65,7 +65,7 @@ const addModal = (() => {
         ".income-modal__content"
       ) as HTMLInputElement;
 
-      account.content = $incomeContent.value;
+      account.content = !!account.content ? $incomeContent.value : null;
       account.category = target.id;
 
       close($incomeModal);
@@ -104,7 +104,7 @@ const addModal = (() => {
         ".outcome-modal__content"
       ) as HTMLInputElement;
 
-      account.content = $outcomeContent.value;
+      account.content = !!account.content ? $outcomeContent.value : null;
       account.category = target.id;
       paymentModalRedner($outcomeModal);
     };
@@ -134,12 +134,22 @@ const addModal = (() => {
       close($paymentModal);
       postAccounts(account);
     };
+
+    // $category.onclick = (e: MouseEvent) => {
+    //   const target = e.target as HTMLElement;
+
+    //   if (target.nodeName === "FORM") return;
+    //   close($paymentModal);
+    //   postAccounts(account);
+    // };
   };
 
   return {
     addModalRender(date: string) {
       $modal.style.display = "block";
       $overlay.style.display = "block";
+
+      $amount.focus();
 
       const $date = document.querySelector(".add-modal__date") as HTMLElement;
       $date.textContent = date;

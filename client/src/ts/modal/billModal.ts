@@ -1,5 +1,5 @@
 import removeAccount from "../AccountCRUD/removeAccount";
-import editAccount from "../AccountCRUD/putAccount";
+import putAccount from "../AccountCRUD/putAccount";
 import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 
@@ -23,6 +23,7 @@ async function billModalRender(id: string): Promise<void> {
   $addModal.style.display = "none";
 
   const $date = document.querySelector(".bill-modal__date") as HTMLElement;
+  // TODO: format 사용
   $date.textContent = globalState.currentDate.toISOString().slice(0, 10);
 
   const res = await getAccounts();
@@ -31,7 +32,7 @@ async function billModalRender(id: string): Promise<void> {
     return _id.includes(id);
   });
 
-  $billPrice.value = billModalData[0].amount;
+  $billPrice.value = billModalData[0].amount + "";
   $billContent.value = billModalData[0].content;
   $billPayment.value =
     billModalData[0].payment !== undefined ? billModalData[0].payment : "수입";
@@ -46,7 +47,7 @@ const close = (): void => {
   $addModal.style.display = "block";
 };
 
-$billModal.onclick = (e: MouseEvent) => {
+$billModal.onclick = async (e: MouseEvent) => {
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
@@ -57,7 +58,27 @@ $billModal.onclick = (e: MouseEvent) => {
   } else if (
     (e.target as HTMLElement).classList.contains("bill-modal__modified")
   ) {
-    // editAccount($editBtn.id, );
+    console.log($deleteBtn.id);
+    const res = await getAccounts();
+    const billModalData: {
+      date: string;
+      amount: number;
+      category: string;
+      content: string;
+      payment: string;
+      type: string;
+      _id?: string;
+    } = res.filter(({ _id }: { _id: string }) => {
+      return _id.includes($deleteBtn.id);
+    })[0];
+
+    billModalData.amount = +$billPrice.value;
+    billModalData.content = $billContent.value;
+    billModalData.payment = $billPayment.value;
+    delete billModalData._id;
+
+    putAccount($deleteBtn.id, billModalData);
+    close();
   }
 };
 
