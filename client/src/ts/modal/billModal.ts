@@ -1,4 +1,5 @@
 import removeAccount from "../AccountCRUD/removeAccount";
+import putAccount from "../AccountCRUD/putAccount";
 import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 
@@ -46,19 +47,43 @@ const close = (): void => {
   $addModal.style.display = "block";
 };
 
-$billModal.onclick = (e: MouseEvent) => {
+$billModal.onclick = async (e: MouseEvent) => {
   const $editBtn = document.querySelector(
     ".bill-modal__modified"
   ) as HTMLElement;
 
-  $editBtn.className = "bill-modal__modified fas fa-check";
-
+  // $editBtn.className = "bill-modal__modified fas fa-check";
+  
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
     (e.target as HTMLElement).classList.contains("bill-modal__deleted")
   ) {
     removeAccount($deleteBtn.id);
+    close();
+  } else if (
+    (e.target as HTMLElement).classList.contains("bill-modal__modified")
+  ) {
+    console.log($deleteBtn.id);
+    const res = await getAccounts();
+    const billModalData: {
+      date: string;
+      amount: number;
+      category: string;
+      content: string;
+      payment: string;
+      type: string;
+      _id?: string;
+    } = res.filter(({ _id }: { _id: string }) => {
+      return _id.includes($deleteBtn.id);
+    })[0];
+
+    billModalData.amount = +$billPrice.value;
+    billModalData.content = $billContent.value;
+    billModalData.payment = $billPayment.value;
+    delete billModalData._id;
+
+    putAccount($deleteBtn.id, billModalData);
     close();
   }
 };
