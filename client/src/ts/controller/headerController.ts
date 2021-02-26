@@ -2,6 +2,7 @@ import renderCalendar from "../calendar/calendar";
 import globalState from "../globalState";
 import chartRender from "../chart/chart_render";
 import addModal from "../modal/addModal";
+import formattedDate from "../utils/formattedDate";
 
 const $year = document.querySelector(".month__year") as HTMLElement;
 const $month = document.querySelector(".month__num") as HTMLElement;
@@ -55,9 +56,7 @@ const headerController = (): void => {
       }
 
       $addBtn.onclick = () => {
-        addModal.addModalRender(
-          globalState.currentDate.toISOString().slice(0, 10)
-        );
+        addModal.addModalRender(formattedDate(globalState.currentDate));
       };
     };
   } else {
@@ -84,9 +83,7 @@ const headerController = (): void => {
     };
 
     $addBtn.onclick = () => {
-      addModal.addModalRender(
-        globalState.currentDate.toISOString().slice(0, 10)
-      );
+      addModal.addModalRender(formattedDate(globalState.currentDate));
     };
   }
 };

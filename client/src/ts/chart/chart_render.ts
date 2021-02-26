@@ -196,13 +196,9 @@ const renderBarChart = (
 
               const labelName: string = chartLabelData._model.label;
 
-              console.log(labelName);
-              console.log(accountData);
-
               const categoryData = accountData.filter(
                 (v: Accounts) => v.category === labelName
               );
-              console.log(categoryData);
 
               $detailList.innerHTML = categoryData
                 .map(
@@ -244,19 +240,15 @@ const chartRender = async (
   $month.textContent = `${month + 1}`;
 
   const res = await getAccounts();
-  console.log(res);
 
-  // 월 별로 income outcome 데이서 분류
   const accountData = res.filter(
     ({ date, type }: { date: string; type: string }) =>
       date.includes(monthYear) && type.includes(someType)
   );
-  console.log(accountData);
 
   const categoryData = accountData
     .map(({ category }: { category: string }) => category)
     .filter((v: string, i: number, arr: string[]) => arr.indexOf(v) === i);
-  console.log(categoryData);
 
   const amountData = Object.values(
     accountData.reduce((acc: any, cur: Accounts) => {
@@ -264,7 +256,6 @@ const chartRender = async (
       return acc;
     }, {})
   ) as number[];
-  console.log(amountData);
 
   const incomeAmount: number = res
     .filter(
