@@ -134,14 +134,6 @@ const addModal = (() => {
       close($paymentModal);
       postAccounts(account);
     };
-
-    // $category.onclick = (e: MouseEvent) => {
-    //   const target = e.target as HTMLElement;
-
-    //   if (target.nodeName === "FORM") return;
-    //   close($paymentModal);
-    //   postAccounts(account);
-    // };
   };
 
   return {
