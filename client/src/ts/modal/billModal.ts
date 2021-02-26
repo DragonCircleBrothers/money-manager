@@ -1,4 +1,5 @@
 import removeAccount from "../AccountCRUD/removeAccount";
+import putAccount from "../AccountCRUD/putAccount";
 import getAccounts from "../AccountCRUD/getAccounts";
 import globalState from "../globalState";
 
@@ -45,13 +46,29 @@ const close = (): void => {
   $addModal.style.display = "block";
 };
 
-$billModal.onclick = (e: MouseEvent) => {
+$billModal.onclick = async (e: MouseEvent) => {
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
     (e.target as HTMLElement).classList.contains("bill-modal__deleted")
   ) {
     removeAccount($deleteBtn.id);
+    close();
+  } else if (
+    (e.target as HTMLElement).classList.contains("bill-modal__modified")
+  ) {
+    console.log($deleteBtn.id);
+    const res = await getAccounts();
+    const billModalData = res.filter(({ _id }: { _id: string }) => {
+      return _id.includes($deleteBtn.id);
+    });
+
+    billModalData[0].amount = $billPrice.value;
+    billModalData[0].content = $billContent.value;
+    billModalData[0].payment = $billPayment.value;
+    delete billModalData[0]._id;
+
+    putAccount($deleteBtn.id, billModalData[0]);
     close();
   }
 };
