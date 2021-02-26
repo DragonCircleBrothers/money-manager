@@ -53,7 +53,7 @@ $billModal.onclick = async (e: MouseEvent) => {
   ) as HTMLElement;
 
   // $editBtn.className = "bill-modal__modified fas fa-check";
-  
+
   if ((e.target as HTMLElement).classList.contains("bill-modal__closed")) {
     close();
   } else if (
