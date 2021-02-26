@@ -6,7 +6,7 @@
 DCB 가계부로 차근차근 가계부 작성을 시작해보세요.
 나의 :moneybag:입출금 내역:moneybag:을 한눈에 파악해보세요!
 
-<!-- <img src="https://user-images.githubusercontent.com/39546083/94138332-ecd8a700-fea2-11ea-9666-926c514ddb8a.gif"> -->
+<img src="./client/src/asset/demo.gif">
 
 
 ## 👨‍👨‍👧‍👦 함께한 사람들

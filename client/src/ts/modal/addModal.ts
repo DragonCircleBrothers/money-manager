@@ -130,7 +130,10 @@ const addModal = (() => {
       if (target.classList.contains("btn-close")) close($paymentModal);
     };
 
-    $category.onchange = () => {
+    $category.onclick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      if (target.nodeName === "FORM") return;
       close($paymentModal);
       postAccounts(account);
     };
