@@ -65,7 +65,7 @@ const addModal = (() => {
         ".income-modal__content"
       ) as HTMLInputElement;
 
-      account.content = !!account.content ? $incomeContent.value : null;
+      account.content = $incomeContent.value ? $incomeContent.value : null;
       account.category = target.id;
 
       close($incomeModal);
