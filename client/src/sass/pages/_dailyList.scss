@@ -75,8 +75,9 @@
   justify-content: space-between;
   align-content: start;
   flex-wrap: wrap;
-  overflow: hidden auto;
-  height: 166px;
+  overflow: auto;
+  height: 300px;
+  font-weight: bold;
 
   li {
     width: 100%;
@@ -92,8 +93,18 @@
     padding-right: 11px;
 
       span {
-        font-size: 2rem;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.5rem;
         width: 150px;
+      }
+
+      .consumption-detail__list__type.income {
+        color: $outcome-color;
+      }
+
+      .consumption-detail__list__type.outcome {
+        color: $income-color;
       }
 
     #categorybadge {
