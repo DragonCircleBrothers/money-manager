@@ -1,10 +1,8 @@
 import axios from "axios";
 import { AccountItem } from "../type";
-import calendarListRender from "../calendar/calendarListRender";
 import chartRender from "../chart/chart_render";
 import globalState from "../globalState";
 import renderCalendar from "../calendar/calendar";
-
 
 const postAccounts = async (account: AccountItem): Promise<void> => {
   await axios.post("http://localhost:1111/api/account", { ...account });
