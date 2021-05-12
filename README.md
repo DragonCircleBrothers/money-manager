@@ -29,4 +29,5 @@ DCB 가계부로 차근차근 가계부 작성을 시작해보세요.
 - 카테고리별 지출 통계
 - 월간 지출 통계
 
+## 발표 자료
 [slides](https://slides.com/nyong/deck-ab407a)
